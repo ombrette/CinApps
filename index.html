@@ -4,11 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>page d'accueil</title>
+		<title>Page d'accueil</title>
 		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
 		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
+		
 
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 
@@ -44,12 +45,15 @@
 					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
 						<!-- Top Navigation -->
 						<header class="codrops-header">
-							<h1>today's movie</h1>
+							<div id="st-trigger-effects" class="column">
+								<button data-effect="st-effect-1">Menu</button>
+							</div>
+							<h1>Today's movie</h1>
 						</header>
 						<div class="main clearfix">
-							<div id="st-trigger-effects" class="column">
-								<button data-effect="st-effect-1">Slide in on top</button>
-							</div>
+							<!--<div id="st-trigger-effects" class="column">
+								<button data-effect="st-effect-1">Slide</button>
+							</div>-->
 						</div><!-- /main -->
 					</div><!-- /st-content-inner -->
 				</div><!-- /st-content -->
