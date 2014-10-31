@@ -11,6 +11,27 @@
 		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
+@font-face{
+	font-family:"Good Times";
+    src:url('../fonts/Good%20Times/good_times_rg-webfont.eot');
+    src: url('../fonts/Good%20Times/good_times_rg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Good%20Times/good_times_rg-webfont.ttf') format('truetype'),
+         url('../fonts/Good%20Times/good_times_rg-webfont.woff') format('woff'),
+		 url('../fonts/Good%20Times/good%20times%20rg.otf') format('otf');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+	font-family:"Raleway";
+    src:url('../fonts/Raleway/raleway-medium.eot');
+    src: url('../fonts/Raleway/raleway-medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Raleway/raleway-medium.ttf') format('truetype'),
+         url('../fonts/Raleway/raleway-medium.woff') format('woff');
+	font-weight: normal;
+    font-style: normal;
+}
+
 
 html, body {
 	margin:0px;
@@ -26,7 +47,7 @@ nav{
 
 
 body {
-	background-image:url('img/fond-accueil.jpg');
+	background-image:url('../img/fond-accueil.jpg');
 	background-repeat: no-repeat;
   	background-size: cover;
 	font-weight: 300;
@@ -46,7 +67,7 @@ a {
 	outline: none;
 }
 
-a:hover, a:focus {
+a:hover, a:focus{
 	color: #2c774b;
 	outline: none;
 }
@@ -58,18 +79,46 @@ a:hover, a:focus {
 
 }
 
-.accueiljour {
-	margin-top: 1em;
-	height: 70%;
+.accueiljour{
+	clear:both;
+	margin-top: 18%;
+	/*height: 70%;*/
 	width: 100%;
 }
 
+.accueiljour h2{
+	font-family:"Raleway";
+	text-align:center;
+	font-weight:300;
+	padding-top:10px;
+	font-size:1.4em;
+}
 
-.accueilrecom {
+.accueiljour h3{
+	font-family:"codropsicons";
+	text-align:center;
+	font-weight:300;
+	font-style:italic;
+}
+
+.accueiljour img{
+	margin-left:95px;
+	width:180px;
+}
+
+.accueilrecom{
 	background-color: rgba(0, 0, 0, 0.4);
-	height: 30%;
+	/*height: 30%;*/
 	width: 100%;
 	vertical-align: bottom;
+}
+
+.accueilrecom h2{
+	font-family:"Raleway";
+	font-size:1.1em;
+	text-align:center;
+	font-weight:300;
+	padding-top:10px;
 }
 
 
@@ -103,13 +152,15 @@ a:hover, a:focus {
 }
 
 .codrops-header h1 {
+	display:inline-block;
 	margin: 0;
+	font-family:"Good Times";
 	font-weight: 300;
-	font-size: 1.5em;
-	line-height: 1;
+	font-size: 1.1em;
+	line-height: 1.6;
 	vertical-align: middle;
 	text-align: center;
-	color:yellow;
+	color:white;
 	
 }
 
@@ -167,7 +218,7 @@ a:hover, a:focus {
 
 button {
 	border: none;
-	background: silver;
+	background:none;
 	color: #fff;
 	font-family: 'Lato', 'Calibri', Arial, sans-serif;
 	font-size: 1em;
@@ -175,16 +226,10 @@ button {
 	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-block;
-		
 	
-
-
 	border-radius: 2px;
 }
 
-button:hover {
-	background: grey;
-}
 
 .info {
 	text-align: center;
@@ -201,3 +246,20 @@ button:hover {
 	font-size: 0.9em;
 }
 
+
+/*Modif by Héma*/
+.codrops-header{
+	padding-top:14px;
+}
+
+.codrops-header .column{
+	margin-top:-2px;
+}
+
+.codrops-header a.quizz{
+	display:inline-block;
+	float:right;
+	margin-left:-10px;
+	margin-right:10px;
+	margin-top:4px;
+}
