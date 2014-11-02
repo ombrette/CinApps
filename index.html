@@ -11,10 +11,13 @@
 		<link rel="shortcut icon" href="../favicon.ico">
 		
 
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+        <link rel="stylesheet" type="text/css" href="css/movies-app.css" />
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -67,13 +70,54 @@
 						<!-- ancienne recommandation -->
 						<div class="accueilrecom">
 							<h2>Anciennes Recommandations</h2>
+                            
+                            <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/film1.jpg" width="220" height="260">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/film2.jpg" width="220" height="260">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/film3.jpg" width="220" height="260">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/film4.jpg" width="220" height="260">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/film5.jpg" width="220" height="260">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/film6.jpg" width="220" height="260">
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+                            
 
 						</div>
 					
 				</div><!-- /st-content -->
 			</div><!-- /st-pusher -->
 		</div><!-- /st-container -->
+        
+        
+        
+        
 		<script src="js/classie.js"></script>
 		<script src="js/sidebarEffects.js"></script>
+        <script src="js/jquery.min.js"></script>
+  		<script src="js/idangerous.swiper-2.0.min.js"></script>
+  		<script>
+  			var mySwiper = new Swiper('.swiper-container',{
+    		pagination: '.pagination',
+    		paginationClickable: true,
+    		centeredSlides: true,
+    		slidesPerView: 3,
+   			watchActiveIndex: true
+  			})
+  		</script>
 	</body>
 </html>
