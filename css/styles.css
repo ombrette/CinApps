@@ -46,10 +46,13 @@ nav{
 }
 
 
-body {
-	background-image:url('../img/fond-accueil.jpg');
-	background-repeat: no-repeat;
-  	background-size: cover;
+.navbar-nav{
+	float: right;
+}
+
+body{
+	background-image: url(../img/txtfond.jpg);
+	background-repeat: repeat;
 	font-weight: 300;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 
@@ -263,3 +266,108 @@ button {
 	margin-right:10px;
 	margin-top:4px;
 }
+
+
+/*###### caroussel ######*/
+/* Global */
+
+img { max-width:100%; }
+
+a {
+	-webkit-transition: all 150ms ease;
+	-moz-transition: all 150ms ease;
+	-ms-transition: all 150ms ease;
+	-o-transition: all 150ms ease;
+	transition: all 150ms ease; 
+	}
+    a:hover {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+        filter: alpha(opacity=50); /* IE7 */
+        opacity: 0.6;
+        text-decoration: none;
+    }
+
+
+/* Container */
+.container-fluid {
+    background: #FFFFFF;
+    margin: 40px auto 10px;
+    padding: 20px 40px 0;
+    max-width: 960px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Page Header */
+.page-header {
+    background: #f9f9f9;
+    margin: -30px -40px 40px;
+    padding: 20px 40px;
+    border-top: 4px solid #ccc;
+    color: #999;
+    text-transform: uppercase;
+    }
+    .page-header h3 {
+        line-height: 0.88rem;
+        color: #000;
+        }
+
+
+
+/* Thumbnail Box */
+.caption h4 {
+    font-size: 1rem;
+    color: #444;
+    }
+    .caption p {
+        font-size: 0.75rem;
+        color: #999;
+        }
+        .btn.btn-mini {
+            font-size: 0.63rem;
+            }
+
+/*control*/
+    .carousel-control{
+        background: #666;
+        border: 0px;
+        border-radius: 0px;
+        display: inline-block;
+        font-size: 34px;
+        font-weight: 200;
+        line-height: 18px;
+        opacity: 0.5;
+        padding: 4px 10px 0px;
+        position: static;
+        height: 30px;
+        width: 15px;
+        }
+        
+/* Footer */
+.footer {
+    margin: auto;
+    width: 100%;
+    max-width: 960px;
+    display: block;
+    font-size: 0.69rem;
+    }
+    .footer, .footer a {
+        color: #c9e4f7;
+        }
+        p.right  { 
+            float: right; 
+            }
+
+
+/* Mobile Only */
+@media (max-width: 767px) {
+    .page-header, .control-box {
+    text-align: center;
+    } 
+}
+@media (max-width: 479px) {
+    .caption {
+    word-break: break-all;
+    }
+}
+
