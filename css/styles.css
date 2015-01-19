@@ -33,6 +33,11 @@
 }
 
 
+@font-face{
+    font-family : "microsoft-yi-baiti";
+    src : url('../onts/yi-baiti/microsoft-yi-baiti.ttf');
+}
+
 html, body {
 	margin:0px;
 	padding:0px;
@@ -45,10 +50,19 @@ body{
 	background-repeat: repeat;
 	font-weight: 300;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-
 	font-size:1.2em;
 	margin:10px;
 	margin:0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family : "microsoft-yi-baiti", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 nav{
@@ -76,12 +90,16 @@ nav{
 	background-color:white;}
 	
 .logoQuestionnaire{
-	height:50px;}
+	height:50px;
+}
 
 .questionnaire a{
 	margin:0;
 	padding:0 !important;
 }
+
+
+/*###### film du jour ######*/
 
 .container.fdj{
 	text-align:center;
@@ -91,9 +109,6 @@ nav{
 	display:inline-block;
 }
 
-.fdj .container-fluid.affiche{
-	width:20%;
-}
 
 .fdj .container-fluid{
 	width:60%;
@@ -115,6 +130,8 @@ nav{
 }
 
 
+
+
 a {
 	text-decoration: none;
 	color: #48a770;
@@ -127,53 +144,54 @@ a:hover, a:focus{
 }
 
 
-.accueiljour, 
-.accueilrecom{
-	color: white;
+
+.affiche img{
+	margin: 0 auto;
+	margin-top:-30px;
+	width:210px;
+}
+
+@media screen and (min-width: 769px) {
+	.titre_fdj{
+	width: 228px;
+	height: 54px;
+	}
+
+	.fdj .container-fluid.affiche{
+	width: 300px;
+	height: 407px;
+	}
+
 
 }
 
-.accueiljour{
-	clear:both;
-	margin-top: 18%;
-	/*height: 70%;*/
-	width: 100%;
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+	.titre_fdj{
+	width: 210px;
+	height: 54px;
+	}
+
+	.fdj .container-fluid.affiche{
+	width: 270px;
+	height: 363px;
+	}
 }
 
-.accueiljour h2{
-	font-family:"Raleway";
-	text-align:center;
-	font-weight:300;
-	padding-top:10px;
-	font-size:1.4em;
+@media only screen and (max-device-width: 480px) {
+	.titre_fdj{
+	width: 228px;
+	height: 54px;
+	}
+
+	.fdj .container-fluid.affiche{
+	width: 300px;
+	height: 407px;
+	}
 }
 
-.accueiljour h3{
-	font-family:"codropsicons";
-	text-align:center;
-	font-weight:300;
-	font-style:italic;
-}
+/*###### fin film du jour ######*/
 
-.accueiljour img{
-	margin-left:95px;
-	width:180px;
-}
 
-.accueilrecom{
-	background-color: rgba(0, 0, 0, 0.4);
-	/*height: 30%;*/
-	width: 100%;
-	vertical-align: bottom;
-}
-
-.accueilrecom h2{
-	font-family:"Raleway";
-	font-size:1.1em;
-	text-align:center;
-	font-weight:300;
-	padding-top:10px;
-}
 
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
