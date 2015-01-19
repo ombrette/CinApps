@@ -151,6 +151,10 @@ a:hover, a:focus{
 	width:210px;
 }
 
+.notationfilm p, .notationfilm h2 {
+	display: inline-block;
+}
+
 @media screen and (min-width: 769px) {
 	.titre_fdj{
 	width: 228px;
@@ -366,7 +370,13 @@ a {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-
+.container-fluid-carrousel {
+    background: #FFFFFF;
+    margin: 40px auto 10px;
+    padding: 20px 40px 0;
+    max-width: 960px;
+    background-color: transparent;
+}
 /* Page Header */
 .page-header {
     background: #f9f9f9;
@@ -384,6 +394,11 @@ a {
 
 
 /* Thumbnail Box */
+.carousel-inner ul li {
+	background-color: white;
+
+}
+
 .caption h4 {
     font-size: 1rem;
     color: #444;
