@@ -40,16 +40,6 @@ html, body {
 }
 
 
-
-nav{
-	background-color:#000;
-}
-
-
-.navbar-nav{
-	float: right;
-}
-
 body{
 	background-image: url(../img/txtfond.jpg);
 	background-repeat: repeat;
@@ -61,7 +51,68 @@ body{
 	margin:0 auto;
 }
 
+nav{
+	background-color:#000;
+}
 
+
+.navbar-nav{
+	float: right !important;
+	height:50px;
+	
+}
+
+.navbar-nav li{
+	height:100%;}
+	
+.navbar-nav li a{
+	height:100%;
+	line-height:28px;}
+
+.container{
+	padding:0;}
+
+.navbar-collapse{
+	background-color:white;}
+	
+.logoQuestionnaire{
+	height:50px;}
+
+.questionnaire a{
+	margin:0;
+	padding:0 !important;
+}
+
+.container.fdj{
+	text-align:center;
+}
+
+.fdj .container-fluid{
+	display:inline-block;
+}
+
+.fdj .container-fluid.affiche{
+	width:20%;
+}
+
+.fdj .container-fluid{
+	width:60%;
+	margin-left:2%;
+}
+
+.col-lg-12{
+	padding:0;}
+
+.titre_fdj{
+	background-color:#c0392b;
+	color:white;
+	font-size:28px;
+	display:inline-block;
+	padding:10px;
+	margin:0px;
+	position:relative;
+	top:-45px;
+}
 
 
 a {
@@ -357,6 +408,7 @@ a {
         p.right  { 
             float: right; 
             }
+		
 
 
 /* Mobile Only */
