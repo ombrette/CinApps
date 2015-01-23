@@ -21,59 +21,74 @@
     <nav class="navbar navbar-default" role="navigation">
     
             <div class="container">
-                <a class="navbar-brand" href="">
-                        <img src="" width="" height="" alt="logo Cinefeel"></a>
+                
                         
                 <div class="navbar-header">
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse">
+
                     <span class="sr-only">Toggle navigation</span> <!-- sr = screen reader-->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
+
+                    <h4 class="visible-xs">Cinefeel</h4>
                     
-    
                 </div>
     
-                <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
+            <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
+                <a class="navbar-brand hidden-xs" href="">
+                        <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">ACCUEIL</a></li>
                     <li><a href="#">QUESTIONNAIRE</a></li>
                     <li><a href="#">LISTE DE FILMS</a></li>
                     <li><a href="#">MON COMPTE</a></li>
-                    <li class="questionnaire"><a href="#"><img class="logoQuestionnaire" src="img/logo_questionnaire.jpg" alt="Logo du Questionnaire"></a></li>
+                   
+
+                    <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
                 </ul>
-                </div>
-    
             </div>
+    
         </nav>
     
     <!--FIN MENU-->
     
+
+
     <!--FILM DU JOUR-->
-    	<div class="fdj">
-            <div class="container-fluid affiche">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <h1 class="titre_fdj">Film du Jour</h1>
-<!--                         <img src="img/malefique.png">
- -->                    </div>
-                </div>
-        
-            </div>
-            <div class="container-fluid texte">
-                <div class="row">
-                    <div class="col-lg-8 col-md-8">
-                        <div class="notationfilm">
-                        <h2>127 Heures</h2><p>note</p><br>
-                        <p>date</p><p>genre</p>
-                    </div>
-                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-        
-            </div>
+<div class="container fdj">
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h1 class="titre_fdj">Film du Jour</h1>
+            <img src="img/malefique2.jpg" width="250" height="333" alt="">
         </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-7 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+            
+
+            <h2>127 Heures</h2>
+            <p>note</p><br>
+            <p class="infos">Année : </p>
+            <p class="infos">Genre :</p>
+            
+
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p class="boutonfdj"><a href="#">Bande annonce</a></p>
+            <p class="boutonfdj"><a href="#">A regarder plus tard</a></p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
     
     <!--FIN FILM DU JOUR-->
     

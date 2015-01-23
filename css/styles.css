@@ -1,5 +1,20 @@
 /*------demo------*/
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+@font-face {
+    font-family: 'angelinaregular';
+    src: url('../fonts/angelina/angelina-webfont.eot');
+    src: url('../fonts/angelina/angelina-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/angelina/angelina-webfont.woff2') format('woff2'),
+         url('../fonts/angelina/angelina-webfont.woff') format('woff'),
+         url('../fonts/angelina/angelina-webfont.ttf') format('truetype'),
+         url('../fonts/angelina/angelina-webfont.svg#angelinaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 @font-face {
 	font-weight: normal;
 	font-style: normal;
@@ -50,7 +65,7 @@ body{
 	background-repeat: repeat;
 	font-weight: 300;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	font-size:1.2em;
+	font-size:1.3em;
 	margin:10px;
 	margin:0 auto;
 }
@@ -65,70 +80,119 @@ h6 {
     text-transform: uppercase;
 }
 
+/*###### Menu ######*/
+
 nav{
 	background-color:#000;
 }
 
+.navbar{
+	margin-bottom: 4em;
+
+
+}
+.navbar .nav{
+	margin: 0;
+}
 
 .navbar-nav{
 	float: right !important;
-	height:50px;
+	height:60px;
 	
 }
 
+.navbar > .container .navbar-brand{
+	margin-left: 0;
+}
+
+.navbar-brand{
+	padding:5px 15px;
+	font-family: 'angelinaregular';
+	font-size: 3.5em;
+}
+
+.navbar-header h4{
+	font-family: 'angelinaregular';
+	font-size: 2.5em;
+	text-transform: capitalize;
+	text-align: center;
+
+}
+
+.navbar-brand > img{
+	display: inline-block;
+	margin-right: 0.2em;
+}
 .navbar-nav li{
-	height:100%;}
+	height:100%;
+
+}
 	
 .navbar-nav li a{
 	height:100%;
-	line-height:28px;}
+	line-height:38px;
+	}
+
+.navbar-nav li:nth-child(4){
+	margin-right: 3em;
+}
+
 
 .container{
 	padding:0;}
 
 .navbar-collapse{
-	background-color:white;}
+	background-color:white;
+	padding-right: 0;
+}
 	
-.logoQuestionnaire{
-	height:50px;
+.logorecherche{
+	height:60px;
 }
 
-.questionnaire a{
+.recherche a{
 	margin:0;
 	padding:0 !important;
 }
 
 
-/*###### film du jour ######*/
+/*###### Film du jour ######*/
 
 .container.fdj{
+	width: 85%;
 	text-align:center;
 }
 
-.fdj .container-fluid{
-	display:inline-block;
+.fdj .row{
+	padding-bottom: 3em;
+	border-bottom: solid 0.1em #cdcdcd;
+}
+.fdj .row div{
+	background-color: #fff;
 }
 
 
-.fdj .container-fluid{
-	width:60%;
-	margin-left:2%;
-}
-
-.col-lg-12{
-	padding:0;}
 
 .titre_fdj{
+	width: 14.25em;
+	height: 3.375em;
 	background-color:#c0392b;
 	color:white;
-	font-size:28px;
+	font-size:1.5em;
 	display:inline-block;
-	padding:10px;
-	margin:0px;
+	/*padding:0.625em;*/
+	line-height: 3.375em;
+	vertical-align: middle;
+	margin:auto;
 	position:relative;
-	top:-45px;
+	top:-1em;
 }
 
+
+
+.fdj .row img{
+	margin-bottom: 1.6em;
+}
 
 
 
@@ -145,52 +209,71 @@ a:hover, a:focus{
 
 
 
-.affiche img{
-	margin: 0 auto;
-	margin-top:-30px;
-	width:210px;
+
+.fdj .row div:nth-child(2){
+	text-align: left;
 }
 
-.notationfilm p, .notationfilm h2 {
+.fdj .row div:nth-child(2) h2, h2+p{
 	display: inline-block;
 }
 
-@media screen and (min-width: 769px) {
+.fdj .row div:nth-child(2) .infos{
+	display: inline-block;
+}
+
+.boutonfdj{
+	display: inline-block;
+	background-color:#c0392b;
+	color:white;
+	width: 12em;
+	height: 2.5em;
+	line-height: 2.5em;
+	vertical-align: middle;
+	text-align: center;
+	font-size:1.2em;
+}
+
+.boutonfdj a{
+	color: white;
+}
+
+@media screen and (min-width: 769px) and (max-width:1068px ) {
+
+
+.titre_fdj{
+	width: 90%;
+	height: 90%;
+	
+}
+
+.navbar-nav li:nth-child(4){
+	margin-right: 0;
+}
+
+	.navbar-brand{
+	font-size: 3em;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
 	.titre_fdj{
-	width: 228px;
-	height: 54px;
+	width: 60%;
+	height: 60%;
 	}
 
-	.fdj .container-fluid.affiche{
-	width: 300px;
-	height: 407px;
-	}
 
 
 }
 
-@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+@media only screen and (max-width: 480px) {
 	.titre_fdj{
-	width: 210px;
-	height: 54px;
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
 	}
 
-	.fdj .container-fluid.affiche{
-	width: 270px;
-	height: 363px;
-	}
-}
 
-@media only screen and (max-device-width: 480px) {
-	.titre_fdj{
-	width: 228px;
-	height: 54px;
-	}
-
-	.fdj .container-fluid.affiche{
-	width: 300px;
-	height: 407px;
-	}
 }
 
 /*###### fin film du jour ######*/
