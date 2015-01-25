@@ -326,7 +326,13 @@ a:hover, a:focus{
 
 .mdfp table h2, .mdfp table h3 {
 	padding-left:10%; 
+	text-transform: none;
 
+
+}
+
+.mdfp table h3 {
+	color: grey;
 }
 
 .mdfp form legend {
