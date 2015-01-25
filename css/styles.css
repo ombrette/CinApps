@@ -434,8 +434,12 @@ a:hover, a:focus{
 
 	.container.mdfp{
 	width: 85%;
-}
+	}
 
+	.titre_fdj{
+	float: none;
+	font-size: 1.3em;
+}
 
 	#contact input[type=text],#contact input[type=email],#contact textarea{
     width: 85%;
