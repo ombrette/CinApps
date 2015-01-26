@@ -43,10 +43,10 @@
                 <a class="navbar-brand hidden-xs" href="">
                         <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
                 <ul class="nav navbar-nav">
-                    <li><a href="indexfinal.html">ACCUEIL</a></li>
-                    <li><a href="#">QUESTIONNAIRE</a></li>
-                    <li><a href="#">LISTE DE FILMS</a></li>
-                    <li class="active"><a href="#">MON COMPTE</a></li>
+                    <li><a href="index.php">ACCUEIL</a></li>
+                    <li><a href="questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li><a href="liste_films.php">LISTE DE FILMS</a></li>
+                    <li class="active"><a href="profil.php">MON COMPTE</a></li>
                    
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
