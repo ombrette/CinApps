@@ -76,10 +76,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-family : "microsoft-yi-baiti", Helvetica, Arial, sans-serif;
+	font-family : "microsoft-yi-baiti", Helvetica, Arial, sans-serif;}
+/*
     text-transform: uppercase;
 }
-
+*/
 /*###### Menu ######*/
 
 nav{
@@ -102,7 +103,7 @@ nav{
 }
 
 .navbar > .container .navbar-brand{
-	margin-left: 0;
+	margin-left: 5%;
 }
 
 .navbar-brand{
@@ -218,8 +219,18 @@ a:hover, a:focus{
 	display: inline-block;
 }
 
+.fdj .row div:nth-child(2) .note{
+	float:right;
+	position:relative;
+	top:30px;
+	right:20%;
+}
+
+
 .fdj .row div:nth-child(2) .infos{
 	display: inline-block;
+	margin-right:150px;
+	clear:both;
 }
 
 .boutonfdj{
@@ -232,6 +243,7 @@ a:hover, a:focus{
 	vertical-align: middle;
 	text-align: center;
 	font-size:1.2em;
+	margin-right:15px;
 }
 
 .boutonfdj a{
@@ -291,7 +303,7 @@ a:hover, a:focus{
 
 
 
-.titre_fdj{
+/*.titre_fdj{
 	width: 14.25em;
 	height: 3.375em;
 	background-color:#c0392b;
@@ -299,13 +311,13 @@ a:hover, a:focus{
 	font-size:1.5em;
 	display:inline-block;
 	/*padding:0.625em;*/
-	line-height: 3.375em;
+	/*line-height: 3.375em;
 	vertical-align: middle;
 	margin:auto;
 	position:relative;
 	top:-1em;
 	float: left;
-}
+}*/
 
 
 
