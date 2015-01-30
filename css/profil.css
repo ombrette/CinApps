@@ -1,0 +1,123 @@
+.container.profil{
+	width: 974px;
+	text-align:center;
+}
+
+.profil .row div{
+	background-color: #fff;
+}
+
+.profil .row img{
+	margin-bottom: 1.6em;
+}
+
+.profil table {
+	margin-left:auto; 
+    margin-right:auto;
+    text-align: left;
+}
+
+.profil table img {
+	padding-right:10%; 
+
+}
+
+.profil table h2, .profil table h3 {
+	padding-left:10%; 
+	text-transform: none;
+
+
+}
+
+.profil table h3 {
+	color: grey;
+}
+
+.profil form legend {
+	text-align: left;
+	border: none;
+}
+
+.line-right {
+  margin-right: 1px;
+  border-right: 1px solid grey;
+}
+
+.boutonfdj{
+	display: inline-block;
+	background-color:#c0392b;
+	color:white;
+	width: 12em;
+	height: 2.5em;
+	line-height: 2.5em;
+	vertical-align: middle;
+	text-align: center;
+	font-size:1.2em;
+}
+
+.boutonfdj a{
+	color: white;
+}
+
+@media screen and (min-width: 769px) and (max-width:1068px ) {
+.container.profil{
+	width: 85%;
+}
+
+.titre_fdj{
+	width: 40%;
+	height: 40%;
+	
+}
+
+.navbar-nav li:nth-child(4){
+	margin-right: 0;
+}
+
+	.navbar-brand{
+	font-size: 3em;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
+	.titre_fdj{
+	width: 60%;
+	height: 60%;
+	}
+	
+	.container.profil{
+	width: 85%;
+	}
+
+
+	#contact input[type=text],#contact input[type=email],#contact textarea{
+    width: 85%;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+	.titre_fdj{
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
+	}
+
+	.profil table h2, .profil table h3 {
+		font-size: 1.4em;
+	}
+
+	.container.profil{
+	width: 85%;
+	}
+
+	.titre_fdj{
+	float: none;
+	font-size: 1.3em;
+}
+
+	#contact input[type=text],#contact input[type=email],#contact textarea{
+    width: 85%;
+	}
+
+}
