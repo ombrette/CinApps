@@ -3,6 +3,14 @@
 	text-align:center;
 }
 
+.container.filmavoir, .container.dejavu {
+	margin-top:7%;
+}
+
+
+
+/*####PROFIL#####*/
+
 .profil .row div{
 	background-color: #fff;
 }
@@ -25,8 +33,13 @@
 .profil table h2, .profil table h3 {
 	padding-left:10%; 
 	text-transform: none;
+}
 
-
+.profil table p {
+	margin-left:10%; 
+	text-transform: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .profil table h3 {
@@ -59,28 +72,79 @@
 	color: white;
 }
 
+.titre_profil {
+	text-transform: uppercase;
+}
+
+/*####FIN PROFIL#####*/
+
+/*####A VOIR PLUS TARD#####*/
+
+.filmavoir .row img{
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+}
+
+.filmavoir h2{
+	margin-top: 0px;
+	font-size: 2em;
+}
+
+.filmavoir a, .filmavoir p{
+	color: #c0392b;
+}
+
+.filmavoir a:hover {
+	text-decoration: underline;
+}
+
+/*####FIN A VOUR PLUS TARD#####*/
+
+/*####DEJA VU#####*/
+
+.dejavu .row img{
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+}
+
+.dejavu h2{
+	margin-top: 0px;
+	font-size: 2em;
+}
+
+.dejavu a, .dejavu p{
+	color: #c0392b;
+}
+
+.dejavu a:hover {
+	text-decoration: underline;
+}
+
+/*####FIN DEJA VU#####*/
+
 @media screen and (min-width: 769px) and (max-width:1068px ) {
-.container.profil{
-	width: 85%;
+	.container.profil{
+		width: 85%;
+	}
+
+	.titre_profil{
+		width: 40%;
+		height: 40%;
+		
+	}
+
+	.navbar-nav li:nth-child(4){
+		margin-right: 0;
+	}
+
+		.navbar-brand{
+		font-size: 3em;
+	}
 }
 
-.titre_fdj{
-	width: 40%;
-	height: 40%;
-	
-}
-
-.navbar-nav li:nth-child(4){
-	margin-right: 0;
-}
-
-	.navbar-brand{
-	font-size: 3em;
-}
-}
 
 @media screen and (min-width: 481px) and (max-width: 768px) { 
-	.titre_fdj{
+	.titre_profil{
 	width: 60%;
 	height: 60%;
 	}
@@ -97,7 +161,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-	.titre_fdj{
+	.titre_profil{
 	width: 50%;
 	height: 50%;
 	font-size: 95%;
@@ -107,14 +171,18 @@
 		font-size: 1.4em;
 	}
 
+	.profil table p {
+		font-size: 0.9em;
+	}
+
 	.container.profil{
 	width: 85%;
 	}
 
-	.titre_fdj{
+	.titre_profil{
 	float: none;
 	font-size: 1.3em;
-}
+	}
 
 	#contact input[type=text],#contact input[type=email],#contact textarea{
     width: 85%;
