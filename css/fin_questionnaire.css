@@ -1,0 +1,111 @@
+.container.finquest{
+	width: 974px;
+	text-align:center;
+}
+
+.container.filmavoir, .container.dejavu {
+	margin-top:7%;
+}
+
+
+
+/*####RETOUR QUESTIONNAIRE#####*/
+
+.finquest .row div{
+	background-color: #fff;
+}
+
+.finquest .row img{
+	margin-bottom: 1.6em;
+}
+
+.boutonfdj{
+	display: inline-block;
+	background-color:#c0392b;
+	color:white;
+	width: 12em;
+	height: 2.5em;
+	line-height: 2.5em;
+	vertical-align: middle;
+	text-align: center;
+	font-size:1.2em;
+}
+
+.boutonfdj a{
+	color: white;
+}
+
+.titre_finquest {
+	text-transform: uppercase;
+}
+
+.finquest .row img{
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+}
+
+.finquest h2{
+	margin-top: 0px;
+	font-size: 2em;
+}
+
+.finquest a, .finquest p{
+	color: #c0392b;
+}
+
+.finquest a:hover {
+	text-decoration: underline;
+}
+
+/*####FIN RETOUR QUESTIONNAIRE#####*/
+
+
+@media screen and (min-width: 769px) and (max-width:1068px ) {
+	.container.finquest{
+		width: 85%;
+	}
+
+	.titre_finquest{
+		width: 40%;
+		height: 40%;
+		
+	}
+
+	.navbar-nav li:nth-child(4){
+		margin-right: 0;
+	}
+
+		.navbar-brand{
+		font-size: 3em;
+	}
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
+	.titre_finquest{
+	width: 60%;
+	height: 60%;
+	}
+	
+	.container.finquest{
+	width: 85%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.titre_finquest{
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
+	}
+
+	.container.finquest{
+	width: 85%;
+	}
+
+	.titre_finquest{
+	float: none;
+	font-size: 1.3em;
+	}
+
+}

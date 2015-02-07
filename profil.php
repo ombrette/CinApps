@@ -79,7 +79,7 @@
                  <TD>
                     <h2>Mr Rabbit</h2>
                     <h3>leroilapin@hotmail.fr</h3>
-                    <a href="modification_profil.html"><p class="boutonfdj"><i class="fa fa-cog"></i> Modifier le profil</p></a>
+                    <a href="modification_profil.php"><p class="boutonfdj"><i class="fa fa-cog"></i> Modifier le profil</p></a>
                 </TD>
               </TR>
             </TABLE>            
@@ -95,49 +95,49 @@
         <h1 class="titre_profil titre_fdj">à regarder plus tard</h1>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>          
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
@@ -155,49 +155,49 @@
         <h1 class="titre_profil titre_fdj">déjà vu</h1>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>          
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    
                         <p>2014</p>           
                 </div>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="#">
+                    <a href="fiche_film.php">
                         <img src="img/malefique2.jpg">
                         <h2>Maléfique</h2>
                     </a>    

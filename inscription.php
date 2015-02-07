@@ -78,7 +78,7 @@
                 <br>
                 <input type="checkbox" name="vehicle" value="#">Retenir mon pseudo/adresse email <br>
                 
-                <a href="index.html">Accéder sans se connecter</a>
+                <a href="index.php">Accéder sans se connecter</a>
             </form>
         </div>
     </div>
