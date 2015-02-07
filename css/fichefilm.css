@@ -1,0 +1,40 @@
+
+/*A enlever plus tard*/
+nav .container{
+	width: 100%;
+	margin: 0;
+}
+
+
+
+
+.film h2{
+	margin-top: 0;
+}
+
+
+
+.container.film{
+	width: 85%;
+	text-align:center;
+}
+
+.film{
+	padding-bottom: 3em;
+	border-bottom: solid 0.1em #cdcdcd;
+}
+.film .row .affiche,
+.film .row .resume
+{
+	background-color: #fff;
+}
+
+
+.film .row img{
+	margin: 0 auto;
+}
+
+
+.resume{
+	padding: 1.5em;
+}
