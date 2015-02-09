@@ -244,10 +244,23 @@ a:hover, a:focus{
 	text-align: center;
 	font-size:1.2em;
 	margin-right:15px;
+	border-radius: 0.5em;
+
 }
 
 .boutonfdj a{
-	color: white;
+	color: #fff;
+}
+
+
+.boutonfdj:hover{
+background-color: #fff;
+color: #c0392b;
+border:solid 1px #c0392b;
+}
+
+.fa{
+	margin-right: 0.5em;
 }
 
 @media screen and (min-width: 769px) and (max-width:1068px ) {
