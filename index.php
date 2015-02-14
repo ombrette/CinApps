@@ -9,6 +9,10 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <!-- custom font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,6 +23,19 @@
 
 <body>
 
+    <?php
+//Connexion à la base de données 
+
+$user = "cinappsflnqgg";
+$passwd = "Szs3u533jCve";
+$host = "cinappsflnqgg.mysql.db";
+$nombase = "cinappsflnqgg";
+$connexion = mysql_connect($host,$user,$passwd);
+mysql_select_db($nombase,$connexion);
+
+
+$requete = "SELECT * FROM film LEFT JOIN code2 ON film.id_film = code2.id_film LEFT JOIN film_genre ON film.id_film = film_genre.film_id LEFT JOIN genre ON film_genre.genre_id = genre.id_genre";
+?>
     <!--MENU-->
     
     <nav class="navbar navbar-default" role="navigation">
@@ -44,11 +61,11 @@
                 <a class="navbar-brand hidden-xs" href="">
                         <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
                 <ul class="nav navbar-nav">
-                    <li><a href="index.php">ACCUEIL</a></li>
-                    <li class="active"><a href="questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li class="active"><a href="index.php">ACCUEIL</a></li>
+                    <li><a href="questionnaire.php">QUESTIONNAIRE</a></li>
                     <li><a href="liste_films.php">LISTE DE FILMS</a></li>
                     <li><a href="profil.php">MON COMPTE</a></li>
-                   
+                                   
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
                 </ul>
@@ -57,7 +74,7 @@
         </nav>
     
     <!--FIN MENU-->
-    
+
 
 
     <!--FILM DU JOUR-->
@@ -66,22 +83,22 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
             <h1 class="titre_fdj">Film du Jour</h1>
-            <img src="img/malefique2.jpg" width="250" height="333" alt="">
+            <img src="<?php echo $urlposter; ?>" width="250" height="333" alt="">
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-7 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             
 
-            <h2>Maléfique</h2>
-            <p class="note">note : 4.5/5</p><br>
-            <p class="infos">Année : 2014</p>
-            <p class="infos">Genre : Fantastique</p>
+            <h2><?php ?></h2>
+            <p class="note">note : <?php echo $note ?>/5</p><br>
+            <p class="infos">Année : <?php echo $annee; ?></p>
+            <p class="infos">Genre : <?php echo $genre;?></p>
             
 
-            <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène une  vie idyllique au sein d’une paisible forêt dans un royaume où règnent le bonheur et l’harmonie. Un jour, une armée d’envahisseurs menace les frontières du pays et Maléfique, n’écoutant que son courage, s’élève en féroce protectrice de cette terre. Dans cette lutte acharnée, une personne en qui elle avait foi va la trahir, déclenchant en elle une souffrance à nulle autre pareille qui va petit à petit transformer son coeur pur en un coeur de pierre. Bien décidée à se venger, elle s’engage dans une bataille épique avec le successeur du roi, jetant une terrible malédiction sur sa fille qui vient de naître, Aurore. Mais lorsque l’enfant grandit, Maléfique se rend compte que la petite princesse détient la clé de la paix du royaume, et peut-être aussi celle de sa propre rédemption…</p>
+            <p class="text-justify"><?php echo $synopsis; ?></p>
 
-            <p class="boutonfdj"><a href="#">Bande annonce</a></p>
-            <p class="boutonfdj"><a href="#">A regarder plus tard</a></p>
+            <p class="boutonfdj"><a href="#"><i class="fa fa-play-circle-o"></i>Bande annonce</a></p>
+            <p class="boutonfdj"><a href="#"><i class="fa fa-plus-square-o"></i>A regarder plus tard</a></p>
 
 
         </div>
@@ -253,6 +270,8 @@
     </div><!-- /.container -->
     
     <!-- FIN ANCIENNE RECOMMANDATION -->
+
+
     
       <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
       <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>

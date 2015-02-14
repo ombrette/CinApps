@@ -1,0 +1,162 @@
+
+
+.titre_profil {
+	text-transform: uppercase;
+}
+
+
+/*###### questionnaire ######*/
+.container.questionnaire{
+	width: 974px;
+	text-align:center;
+}
+
+.questionnaire .row div{
+	background-color: #fff;
+}
+
+
+.titre_fdj{
+	float: left;
+}
+
+#question {
+	border: black solid 1px;
+	padding: 2.5em 2em;
+	margin-bottom: 1.2em;
+}
+
+#question h2 {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 0px;
+}
+
+.questionnaire .row img{
+	margin-bottom: 1.6em;
+}
+
+
+a {
+	text-decoration: none;
+	color: #48a770;
+	outline: none;
+}
+
+a:hover, a:focus{
+	color: #2c774b;
+	outline: none;
+}
+
+
+.boutonquest{
+	display: inline-block;
+	background-color:#c0392b;
+	color:white;
+	width: 15em;
+	height: 3.5em;
+	line-height: 3.7em;
+	vertical-align: middle;
+	text-align: center;
+	font-size:1.2em;
+}
+
+.boutonquest a{
+	color: white;
+}
+
+@media screen and (min-width: 769px){
+		#question{
+		margin-bottom: 50px;
+		height: 13em;
+	}
+
+}
+
+@media screen and (min-width: 769px) and (max-width:1068px ) {
+	.container.questionnaire{
+		width: 85%;
+	}
+
+	.titre_fdj{
+		width: 40%;
+		height: 40%;
+		
+	}
+
+
+
+	.navbar-nav li:nth-child(4){
+		margin-right: 0;
+	}
+
+	.navbar-brand{
+		font-size: 3em;
+	}
+
+	.titre_profil{
+		width: 40%;
+		height: 40%;
+		
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
+	.titre_fdj{
+	width: 60%;
+	height: 60%;
+	}
+	
+	.container.questionnaire{
+	width: 85%;
+	}
+
+	.titre_profil{
+	width: 60%;
+	height: 60%;
+	}
+
+		#question h2 {
+		font-size: 1.8em;
+	}
+	
+
+}
+
+@media only screen and (max-width: 480px) {
+	.titre_fdj{
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
+	}
+
+	.container.questionnaire{
+	width: 85%;
+	}
+
+	.titre_fdj{
+	float: none;
+	font-size: 1.3em;
+	}
+
+	.titre_profil{
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
+	}
+
+
+	.titre_profil{
+	float: none;
+	font-size: 1.3em;
+	}
+
+	#question h2 {
+		font-size: 1.8em;
+	}
+
+}
+
+/*############ Fin questionnaire ##############*/
+

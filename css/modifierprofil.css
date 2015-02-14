@@ -73,7 +73,7 @@
 	font-size: 1.3em;
 	}
 
-	#contact input[type=text],#contact input[type=email],#contact textarea{
+	#contact input[type=password],#contact input[type=email]{
     width: 85%;
 	}
 
@@ -145,7 +145,7 @@ a:hover, a:focus{
 	outline: none;
 }
 
-#contact input[type=text],#contact input[type=email],#contact textarea{
+#contact input[type=password],#contact input[type=email]{
     background-color: transparent;
     color:#FFF;
     border: solid 0.1em #000000; 
@@ -203,7 +203,7 @@ a:hover, a:focus{
 	}
 
 
-	#contact input[type=text],#contact input[type=email],#contact textarea{
+	#contact input[type=password],#contact input[type=email]{
     width: 85%;
 	}
 
@@ -229,7 +229,7 @@ a:hover, a:focus{
 	font-size: 1.3em;
 }
 
-	#contact input[type=text],#contact input[type=email],#contact textarea{
+	#contact input[type=password],#contact input[type=email]{
     width: 85%;
 	}
 

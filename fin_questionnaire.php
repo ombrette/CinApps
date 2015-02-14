@@ -137,8 +137,7 @@
                     </a> 
                     <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
                     <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a>           
-                </div>
-                
+                </div>  
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
