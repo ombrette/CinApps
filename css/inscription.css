@@ -39,13 +39,13 @@
 
 a {
 	text-decoration: none;
-	color: #48a770;
+	color: #c0392b;
 	outline: none;
 }
 
-a:hover, a:focus{
-	color: #2c774b;
-	outline: none;
+a:hover {
+	color: #c0392b;
+	text-decoration: underline;
 }
 
 #inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{

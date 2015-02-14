@@ -9,6 +9,10 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <!-- custom font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -93,7 +97,7 @@ $requete = "SELECT * FROM film LEFT JOIN code2 ON film.id_film = code2.id_film L
 
             <p class="text-justify"><?php echo $synopsis; ?></p>
 
-            <p class="boutonfdj"><a href="#">Bande annonce</a></p>
+            <p class="boutonfdj"><a href="#"><i class="fa fa-play-circle-o"></i>Bande annonce</a></p>
             <p class="boutonfdj"><a href="#">A regarder plus tard</a></p>
 
 

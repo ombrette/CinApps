@@ -31,8 +31,19 @@
 	font-size:1.2em;
 }
 
-.boutonfdj a{
+.finquest .boutonfdj {
+	margin: 0 auto;
+	margin-bottom: 0.8em;
+}
+
+.finquest a .boutonfdj{
 	color: white;
+}
+
+.finquest .boutonfdj:hover{
+background-color: #fff;
+color: #c0392b;
+border:solid 1px #c0392b;
 }
 
 .titre_finquest {
@@ -49,11 +60,15 @@
 	font-size: 2em;
 }
 
-.finquest a, .finquest p{
+.finquest a, .finquest p {
+	color: black;
+}
+
+.finquest a .plusdefilm {
 	color: #c0392b;
 }
 
-.finquest a:hover {
+.finquest a .plusdefilm:hover {
 	text-decoration: underline;
 }
 
