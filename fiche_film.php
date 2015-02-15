@@ -64,7 +64,7 @@
  <!--FILM-->
 <div class="container film">
 
-    <h2 class="text-center">Maléfique</h2>
+    <h1 class="text-center">Maléfique</h1>
 
     <div class="row film1">
         <div class="affiche col-lg-3 col-md-3 col-sm-3">
@@ -108,7 +108,7 @@
             <div class="entete">Réalisateur</div>
             
             <div class="col-lg-6">
-            <img src="img/malefique2.jpg" alt="" class="img-responsive">
+            <img src="img/malefique2.jpg" width="125" height="167" alt="">
             <p>Angelina Jolie</p>
             </div>
 
@@ -133,9 +133,11 @@
             </div>
         </div>
 
-        <a href="#"><p class="boutonfdj">Regarder en streaming</p></a>
-        <a href="#"><p class="boutonfdj">Lien de téléchargement</p></a>
 
+        <div class="col-lg-offset-4 col-lg-8">
+        <a href="#"><p class="boutonfdj">Regarder en streaming</p></a>  
+        <a href="#"><p class="boutonfdj">Lien de téléchargement</p></a>
+        </div>
 
     </div>
 
@@ -148,6 +150,20 @@
 </div>
     
     <!--FIN FILM-->
+
+
+<div class="container commentaires">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Commentaires</h3>
+        </div>
+
+    </div>
+
+
+
+</div>
 
 
 </body>

@@ -24,6 +24,7 @@ nav .container{
 .film{
 	padding-bottom: 3em;
 	border-bottom: solid 0.1em #cdcdcd;
+	margin-bottom: 3em;
 }
 
 
@@ -80,4 +81,15 @@ nav .container{
 
 .acteur img{
 	margin: 0 auto;
+}
+
+
+
+
+
+
+
+.commentaires{
+	width: 85%;
+	background-color: #fff;
 }
