@@ -26,16 +26,18 @@
     <?php
 //Connexion à la base de données 
 
-$user = "cinappsflnqgg";
-$passwd = "Szs3u533jCve";
-$host = "cinappsflnqgg.mysql.db";
-$nombase = "cinappsflnqgg";
+$user = "localhost";
+$passwd = "";
+$host = "root";
+$nombase = "cinapps";
 $connexion = mysql_connect($host,$user,$passwd);
 mysql_select_db($nombase,$connexion);
 
 
-$requete = "SELECT * FROM film LEFT JOIN code2 ON film.id_film = code2.id_film LEFT JOIN film_genre ON film.id_film = film_genre.film_id LEFT JOIN genre ON film_genre.genre_id = genre.id_genre";
+$requete = "SELECT * FROM film LEFT JOIN code2 ON film.id_film = code2.id_film LEFT JOIN film_genre ON film.id_film = film_genre.film_id LEFT JOIN genre ON film_genre.genre_id = genre.id_genre WHERE film.titre='Gemma Bovery'";
+$result=mysql_query($requete,$connexion);
 ?>
+
     <!--MENU-->
     
     <nav class="navbar navbar-default" role="navigation">
