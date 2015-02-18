@@ -24,18 +24,16 @@
 <body>
 
     <?php
+
+    include 'db.php';
+
+    ?>
+
+<?php
 //Connexion à la base de données 
 
-$user = "localhost";
-$passwd = "";
-$host = "root";
-$nombase = "cinapps";
-$connexion = mysql_connect($host,$user,$passwd);
-mysql_select_db($nombase,$connexion);
-
-
-$requete = "SELECT * FROM film LEFT JOIN code2 ON film.id_film = code2.id_film LEFT JOIN film_genre ON film.id_film = film_genre.film_id LEFT JOIN genre ON film_genre.genre_id = genre.id_genre WHERE film.titre='Gemma Bovery'";
-$result=mysql_query($requete,$connexion);
+$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
+$result=$requete->fetchAll();
 ?>
 
     <!--MENU-->
@@ -84,20 +82,23 @@ $result=mysql_query($requete,$connexion);
 
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
+            <?php foreach($result as $res): ?>
             <h1 class="titre_fdj">Film du Jour</h1>
-            <img src="<?php echo $urlposter; ?>" width="250" height="333" alt="">
+            <img src="<?= $res['affiche'] ?>" width="250" height="333" alt="">
+            <?php endforeach ?>
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-7 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             
+            <?php foreach($result as $res): ?>
+            <h2><?= $res['titre'] ?></h2>
+            <p class="note">note : <?= $res['note'] ?>/5</p><br>
+            <p class="infos">Année : </p>
+            <p class="infos">Genre : <?= $res['nom_genre'] ?></p>
+            <?= $res['synopsis'] ?>
+            <?php endforeach ?>
 
-            <h2><?php ?></h2>
-            <p class="note">note : <?php echo $note ?>/5</p><br>
-            <p class="infos">Année : <?php echo $annee; ?></p>
-            <p class="infos">Genre : <?php echo $genre;?></p>
-            
-
-            <p class="text-justify"><?php echo $synopsis; ?></p>
+            <p class="text-justify"></p>
 
             <p class="boutonfdj"><a href="#"><i class="fa fa-play-circle-o"></i>Bande annonce</a></p>
             <p class="boutonfdj"><a href="#"><i class="fa fa-plus-square-o"></i>A regarder plus tard</a></p>
