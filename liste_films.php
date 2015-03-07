@@ -8,6 +8,7 @@
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/listefilms.css">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,22 +61,154 @@
     
 
 
-    <!---->
-<div class="container">
+    <!--TRI-->
+        <div class="container">
 
-    <div class="row">
-        
-
-
-        
+            <div class="row">
 
 
-    </div>
+                <div class="col-lg-9 hidden-xs">
+
+                    <ul id="menu-deroulant">
+                        <li class="menu1"><a href="#">Genre</a>
+                            <ul>
+                                <div class="sousmenu">
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
 
 
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
 
-</div>
+
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="menu1"><a href="#">Année</a>
+                            <ul>
+                                <div class="sousmenu">
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="menu1"><a href="#">Note</a>
+                            <ul>
+                                <div class="sousmenu">
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="menu1"><a href="#">Pays</a>
+                            <ul>
+                                <div class="sousmenu">
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                <li><a href="#">lien sous menu 1</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+
+                   <!--<div id="menu">
+                        <ul>
+                            <li class="menu1"><a href="#">Genre</a>
+                                <ul>
+                                    <div class="sousmenu">
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                    </div>
+
+
+                                   
+                                </ul>
+                            </li>
+                            <li class="menu1"><a href="#">Année</a>
+                                <ul>
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Note</a>
+                                <ul>
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pays</a>
+                                <ul>
+                                    <li><a href="#">Lien 1</a></li>
+                                    <li><a href="#">Lien 2</a></li>
+                                    <li><a href="#">Lien 3</a></li>
+                                    <li><a href="#">Lien 4</a></li>
+                                    <li><a href="#">Lien 5</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                     </div>-->
+
     
+
+                    
+
+
+                </div>
+
+
+
+            
+            </div>
+
+        </div>
+
+        <div id="menu" class="col-xs-8 col-xs-offset-2"></div>
+
+        
+            <!--FIN TRI-->
+
+    
+
+
    
     
     
@@ -85,7 +218,7 @@
       <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
       <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
     
-      <script src="js/index.js"></script>
+      <script src="js/main.js"></script>
       <!-- http://codepen.io/anon/pen/gbWaZz -->
     
     
@@ -93,6 +226,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script>
+ $(function() {
+$("<select />").appendTo("#menu"); 
+
+$("<option />", 
+{ 
+   "selected": "selected", 
+   "value"   : "", 
+   "text"    : "Trier par" // default <option> to display in dropdown 
+
+}).appendTo("#menu select"); 
+
+$("#menu-deroulant a").each(function()
+{ 
+
+ var el = $(this); 
+
+ $("<option />", { 
+     "value"   : el.attr("href"), 
+     "text"    : el.text() 
+ }).appendTo("#menu select"); 
+});
+
+$("#menu select").change(function() 
+{ 
+  window.location = $(this).find("option:selected").val(); 
+}); });
+</script>
 </body>
 
 

@@ -108,7 +108,7 @@
             <div class="entete">Réalisateur</div>
             
             <div class="col-lg-6">
-            <img src="img/malefique2.jpg" width="125" height="167" alt="">
+            <img src="img/malefique2.jpg" alt="" class="img-responsive">
             <p>Angelina Jolie</p>
             </div>
 
@@ -118,17 +118,17 @@
         <div class="acteur col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             <div class="entete">Acteurs</div>
             <div class="col-lg-4">
-            <img src="img/malefique2.jpg" width="125" height="167" alt="" class="img-responsive">
+            <img src="img/malefique2.jpg" alt="" class="img-responsive">
             <p>Angelina Jolie</p>
             </div>
 
             <div class="col-lg-4">
-            <img src="img/malefique2.jpg" width="125" height="167" alt="" class="img-responsive">
+            <img src="img/malefique2.jpg" alt="" class="img-responsive">
             <p>Angelina Jolie</p>
             </div>
 
             <div class="col-lg-4">
-            <img src="img/malefique2.jpg" width="125" height="167" alt="" class="img-responsive">
+            <img src="img/malefique2.jpg" alt="" class="img-responsive">
             <p>Angelina Jolie</p>
             </div>
         </div>
