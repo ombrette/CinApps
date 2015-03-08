@@ -93,15 +93,15 @@ $result=$requete->fetchAll();
             <?php foreach($result as $res): ?>
             <h2><?= $res['titre'] ?></h2>
             <p class="note">note : <?= $res['note'] ?>/5</p><br>
-            <p class="infos">Année : </p>
-            <p class="infos">Genre : <?= $res['nom_genre'] ?></p>
+            <p class="infos gris">Année : </p>
+            <p class="infos gris">Genre : <?= $res['nom_genre'] ?></p>
             <?= $res['synopsis'] ?>
             <?php endforeach ?>
 
             <p class="text-justify"></p>
 
-            <p class="boutonfdj"><a href="#"><i class="fa fa-play-circle-o"></i>Bande annonce</a></p>
-            <p class="boutonfdj"><a href="#"><i class="fa fa-plus-square-o"></i>A regarder plus tard</a></p>
+            <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
 
 
         </div>

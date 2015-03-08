@@ -1,7 +1,48 @@
-a { text-decoration:none }
-            
-           
+            /* État par défaut */
+            #menu{float: left; 
+                position: relative;
+                z-index: 10;
+                margin: 1em 0;
+                border: 1px solid #aaa;}
+            #menu ul { margin:0; padding:0; list-style:none; text-align:center; font-size:.1em; letter-spacing:-2px; }
+            #menu li{ display:inline-block;}
+            /*#menu .menu1 li{ position:relative;}*/
+            #menu .menu2 li{ display:inherit; }
+            .menu2{
+                float: right;
+            }
+            /*.sousmenu{
+   display: inline-block;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    }*/
 
+
+            #menu a { display:block; width:14em; height:3em; font-size:14px; letter-spacing:normal; line-height:3em; color:#000; background:#fff; }
+            
+      
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    #menu a{width: 12em; height: 2.5em; line-height: 2.5em; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    #menu a{width: 10em; height: 2.5em; line-height: 2.5em; }
+}
+
+
+
+
+            #menu li ul { left:-4000px; position:absolute; }
+            
+            /* Survol d'un lien racine */
+            #menu a:hover, #menu li:hover > a { color: #fff; background: #c0392b; }
+            #menu li:hover > ul { left: auto;}
+
+
+
+
+/*
 #menu-deroulant, #menu-deroulant ul {
     padding: 0;
     margin: 0;
@@ -12,18 +53,8 @@ a { text-decoration:none }
 #menu-deroulant li {
    display: inline-block;
     line-height: 2em;
-    
-
-    
-
 }
 
-/*#menu-deroulant li:hover
- {
-
-    background-color: #c0392b;
-
-}*/
 
 #menu-deroulant{
     width: 75%;
@@ -47,6 +78,7 @@ a { text-decoration:none }
 
 }
 #menu-deroulant a:hover,
+#menu-deroulant a:focus,
 #menu-deroulant li:hover > a{
     color: #fff;
    background: #c0392b;
@@ -65,8 +97,10 @@ a { text-decoration:none }
 
 .sousmenu{
     display: inline-block;
-    width: 70%;
-    /*background-color: #fff;*/
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    
 
 }
 
@@ -78,54 +112,74 @@ a { text-decoration:none }
 .sousmenu a{
     width: 100%;
 }
-
-
-
-
-
-
-            
-            /* État par défaut */
-            #menu{float: left;}
-            #menu ul { margin:0; padding:0; list-style:none; text-align:center; font-size:.1em; letter-spacing:-2px; }
-            #menu li{ display:inline-block;}
-            #menu li li{ position:relative;}
-
-            .sousmenu{
-   
-    width: 100%;}
-            #menu a { display:block; width:10em; height:3em; font-size:14px; letter-spacing:normal; line-height:3em; color:#000; background:#fff; }
-            
-      
-
-
-
-
-
-            #menu li ul { left:-4000px; position:absolute; }
-            
-            /* Survol d'un lien racine */
-            #menu a:hover, #menu li:hover > a { color: #fff; background: #c0392b; }
-            #menu li:hover > ul { left: auto;}
-            
+*/
             
 
 
+  #menuxs select { 
+    display: inline-block; 
+    width: 100%;
+    margin: 1em;
+
+    } 
 
 
 
 
 
 
+/*****LISTE DE FILMS*****/
 
-
-
-
-#menu select 
-{
-  display: none; 
+.marg{
+    margin-bottom: 1em;
 }
-@media screen and (max-width: 767px)  {
 
-  #menu select { display: inline-block; width: 100%; } 
+.film-list{
+    background-color: #fff;
+    padding: 1em;
+
 }
+
+
+
+.titre h1{
+    font-size: 1.8em;
+}
+
+.note{
+    font-size: 1em;
+    line-height: 4em;
+    color: #000;
+}
+
+.affiche{
+    width: 85%;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .affiche{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .affiche{
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width: 767px){
+    .affiche{
+        width: 30%;
+    }
+}
+
+
+.boutonfdj{
+    
+    font-size: 1em;
+}
+
+

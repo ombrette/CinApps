@@ -209,7 +209,9 @@ a:hover, a:focus{
 }*/
 
 
-
+.gris{
+	color: #777;
+}
 
 .fdj .row div:nth-child(2){
 	text-align: left;
