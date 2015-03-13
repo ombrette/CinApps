@@ -81,6 +81,36 @@ h6 {
     text-transform: uppercase;
 }
 */
+
+/*en attente pour travaux*/
+.travaux .container-fluid{
+	margin-top: 0px;
+}
+
+.travaux{
+	padding-top: 20px;
+}
+
+.travaux p {
+	font-size: 1.5em;
+	margin:20px 20px;
+}
+.travaux .title {
+	width: 14.25em;
+	height: 3.375em;
+	background-color:#c0392b;
+	color:white;
+	font-size:1.5em;
+	display:block;
+	/*padding:0.625em;*/
+	line-height: 3.375em;
+	vertical-align: middle;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
 /*###### Menu ######*/
 
 nav{
@@ -300,6 +330,13 @@ border:solid 1px #c0392b;
 
 
 }
+
+@media only screen and (max-width: 768px) {
+
+
+}
+
+
 
 /*###### fin film du jour ######*/
 
