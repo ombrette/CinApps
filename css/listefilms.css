@@ -10,6 +10,7 @@
             #menu .menu2 li{ display:inherit; }
             .menu2{
                 float: right;
+        
             }
             /*.sousmenu{
    display: inline-block;
@@ -19,7 +20,7 @@
     }*/
 
 
-            #menu a { display:block; width:14em; height:3em; font-size:14px; letter-spacing:normal; line-height:3em; color:#000; background:#fff; }
+            #menu a { display:block; width:14em; height:3em; font-size:14px; letter-spacing:normal; line-height:3em; color:#000; background:#fff; text-decoration: none;}
             
       
 @media screen and (min-width: 992px) and (max-width: 1200px){
@@ -36,7 +37,9 @@
             #menu li ul { left:-4000px; position:absolute; }
             
             /* Survol d'un lien racine */
-            #menu a:hover, #menu li:hover > a { color: #fff; background: #c0392b; }
+            #menu li:hover > a { color: #fff; background: #c0392b; }
+            #menu li li:hover > a { color: #fff; background: #ccc; }
+
             #menu li:hover > ul { left: auto;}
 
 
@@ -131,7 +134,7 @@
 /*****LISTE DE FILMS*****/
 
 .marg{
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 .film-list{
@@ -140,7 +143,9 @@
 
 }
 
-
+.film-list p:not(.boutonfdj){
+    font-size: 1.1em;
+}
 
 .titre h1{
     font-size: 1.8em;

@@ -204,35 +204,28 @@
                             </div>
 
                         </div>
+ 
 
-
-                        
-                            
-
-                        
-
-                    </div>
+                    </div> <!--fin row-->
 
 
 
-                </div>
+                </div> <!--fin marg-->
 
 
-
-
-              <!--  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
 
                     <div class="row center-block film-list">
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 titre">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
                             <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
-                            <p class="annee text-left">Année : 2014</p>
-                            <p class="genre">Genre : Fantastique</p>
+                            <p class="annee gris text-left hidden-xs">Année : 2014</p>
+                            <p class="genre gris hidden-xs">Genre : Fantastique</p>
                             <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                             <div class="note text-right">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -241,7 +234,7 @@
                             <i class="fa fa-star-o"></i>
                             </div>
 
-                            <p class="text-left">Synopsis</p>
+                            <p class="text-left gris">Synopsis</p>
                             <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
                         
                             <div class="row">
@@ -252,25 +245,28 @@
                             </div>
 
                         </div>
+ 
 
-                    </div>
-
-                </div>
+                    </div> <!--fin row-->
 
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                </div> <!--fin marg-->
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
 
                     <div class="row center-block film-list">
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 titre">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
                             <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
-                            <p class="annee text-left">Année : 2014</p>
-                            <p class="genre">Genre : Fantastique</p>
+                            <p class="annee gris text-left hidden-xs">Année : 2014</p>
+                            <p class="genre gris hidden-xs">Genre : Fantastique</p>
                             <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                             <div class="note text-right">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -279,7 +275,7 @@
                             <i class="fa fa-star-o"></i>
                             </div>
 
-                            <p class="text-left">Synopsis</p>
+                            <p class="text-left gris">Synopsis</p>
                             <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
                         
                             <div class="row">
@@ -290,23 +286,20 @@
                             </div>
 
                         </div>
+ 
 
-                    </div>
-
-                </div>-->
-
+                    </div> <!--fin row-->
 
 
 
+                </div> <!--fin marg-->
+
+            </div> <!--fin row-->
+
+        </div> <!-- fin container-->
 
 
-            </div>
 
-
-
-
-
-        </div>
 
    
     

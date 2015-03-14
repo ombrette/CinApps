@@ -9,6 +9,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+
+
     <!-- custom font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -19,9 +21,45 @@
 
     <link rel="icon" type="image/png" href="img/favicon.png" />
 
+
+ <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
+    
+      <script src="js/index.js"></script>
+      <!-- http://codepen.io/anon/pen/gbWaZz -->
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+  
+        <link href="css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
+        <script src="js/jquery.fs.shifter.js"></script>
+
+    
+
+        <script>
+            $(document).ready(function() {
+                $.shifter({
+                    maxWidth: Infinity
+                });
+            });
+        </script>
+
 </head>
 
-<body>
+<body class="shifter">
+
+    <div class="shifter-page">
+        <header class="visible-xs menu-mobile">
+            <div class="row">
+                <div>
+                    <a href="questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
+                    <span class="shifter-handle">Menu</span>
+                </div>
+            </div>
+        </header>
 
     <?php
 
@@ -38,26 +76,18 @@ $result=$requete->fetchAll();
 
     <!--MENU-->
     
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default hidden-xs" role="navigation">
     
             <div class="container">
                 
                         
                 <div class="navbar-header">
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse">
-
-                    <span class="sr-only">Toggle navigation</span> <!-- sr = screen reader-->
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-
                     <h4 class="visible-xs">Cinefeel</h4>
                     
                 </div>
     
-            <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
                 <a class="navbar-brand hidden-xs" href="">
                         <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
                 <ul class="nav navbar-nav">
@@ -84,7 +114,7 @@ $result=$requete->fetchAll();
         <div class="col-lg-4 col-md-4 col-sm-4">
             <?php foreach($result as $res): ?>
             <h1 class="titre_fdj">Film du Jour</h1>
-            <img src="<?= $res['affiche'] ?>" width="250" height="333" alt="">
+            <img src="<?= $res['affiche'] ?>" class="img-responsive center-block" alt="">
             <?php endforeach ?>
         </div>
 
@@ -95,10 +125,10 @@ $result=$requete->fetchAll();
             <p class="note">note : <?= $res['note'] ?>/5</p><br>
             <p class="infos gris">Année : </p>
             <p class="infos gris">Genre : <?= $res['nom_genre'] ?></p>
-            <?= $res['synopsis'] ?>
+            <p class="text-justify"><?= $res['synopsis'] ?></p>
             <?php endforeach ?>
 
-            <p class="text-justify"></p>
+            
 
             <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
@@ -274,19 +304,20 @@ $result=$requete->fetchAll();
     
     <!-- FIN ANCIENNE RECOMMANDATION -->
 
+</div><!--fin shifter-->
+    
+     
 
-    
-      <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-      <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
-    
-      <script src="js/index.js"></script>
-      <!-- http://codepen.io/anon/pen/gbWaZz -->
-    
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+        <nav class="shifter-navigation visible-xs">
+            <img src="img/logo2.png" width="38" height="50" alt="logo" class="center-block logo-menu-xs">
+
+
+            <a href="index.php"><img src="img/menu_accueil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Accueil</a>
+            <a href="questionnaire.php"><img src="img/menu_questionnaire.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Questionnaire</a>
+            <a href="liste_films.php"><img src="img/menu_films.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Liste de films</a>
+            <a href="profil.php"><img src="img/menu_profil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Mon compte</a>
+            <a href="profil.php"><img src="img/menu_deconnexion.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Déconnexion</a>
+        </nav>
 </body>
 
 

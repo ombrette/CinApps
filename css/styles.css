@@ -83,8 +83,16 @@ h6 {
 */
 /*###### Menu ######*/
 
+
+
+
 nav{
 	background-color:#000;
+}
+
+nav .container{
+	width: 100%;
+	margin: 0;
 }
 
 .navbar{
@@ -143,7 +151,7 @@ nav{
 	padding:0;}
 
 .navbar-collapse{
-	background-color:white;
+	background-color:#fff;
 	padding-right: 0;
 }
 	
@@ -157,11 +165,33 @@ nav{
 }
 
 
+/*Menu mobile*/
+
+header.menu-mobile{
+	background-color: #fff;
+	height: 50px;
+}
+
+.quest{
+	margin:1em 2.2em;
+}
+
+.shifter-navigation .logo-menu-xs{
+	margin-bottom: 4em;
+}
+
+.shifter-navigation .icon-menu-xs{
+	margin-right: 1em;
+}
+
+
+
 /*###### Film du jour ######*/
 
 .container.fdj{
 	width: 85%;
 	text-align:center;
+	margin-top: 2.5em;
 }
 
 .fdj .row{
@@ -193,8 +223,13 @@ nav{
 
 .fdj .row img{
 	margin-bottom: 1.6em;
+	width: 75%;
 }
 
+@media screen and (max-width: 767px){
+	.fdj .row img{
+	margin-bottom:0;}
+}
 
 /*
 a {
@@ -238,19 +273,17 @@ a:hover, a:focus{
 .boutonfdj{
 	display: inline-block;
 	background-color:#c0392b;
-	color:white;
+	color:#fff;
 	width: 12em;
 	height: 2.5em;
 	line-height: 2.5em;
 	vertical-align: middle;
 	text-align: center;
 	font-size:1.2em;
-	margin-right:15px;
+	margin-right:1em;
 }
 
-.boutonfdj a{
-	color: #fff;
-}
+
 
 
 .boutonfdj:hover{
