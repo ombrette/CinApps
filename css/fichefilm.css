@@ -1,0 +1,91 @@
+
+
+
+
+.navbar{
+	margin-bottom: 3em;
+}
+
+.film h2{
+	margin-top: 0;
+}
+
+
+
+.container.film{
+	width: 85%;
+	
+}
+
+.film{
+	padding-bottom: 3em;
+	border-bottom: solid 0.1em #cdcdcd;
+	margin-bottom: 3em;
+}
+
+
+.film1{
+	margin-bottom: 2em;
+}
+
+.film .film1 .affiche,
+.film .film1 .resume
+{
+	background-color: #fff;
+}
+
+
+.film .film1 img{
+
+
+	margin: 0 auto;
+	padding-top: 1.38em;
+	padding-bottom: 1.38em;
+
+}
+
+
+.resume{
+	padding: 1.5em;
+}
+
+
+
+
+/*Personnes*/
+
+.personnes .realisateur,
+.personnes .acteur{
+	padding:0;
+}
+
+.entete{
+	min-width: 60%;
+	height: 1.5em;
+	line-height: 1.5em;
+	
+	font-size: 2em;
+	background-color: #c0392b;
+	color: #fff;
+	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.personnes p{
+	text-align: center;
+}
+
+.acteur img{
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+.commentaires{
+	width: 85%;
+	background-color: #fff;
+}
