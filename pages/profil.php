@@ -86,7 +86,7 @@ include '../partials/header.php'; ?>
                         <p>2014</p>           
                 </div>
             </div>
-            <a href=""><p class="plusdefilm">afficher plus de film</p></a>
+            <a href=""><p class="plusdefilm">afficher plus de films</p></a>
         </div>
     </div>
 </div>
@@ -146,7 +146,7 @@ include '../partials/header.php'; ?>
                         <p>2014</p>           
                 </div>
             </div>
-            <a href=""><p class="plusdefilm">afficher plus de film</p></a>
+            <a href=""><p class="plusdefilm">afficher plus de films</p></a>
         </div>
     </div>
 </div>

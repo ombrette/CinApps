@@ -44,8 +44,8 @@ include '../partials/header.php'; ?>
                 <p><input type="password" id="password" name="password" placeholder="nouveau mot de passe" /></p>
             
             <div class="boutonfdj"><input type="submit" name="envoi" value="Confirmer" /></div>
-            <p class="boutonfdj"><a href="profil.php">Annuler</a></p>
-            <p class="boutonfdj"><a href="#">Supprimer mon compte</a></p>
+            <a href="profil.php"><p class="boutonfdj">Annuler</p></a>
+            <a href="#"><p class="boutonfdj">Supprimer mon compte</p></a>
             
         </form>
 
