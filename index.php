@@ -9,6 +9,9 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+
 
 
     <!-- custom font -->
@@ -55,7 +58,7 @@
         <header class="visible-xs menu-mobile">
             <div class="row">
                 <div>
-                    <a href="questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
+                    <a href="pages/questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
                     <span class="shifter-handle">Menu</span>
                 </div>
             </div>
@@ -63,7 +66,7 @@
 
     <?php
 
-    include 'db.php';
+    include 'lib/db.php';
 
     ?>
 
@@ -92,9 +95,9 @@ $result=$requete->fetchAll();
                         <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">ACCUEIL</a></li>
-                    <li><a href="questionnaire.php">QUESTIONNAIRE</a></li>
-                    <li><a href="liste_films.php">LISTE DE FILMS</a></li>
-                    <li><a href="profil.php">MON COMPTE</a></li>
+                    <li><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
+                    <li><a href="pages/profil.php">MON COMPTE</a></li>
                                    
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
@@ -150,159 +153,7 @@ $result=$requete->fetchAll();
     <!-- ANCIENNE RECOMMANDATION -->
     
     
-    <div class="container-fluid-carrousel">
 
-    <div class="row-fluid">
-    <div class="span12">
-    
-        <div class="carousel slide" id="myCarousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                        <ul class="thumbnails">
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide1 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide2 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                            <li class="span3">
-                                <div class="thumbnail">
-                                    <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                                </div>
-                                <div class="caption">
-                                    <h4>Praesent commodo</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a class="btn btn-mini" href="#">&raquo; Read More</a>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide3 --> 
-            </div>
-    
-            <div class="control-box">                            
-                <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-                <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
-            </div><!-- /.control-box -->   
-    
-        </div><!-- /#myCarousel -->
-    
-    </div><!-- /.span12 -->          
-    </div><!-- /.row --> 
-    </div><!-- /.container -->
-    
-    <!-- FIN ANCIENNE RECOMMANDATION -->
 
 </div><!--fin shifter-->
     
