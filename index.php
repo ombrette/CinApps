@@ -155,7 +155,7 @@ $result=$requete->fetchAll();
    <div class="container">
 
     <h1>Anciennes recommandations</h1>
-        <div class="center">
+        <div class="center ancrec">
           <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p>Le Lornonyme assembla</p></div>
           <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
           <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
