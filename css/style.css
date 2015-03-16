@@ -1,0 +1,497 @@
+/*------demo------*/
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+@font-face {
+    font-family: 'angelinaregular';
+    src: url('../fonts/angelina/angelina-webfont.eot');
+    src: url('../fonts/angelina/angelina-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/angelina/angelina-webfont.woff2') format('woff2'),
+         url('../fonts/angelina/angelina-webfont.woff') format('woff'),
+         url('../fonts/angelina/angelina-webfont.ttf') format('truetype'),
+         url('../fonts/angelina/angelina-webfont.svg#angelinaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+@font-face{
+	font-family:"Good Times";
+    src:url('../fonts/Good%20Times/good_times_rg-webfont.eot');
+    src: url('../fonts/Good%20Times/good_times_rg-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Good%20Times/good_times_rg-webfont.ttf') format('truetype'),
+         url('../fonts/Good%20Times/good_times_rg-webfont.woff') format('woff'),
+		 url('../fonts/Good%20Times/good%20times%20rg.otf') format('otf');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+	font-family:"Raleway";
+    src:url('../fonts/Raleway/raleway-medium.eot');
+    src: url('../fonts/Raleway/raleway-medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Raleway/raleway-medium.ttf') format('truetype'),
+         url('../fonts/Raleway/raleway-medium.woff') format('woff');
+	font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family : "microsoft-yi-baiti";
+    src : url('../onts/yi-baiti/microsoft-yi-baiti.ttf');
+}
+
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;	
+}
+
+
+body{
+	background-image: url(../img/txtfond.jpg);
+	background-repeat: repeat;
+	font-weight: 300;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-size:1.3em;
+	margin:10px;
+	margin:0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family : "microsoft-yi-baiti", Helvetica, Arial, sans-serif;}
+/*
+    text-transform: uppercase;
+}
+*/
+
+/*en attente pour travaux*/
+.travaux .container-fluid{
+	margin-top: 0px;
+}
+
+.travaux{
+	padding-top: 20px;
+}
+
+.travaux p {
+	font-size: 1.5em;
+	margin:20px 20px;
+}
+.travaux .title {
+	width: 14.25em;
+	height: 3.375em;
+	background-color:#c0392b;
+	color:white;
+	font-size:1.5em;
+	display:block;
+	/*padding:0.625em;*/
+	line-height: 3.375em;
+	vertical-align: middle;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+/*###### Menu ######*/
+
+
+
+
+nav{
+	background-color:#000;
+}
+
+nav .container{
+	width: 100%;
+	margin: 0;
+}
+
+.navbar{
+	margin-bottom: 4em;
+
+
+}
+.navbar .nav{
+	margin: 0;
+}
+
+.navbar-nav{
+	float: right !important;
+	height:60px;
+	
+}
+
+.navbar > .container .navbar-brand{
+	margin-left: 5%;
+}
+
+.navbar-brand{
+	padding:5px 15px;
+	font-family: 'angelinaregular';
+	font-size: 3.5em;
+}
+
+.navbar-header h4{
+	font-family: 'angelinaregular';
+	font-size: 2.5em;
+	text-transform: capitalize;
+	text-align: center;
+
+}
+
+.navbar-brand > img{
+	display: inline-block;
+	margin-right: 0.2em;
+}
+.navbar-nav li{
+	height:100%;
+
+}
+	
+.navbar-nav li a{
+	height:100%;
+	line-height:38px;
+	}
+
+.navbar-nav li:nth-child(4){
+	margin-right: 3em;
+}
+
+
+.container{
+	padding:0;}
+
+.navbar-collapse{
+	background-color:#fff;
+	padding-right: 0;
+}
+	
+.logorecherche{
+	height:60px;
+}
+
+.recherche a{
+	margin:0;
+	padding:0 !important;
+}
+
+
+/*Menu mobile*/
+
+header.menu-mobile{
+	background-color: #fff;
+	height: 50px;
+}
+
+.quest{
+	margin:1em 2.2em;
+}
+
+.shifter-navigation .logo-menu-xs{
+	margin-bottom: 4em;
+}
+
+.shifter-navigation .icon-menu-xs{
+	margin-right: 1em;
+}
+
+
+
+/*###### Film du jour ######*/
+
+.container.fdj{
+	width: 85%;
+	text-align:center;
+	margin-top: 2.5em;
+}
+
+.fdj .row{
+	padding-bottom: 3em;
+	border-bottom: solid 0.1em #cdcdcd;
+}
+.fdj .row div{
+	background-color: #fff;
+}
+
+
+
+.titre_fdj{
+	width: 14em;
+	height: 3em;
+	background-color:#c0392b;
+	color:white;
+	font-size:1.5em;
+	display:inline-block;
+	/*padding:0.625em;*/
+	line-height: 3em;
+	vertical-align: middle;
+	margin:auto;
+	position:relative;
+	top:-1em;
+}
+
+
+
+.fdj .row img{
+	margin-bottom: 1.6em;
+	width: 75%;
+}
+
+.description {
+	font-size: 1.5em;
+}
+
+@media screen and (max-width: 767px){
+	.fdj .row img{
+	margin-bottom:0;}
+}
+
+
+
+/*
+a {
+	text-decoration: none;
+	color: #48a770;
+	outline: none;
+}
+
+a:hover, a:focus{
+	color: #2c774b;
+	outline: none;
+}*/
+
+
+.gris{
+	color: #777;
+}
+
+.fdj .row div:nth-child(2){
+	text-align: left;
+}
+
+.fdj .row div:nth-child(2) h2, h2+p{
+	display: inline-block;
+}
+
+.fdj .row div:nth-child(2) .note{
+	float:right;
+	position:relative;
+	top:30px;
+	right:20%;
+}
+
+
+.fdj .row div:nth-child(2) .infos{
+	display: inline-block;
+	margin-right:150px;
+	clear:both;
+}
+
+.boutonfdj{
+	display: inline-block;
+	background-color:#c0392b;
+	color:#fff;
+	width: 12em;
+	height: 2.5em;
+	line-height: 2.5em;
+	vertical-align: middle;
+	text-align: center;
+	font-size:1.2em;
+	margin-right:1em;
+}
+
+
+
+
+.boutonfdj:hover{
+background-color: #fff;
+color: #c0392b;
+border:solid 1px #c0392b;
+}
+
+.fa{
+	margin-right: 0.5em;
+}
+
+@media screen and (min-width: 769px) and (max-width:1068px ) {
+
+
+.titre_fdj{
+	width: 60%;
+	height: 60%;
+	
+}
+
+.navbar-nav li:nth-child(4){
+	margin-right: 0;
+}
+
+	.navbar-brand{
+	font-size: 3em;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
+	.titre_fdj{
+	width: 60%;
+	height: 60%;
+	}
+
+
+
+}
+
+@media only screen and (max-width: 480px) {
+	.titre_fdj{
+	width: 50%;
+	height: 50%;
+	font-size: 95%;
+	}
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+}
+
+
+
+/*###### fin film du jour ######*/
+
+
+/*################################################### caroussel ###############################################################*/
+/* Global */
+
+img { max-width:100%; }
+
+a {
+	-webkit-transition: all 150ms ease;
+	-moz-transition: all 150ms ease;
+	-ms-transition: all 150ms ease;
+	-o-transition: all 150ms ease;
+	transition: all 150ms ease; 
+	}
+    /*a:hover {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+        /*filter: alpha(opacity=50); /* IE7 */
+       /* opacity: 0.6;
+        text-decoration: none;
+    }*/
+
+
+/* Container */
+.container-fluid {
+    background: #FFFFFF;
+    margin: 40px auto 10px;
+    padding: 20px 40px 0;
+    max-width: 960px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid-carrousel {
+    background: #FFFFFF;
+    margin: 40px auto 10px;
+    padding: 20px 40px 0;
+    max-width: 960px;
+    background-color: transparent;
+}
+/* Page Header */
+.page-header {
+    background: #f9f9f9;
+    margin: -30px -40px 40px;
+    padding: 20px 40px;
+    border-top: 4px solid #ccc;
+    color: #999;
+    text-transform: uppercase;
+    }
+    .page-header h3 {
+        line-height: 0.88rem;
+        color: #000;
+        }
+
+
+
+/* Thumbnail Box */
+.carousel-inner ul li {
+	background-color: white;
+
+}
+
+.caption h4 {
+    font-size: 1rem;
+    color: #444;
+    }
+    .caption p {
+        font-size: 0.75rem;
+        color: #999;
+        }
+        .btn.btn-mini {
+            font-size: 0.63rem;
+            }
+
+/*control*/
+    .carousel-control{
+        background: #666;
+        border: 0px;
+        border-radius: 0px;
+        display: inline-block;
+        font-size: 34px;
+        font-weight: 200;
+        line-height: 18px;
+        opacity: 0.5;
+        padding: 4px 10px 0px;
+        position: static;
+        height: 30px;
+        width: 15px;
+        }
+        
+/* Footer */
+.footer {
+    margin: auto;
+    width: 100%;
+    max-width: 960px;
+    display: block;
+    font-size: 0.69rem;
+    }
+    .footer, .footer a {
+        color: #c9e4f7;
+        }
+        p.right  { 
+            float: right; 
+            }
+		
+
+
+/* Mobile Only */
+@media (max-width: 767px) {
+    .page-header, .control-box {
+    text-align: center;
+    } 
+}
+@media (max-width: 479px) {
+    .caption {
+    word-break: break-all;
+    }
+}
+
