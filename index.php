@@ -127,14 +127,14 @@ $result=$requete->fetchAll();
             <h2><?= $res['titre'] ?></h2>
             <p class="note">note : <?= $res['note'] ?>/5</p><br>
             <p class="infos gris">Année : </p>
-            <p class="infos gris">Genre : <?= $res['nom_genre'] ?></p>
-            <p class="text-justify descrption"><?= utf8_decode($res['synopsis']); ?></p>
+            <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
+            <p class="text-justify description"><?= utf8_decode($res['synopsis']); ?></p>
             <?php endforeach ?>
 
             
 
             <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-            <a href="#"><p class="boutonfdj"><i class="fa-plus-square-o"></i>A regarder plus tard</p></a>
+            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
 
 
         </div>
@@ -156,12 +156,14 @@ $result=$requete->fetchAll();
 
     <h1>Anciennes recommandations</h1>
         <div class="center ancrec">
-          <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p>Le Lornonyme assembla</p></div>
-          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
-          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
-          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
-          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
-          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+          <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+           <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+            <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+             <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+              <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+               <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+                <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+                 <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
         </div>
 
     </div>
