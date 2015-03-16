@@ -3,7 +3,6 @@ include '../lib/include.php';
 $title_page="Questionnaire";
 include '../partials/header.php';
 
-$req=$db->query("CREATE TEMPORARY TABLE tmp_rep(rep_id INT)");
 
 if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['contenu'])) {
     $id=$_GET['id'];
@@ -29,9 +28,69 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['contenu'])) {
                 $tag = $_GET['id'];
                 $type = $_GET['type'];
 
-                $tmp=$db->query("SELECT COUNT(*) FROM tmp_rep");
+                //si $tab n'existe pas -> crée $tab
+                if(empty($tab)){
+
+                    $tab=array();
+
+                    $req = $db->query("SELECT DISTINCT film.id FROM film_tag, film WHERE film_tag.tag_id=$tag AND film.id=film_tag.film_id");
+                    $films= $req->fetchAll();
+                    $i=0;
+                    foreach ($films as $film) {
+                        $tab[$i]=$film['id'];
+                        $i++;
+                    }
+
+                }else{
+
+                    $tmp = $db->query("CREATE TEMPORARY TABLE tmp_rep(rep_id INT)");
+
+                    foreach ($tab as $i => $value) {
+                        $tmp = $db->query("INSERT INTO tmp_rep(rep_id) VALUES($tab[$i]");
+                    }
+
+                    $requ = $db->query("SELECT DISTINCT tmp_rep.rep_id FROM film_tag, tmp_rep WHERE film_tag.film_id=tmp_rep.rep_id AND film_tag.tag_id =$tag");
+                    $movies=$requ->fetchAll();
+
+                    foreach ($tab as $i => $value) {
+                        unset($tab[$i]);
+                    }
+                    $tab = array_values($tab);
+
+                    $i=0;
+                    foreach ($movies as $movie => $value) {
+                        $tab[$i]=$movie['rep_id'];
+                        $i++;
+                    }
+
+                    $del=$db->query("DROP TEMPORARY TABLE tmp_rep");
+
+                }
+
+                $max=sizeof($tab);
+
+                if($max>0 && $max<20){
+
+                    $tmp = $db->query("CREATE TEMPORARY TABLE tmp_rep(rep_id INT)");
+
+                    foreach ($tab as $i => $value) {
+                        $tmp = $db->query("INSERT INTO tmp_rep(rep_id) VALUES($tab[$i])");
+                    }
+                    $selectQ = $db->query("SELECT * FROM questions WHERE type='$type'");
+                    $selectR = $db->query("SELECT DISTINCT film.id, film.contenu FROM film, tmp_rep WHERE film.id=tmp_rep.rep_id");
+
+                    $del=$db->query("DROP TEMPORARY TABLE tmp_rep");
+
+                }else if($max>20){
+
+                    $selectQ = $db->query("SELECT * FROM questions WHERE type='$type'");
+                    $selectR = $db->query("SELECT DISTINCT tags.id, tags.contenu FROM genre_tag, tags WHERE genre_tag.genre_id =$id AND tags.id=genre_tag.tag_id ORDER BY RAND()");
+
+                }
+               /* $tmp=$db->query("SELECT COUNT(*) FROM tmp_rep");
                 $num_rows=$tmp->fetchColumn();
-                $test=$tmp->fetchAll();
+                $test=$tmp->fetchAll(); 
+
                 if($num_rows>0){
                     $req1 = $db->query("SELECT  COUNT(*) FROM film_tag, tmp_rep WHERE film_tag.film_id=tmp_rep.rep_id AND film_tag.tag_id =$tag");
                     $num_rows1=$req1->fetchColumn();
@@ -60,24 +119,7 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['contenu'])) {
                     $selectQ = $db->query("SELECT * FROM questions WHERE type='$type'");
                     $selectR = $db->query("SELECT DISTINCT tags.id, tags.contenu FROM genre_tag, tags WHERE genre_tag.genre_id =$id AND tags.id=genre_tag.tag_id ORDER BY RAND()");
 
-                }
-
-            
-                /*
-                if($num_rows){
-                    $req = $db->query("SELECT DISTINCT reponses.rep_id FROM film_tag, reponses_film WHERE reponses_film.rep_id=film_tag.film_id film_tag.tag_id =$tag");
-                }else{
-                    $req = $db->query("CREATE TEMPORARY TABLE tmp_rep SELECT DISTINCT film.id FROM film_tag, film WHERE film_tag.tag_id=$tag AND film.id=film_tag.film_id");
-                }
-
-                while ($num_rows>10) {
-                    $type = "tag";
-                    $selectQ = $db->query("SELECT * FROM questions WHERE type='$type'");
-                    $selectR = $db->query("SELECT DISTINCT tags.id, tags.contenu FROM genre_tag, tags WHERE genre_tag.genre_id =$id AND tags.id=genre_tag.tag_id ORDER BY RAND()");
-                }
-
-                $selectQ = $db->query("SELECT * FROM questions WHERE type='$type'");
-                $selectR = $db->query("SELECT DISTINCT film.id, film.contenu FROM film_tag, film WHERE film_tag.tag_id =$tag AND film.id=film_tag.film_id");*/
+                }*/
                 
                
                 break;
@@ -107,6 +149,7 @@ $reponses = $selectR->fetchAll();
                 <div id="question">
                     <h2>Question</h2>
                     <p><?= $question['contenu']; ?></p>
+                    <p><?= $max; ?></p>
                     <?php $i=1;?>
                 </div>
             </div>
@@ -114,10 +157,8 @@ $reponses = $selectR->fetchAll();
             <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
                 <?php foreach($reponses as $reponse): ?>
                     <a href="?id=<?= $reponse['id']; ?>&type=<?= $question['type']; ?>&contenu=<?= $reponse['contenu']; ?>&<?= csrf(); ?>"  name="$reponse['id']; ?>"><p class="boutonquest"><?= $reponse['contenu']; ?></p></a>
+                    <img src="<?= $reponse['contenu']; ?>" alt="">
                     <?php $i=$i+1; ?>
-                <?php endforeach ?> 
-                <?php foreach($test as $t): ?>
-                    <p><?= $t['rep_id']; ?></p>
                 <?php endforeach ?> 
             </div>
             <?php endforeach ?>
