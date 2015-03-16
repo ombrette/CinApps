@@ -141,7 +141,7 @@ nav .container{
 }
 
 .navbar > .container .navbar-brand{
-	margin-left: 5%;
+	margin-left: 2.5%;
 }
 
 .navbar-brand{
@@ -161,6 +161,7 @@ nav .container{
 .navbar-brand > img{
 	display: inline-block;
 	margin-right: 0.2em;
+		margin-bottom: 0.4em;
 }
 .navbar-nav li{
 	height:100%;
