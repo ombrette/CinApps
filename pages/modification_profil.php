@@ -17,7 +17,9 @@ include '../partials/header.php'; ?>
         <TABLE>
           <TR>
              <TD class="line-right">
-                <a href="#"><img src="img/photoprofil.jpg" width="233" height="233" alt="photo de profil"></a>
+                <a href="#"><img src="img/photoprofil.jpg" width="233" height="233" alt="photo de profil">
+                  <div class="modifbouton"><i class="fa fa-play-circle-o"></i>Changer de photo</div>
+                </a>
              </TD>
              <TD>
                 <h2>Mr Rabbit</h2>
@@ -44,7 +46,7 @@ include '../partials/header.php'; ?>
                 <p><label for="objet">Changer de mot de passe :</label><br><input type="password" id="password" name="password" placeholder="ancien mot de passe" /></p>
                 <p><input type="password" id="password" name="password" placeholder="nouveau mot de passe" /></p>
             
-            <div class="boutonfdj"><input type="submit" name="envoi" value="Confirmer" /></div>
+            <input class="boutonfdj" type="submit" name="envoi" value="Confirmer" />
             <a href="profil.php"><p class="boutonfdj">Annuler</p></a>
             <a href="#"><p class="boutonfdj">Supprimer mon compte</p></a>
             
