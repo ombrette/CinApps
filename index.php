@@ -128,7 +128,7 @@ $result=$requete->fetchAll();
             <p class="note">note : <?= $res['note'] ?>/5</p><br>
             <p class="infos gris">Année : </p>
             <p class="infos gris">Genre : <?= $res['nom_genre'] ?></p>
-            <p class="text-justify"><?= utf8_decode($res['synopsis']); ?></p>
+            <p class="text-justify descrption"><?= utf8_decode($res['synopsis']); ?></p>
             <?php endforeach ?>
 
             
