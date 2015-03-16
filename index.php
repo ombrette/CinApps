@@ -134,7 +134,7 @@ $result=$requete->fetchAll();
             
 
             <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
+            <a href="#"><p class="boutonfdj"><i class="fa-plus-square-o"></i>A regarder plus tard</p></a>
 
 
         </div>
