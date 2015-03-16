@@ -58,20 +58,14 @@
 
     <!--MENU-->
     
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default hidden-xs" role="navigation">
     
             <div class="container">
                 
                         
                 <div class="navbar-header">
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse">
-
-                    <span class="sr-only">Toggle navigation</span> <!-- sr = screen reader-->
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
+                    
 
                     <h4 class="visible-xs">Cinéos</h4>
                     

@@ -128,7 +128,7 @@ $result=$requete->fetchAll();
             <p class="note">note : <?= $res['note'] ?>/5</p><br>
             <p class="infos gris">Année : </p>
             <p class="infos gris">Genre : <?= $res['nom_genre'] ?></p>
-            <p class="text-justify"><?= $res['synopsis'] ?></p>
+            <p class="text-justify"><?= utf8_decode($res['synopsis']); ?></p>
             <?php endforeach ?>
 
             
@@ -151,8 +151,56 @@ $result=$requete->fetchAll();
     
     
     <!-- ANCIENNE RECOMMANDATION -->
-    
-    
+
+   <div class="container">
+
+    <h1>Anciennes recommandations</h1>
+        <div class="center">
+          <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p>Le Lornonyme assembla</p></div>
+          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+          <div><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3><p>Le Lornonyme assembla</p></div>
+        </div>
+
+    </div>
+
+
+
+
+   <script type="text/javascript" src="js/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+   $('.center').slick({
+  centerMode: true,
+  centerPadding: '40px',
+  slidesToShow: 4,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+                
+    });
+  </script>
 
 
 </div><!--fin shifter-->
