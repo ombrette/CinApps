@@ -39,7 +39,17 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="<?= WEBROOT; ?>js/jquery.js"></script>
-    <script src="<?= WEBROOT; ?>js/bootstrap.min.js"></script> 
+    <script src="<?= WEBROOT; ?>js/bootstrap.min.js"></script>
+
+    <link href="<?= WEBROOT; ?>css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
+    <script src="<?= WEBROOT; ?>js/jquery.fs.shifter.js"></script>
+    <script>
+            $(document).ready(function() {
+                $.shifter({
+                    maxWidth: Infinity
+                });
+            });
+        </script>
     <?php if(isset($script)): ?><?= $script; ?><?php endif; ?>
 
 </head>
@@ -50,7 +60,7 @@
         <header class="visible-xs menu-mobile">
             <div class="row">
                 <div>
-                    <a href="questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
+                    <a href="pages/questionnaire.php"><img src="<?= WEBROOT; ?>img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
                     <span class="shifter-handle">Menu</span>
                 </div>
             </div>
