@@ -2,6 +2,7 @@
 $auth = 0;
 include '../lib/include.php';
 $title_page='Modification du profil';
+$adr='css/modifierprofil.css';
 include '../partials/header.php'; ?>
 
 <!--MODIFICATION PROFIL-->

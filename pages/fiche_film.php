@@ -2,6 +2,7 @@
 $auth = 0;
 include '../lib/include.php';
 $title_page='Film';
+$adr='css/fichefilm.css';
 include '../partials/header.php'; ?>
     
  <!--FILM-->

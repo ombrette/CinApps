@@ -2,6 +2,7 @@
 $auth = 0;
 include '../lib/include.php';
 $title_page='Liste de films';
+$adr='css/listefilms.css';
 include '../partials/header.php'; ?>    
 
 <!--TRI-->

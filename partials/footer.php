@@ -14,7 +14,7 @@
             <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo" class="center-block logo-menu-xs">
 
 
-            <a href="index.php"><img src="<?= WEBROOT; ?>img/menu_accueil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Accueil</a>
+            <a href="<?= WEBROOT; ?>index.php"><img src="<?= WEBROOT; ?>img/menu_accueil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Accueil</a>
             <a href="<?= WEBROOT; ?>pages/questionnaire.php"><img src="<?= WEBROOT; ?>img/menu_questionnaire.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Questionnaire</a>
             <a href="<?= WEBROOT; ?>pages/liste_films.php"><img src="<?= WEBROOT; ?>img/menu_films.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Liste de films</a>
             <a href="<?= WEBROOT; ?>pages/profil.php"><img src="<?= WEBROOT; ?>img/menu_profil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Mon compte</a>

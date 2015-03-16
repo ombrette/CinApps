@@ -2,6 +2,7 @@
 $auth = 0;
 include 'lib/include.php';
 $title_page='Questionnaire';
+$adr='css/fin_questionnaire.css';
 include 'partials/header.php'; ?>
 
 

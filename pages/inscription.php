@@ -2,6 +2,7 @@
 $auth = 0;
 include 'lib/include.php';
 $title_page='Inscription';
+$adr='css/inscription.css';
 include 'partials/header.php'; ?>
 
 
