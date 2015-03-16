@@ -7,7 +7,7 @@
     <title><?php echo $title_page; ?></title>
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>
     <link href="<?= WEBROOT; ?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?= WEBROOT; ?>css/styles.css" rel="stylesheet">
+    <link href="<?= WEBROOT; ?>css/style.css" rel="stylesheet">
     <link href="<?= WEBROOT; ?>css/fichefilm.css" rel="stylesheet">
     <link href="<?= WEBROOT; ?>css/fin_questionnaire.css" rel="stylesheet">
     <link href="<?= WEBROOT; ?>css/inscription.css" rel="stylesheet">
