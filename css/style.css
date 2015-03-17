@@ -264,7 +264,7 @@ header.menu-mobile{
 }
 
 .description {
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 @media screen and (max-width: 767px){
@@ -291,6 +291,8 @@ a:hover, a:focus{
 	color: #777;
 }
 
+
+
 .fdj .row div:nth-child(2){
 	text-align: left;
 }
@@ -304,6 +306,14 @@ a:hover, a:focus{
 	position:relative;
 	top:30px;
 	right:20%;
+	font-size: 1em;
+    
+    color: #c0392b;
+
+
+	
+    
+
 }
 
 
@@ -334,6 +344,8 @@ background-color: #fff;
 color: #c0392b;
 border:solid 1px #c0392b;
 }
+
+
 
 .fa{
 	margin-right: 0.5em;

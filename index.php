@@ -7,7 +7,7 @@
     <title>Cinefeel</title>
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
@@ -73,7 +73,7 @@
 <?php
 //Connexion à la base de données 
 
-$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
+$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Devdas' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
 $result=$requete->fetchAll();
 ?>
 
@@ -125,7 +125,82 @@ $result=$requete->fetchAll();
             
             <?php foreach($result as $res): ?>
             <h2><?= $res['titre'] ?></h2>
-            <p class="note">note : <?= $res['note'] ?>/5</p><br>
+
+            <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                <?php 
+                    if ($res['note'] == 0){
+                        echo '<i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if ($res['note'] == 1){
+                        echo '<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if ($res['note'] == 2){
+                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if ($res['note'] == 3){
+                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if ($res['note'] == 4){
+                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if ($res['note'] == 5){
+                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>' ;
+                    }
+
+                    if (($res['note'] > 0) && ($res['note'] < 1)){
+                        echo '<i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if (($res['note'] > 1) && ($res['note'] < 2)){
+                        echo '<i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if (($res['note'] > 2) && ($res['note'] < 3)){
+                        echo '<i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>' ;
+                    }
+
+                    if (($res['note'] > 3) && ($res['note'] < 4)){
+                        echo '<i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>' ;
+                    }
+
+                     if (($res['note'] > 4) && ($res['note'] < 5)){
+                        echo '<i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>';
+                    }
+                ?>
+
+                
+
+
+
+            </p><br>
+
+
+
             <p class="infos gris">Année : </p>
             <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
             <p class="text-justify description"><?= utf8_decode($res['synopsis']); ?></p>
