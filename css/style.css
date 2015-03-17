@@ -204,7 +204,7 @@ header.menu-mobile{
 	background-color: #fff;
 	height: 50px;
 	position: relative;
-	z-index: 9999;
+	z-index: 999;
 }
 
 
@@ -396,6 +396,11 @@ border:solid 1px #c0392b;
 
 
 
+/*###### Bande annonce ######*/
+
+
+
+
 /*###### fin film du jour ######*/
 
 
@@ -419,15 +424,4 @@ border:solid 1px #c0392b;
 		
 
 
-/* Mobile Only */
-@media (max-width: 767px) {
-    .page-header, .control-box {
-    text-align: center;
-    } 
-}
-@media (max-width: 479px) {
-    .caption {
-    word-break: break-all;
-    }
-}
 

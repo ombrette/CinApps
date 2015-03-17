@@ -40,6 +40,14 @@
         <link href="css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
         <script src="js/jquery.fs.shifter.js"></script>
 
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".video").fancybox();
+    });
+</script>
     
 
         <script>
@@ -127,76 +135,7 @@ $result=$requete->fetchAll();
             <h2><?= $res['titre'] ?></h2>
 
             <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
-                <?php 
-                    if ($res['note'] == 0){
-                        echo '<i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if ($res['note'] == 1){
-                        echo '<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if ($res['note'] == 2){
-                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if ($res['note'] == 3){
-                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if ($res['note'] == 4){
-                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if ($res['note'] == 5){
-                        echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>' ;
-                    }
-
-                    if (($res['note'] > 0) && ($res['note'] < 1)){
-                        echo '<i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if (($res['note'] > 1) && ($res['note'] < 2)){
-                        echo '<i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if (($res['note'] > 2) && ($res['note'] < 3)){
-                        echo '<i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>' ;
-                    }
-
-                    if (($res['note'] > 3) && ($res['note'] < 4)){
-                        echo '<i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>' ;
-                    }
-
-                     if (($res['note'] > 4) && ($res['note'] < 5)){
-                        echo '<i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>';
-                    }
-                ?>
-
-                
-
-
-
+                <?php include 'lib/note.php'; ?>
             </p><br>
 
 
@@ -204,11 +143,22 @@ $result=$requete->fetchAll();
             <p class="infos gris">Année : </p>
             <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
             <p class="text-justify description"><?= utf8_decode($res['synopsis']); ?></p>
-            <?php endforeach ?>
+            
 
             
 
-            <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+            <a href="bandeannonce.html" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+<div style="display:none">
+<div id="video">
+    <p>Bande annonce :</p>
+<!--<?= $res['trailer'] ?>-->
+
+</div> 
+</div>
+
+
+<?php endforeach ?>
+
             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
 
 
