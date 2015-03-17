@@ -198,10 +198,16 @@ nav .container{
 
 /*Menu mobile*/
 
+
+
 header.menu-mobile{
 	background-color: #fff;
 	height: 50px;
+	position: relative;
+	z-index: 9999;
 }
+
+
 
 .quest{
 	margin:1em 2.2em;
