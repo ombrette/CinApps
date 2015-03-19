@@ -81,7 +81,7 @@
 <?php
 //Connexion à la base de données 
 
-$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Devdas' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
+$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
 $result=$requete->fetchAll();
 ?>
 
@@ -100,7 +100,7 @@ $result=$requete->fetchAll();
     
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <a class="navbar-brand hidden-xs" href="">
-                        <img src="img/logo2.png" width="38" height="50" alt="logo">Cinefeel</a>
+                        <img src="img/logo2.png" width="38" height="50" alt="logo">Cinéos</a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">ACCUEIL</a></li>
                     <li><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
@@ -121,45 +121,68 @@ $result=$requete->fetchAll();
     <!--FILM DU JOUR-->
 <div class="container fdj">
 
-    <div class="row">
+    <div id="general" class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
             <?php foreach($result as $res): ?>
-            <h1 class="titre_fdj">Film du Jour</h1>
+            <h1 class="titre-section text-uppercase">Film du Jour</h1>
             <img src="<?= $res['affiche'] ?>" class="img-responsive center-block" alt="">
             <?php endforeach ?>
         </div>
 
-        <div class="col-lg-7 col-md-7 col-sm-7 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 contenu">
             
-            <?php foreach($result as $res): ?>
-            <h2><?= $res['titre'] ?></h2>
+            <div class="row">
 
-            <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
-                <?php include 'lib/note.php'; ?>
-            </p><br>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                <?php foreach($result as $res): ?>
+                <h2 class="titre-film"><?= $res['titre'] ?></h2></div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                    <?php include 'lib/note.php'; ?>
+                </p>
+                </div>
+
+           </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                <p class="infos gris">Année : </p>
+                
+
+                
+                <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
+                
+                <p class="text-justify description hidden-xs"><?= utf8_decode($res['synopsis']); ?></p>
+                </div>
+                
+
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                <a href="bandeannonce.html" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                    <div style="display:none">
+                        <div id="video">
+                            <p>Bande annonce :</p>
+                        <!--<?= $res['trailer'] ?>-->
+                        </div>
+                    </div>
+
+                </div> 
 
 
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
+                </div>
 
-            <p class="infos gris">Année : </p>
-            <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
-            <p class="text-justify description"><?= utf8_decode($res['synopsis']); ?></p>
-            
 
-            
-
-            <a href="bandeannonce.html" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-<div style="display:none">
-<div id="video">
-    <p>Bande annonce :</p>
-<!--<?= $res['trailer'] ?>-->
-
-</div> 
-</div>
+             </div>
 
 
 <?php endforeach ?>
 
-            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
+            
 
 
         </div>
@@ -177,10 +200,13 @@ $result=$requete->fetchAll();
     
     <!-- ANCIENNE RECOMMANDATION -->
 
-   <div class="container">
+   <div class="container ancrec">
 
-    <h1>Anciennes recommandations</h1>
-        <div class="center ancrec">
+    
+   <h1 class="titre-section text-uppercase">Anciennes recommandations</h1>
+    
+    
+        <div class="center">
           <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
            <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
             <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>

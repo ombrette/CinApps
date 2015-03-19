@@ -179,7 +179,8 @@ nav .container{
 
 
 .container{
-	padding:0;}
+	padding:0;
+}
 
 .navbar-collapse{
 	background-color:#fff;
@@ -231,7 +232,7 @@ header.menu-mobile{
 	margin-top: 2.5em;
 }
 
-.fdj .row{
+.fdj #general{
 	padding-bottom: 3em;
 	border-bottom: solid 0.1em #cdcdcd;
 }
@@ -241,18 +242,24 @@ header.menu-mobile{
 
 
 
-.titre_fdj{
-	width: 14em;
-	height: 3em;
+.titre-section{
+	display:inline-block;
 	background-color:#c0392b;
 	color:white;
 	font-size:1.5em;
-	display:inline-block;
-	/*padding:0.625em;*/
+	
+	padding:0 1em;
+
 	line-height: 3em;
 	vertical-align: middle;
 	margin:auto;
 	position:relative;
+	
+}
+
+.fdj .titre-section{
+	width: 14em;
+	height: 3em;
 	top:-1em;
 }
 
@@ -293,34 +300,27 @@ a:hover, a:focus{
 
 
 
-.fdj .row div:nth-child(2){
+.fdj .contenu{
 	text-align: left;
 }
 
-.fdj .row div:nth-child(2) h2, h2+p{
-	display: inline-block;
+.fdj .contenu h2, h2+p{
+	/*display: inline-block;*/
 }
 
-.fdj .row div:nth-child(2) .note{
-	float:right;
+.fdj .contenu .note{
 	position:relative;
-	top:30px;
-	right:20%;
-	font-size: 1em;
-    
-    color: #c0392b;
-
-
+	float: left;
 	
-    
+	padding: 2em 0;
 
+	font-size: 1em;
+    color: #c0392b;
 }
 
 
-.fdj .row div:nth-child(2) .infos{
-	display: inline-block;
-	margin-right:150px;
-	clear:both;
+.infos{
+	font-size: 1.2em;
 }
 
 .boutonfdj{
@@ -333,10 +333,7 @@ a:hover, a:focus{
 	vertical-align: middle;
 	text-align: center;
 	font-size:1.2em;
-	margin-right:1em;
 }
-
-
 
 
 .boutonfdj:hover{
@@ -351,12 +348,12 @@ border:solid 1px #c0392b;
 	margin-right: 0.5em;
 }
 
-@media screen and (min-width: 769px) and (max-width:1068px ) {
+@media screen and (min-width: 768px) and (max-width:1068px) {
 
 
-.titre_fdj{
-	width: 60%;
-	height: 60%;
+.fdj .titre-section{
+	width: 10em;
+	height: 70%;
 	
 }
 
@@ -367,32 +364,51 @@ border:solid 1px #c0392b;
 	.navbar-brand{
 	font-size: 3em;
 }
+
+
+.contenu{
+	font-size: 0.8em;
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) { 
-	.titre_fdj{
-	width: 60%;
-	height: 60%;
-	}
+.titre-film{
+	font-size: 2.5em;
+}
 
-
+.fdj .contenu .note{
+	float: right;
+	padding: 2.5em 0;
+}
 
 }
+
+
 
 @media only screen and (max-width: 480px) {
-	.titre_fdj{
-	width: 50%;
+	.fdj .titre-section{
+	width: 70%;
 	height: 50%;
-	font-size: 95%;
+	font-size: 1.1em;
 	}
 
 
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 767px) {
+	.fdj .contenu{
+		text-align: center;
+	}
 
 
+	.fdj .contenu .note{
+		float: none;
+	}
+
+	.boutonfdj{
+		margin-right: 0;
+	}
 }
+
 
 
 
@@ -404,7 +420,54 @@ border:solid 1px #c0392b;
 /*###### fin film du jour ######*/
 
 
+
+
+
+
 /*################################################### caroussel ###############################################################*/
+
+.container.ancrec{
+	padding: 0 15px;
+}
+
+
+.ancrec .titre-section{
+	margin:2em 0;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.ancrec .titre-section{
+	width: auto;
+	
+	/*height: 50%;*/
+	font-size: 1.1em;
+	text-align: center;
+
+	}
+
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) { 
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1068px) {
+
+
+/*.ancrec .titre-section{
+	width: 8em;
+	height: 70%;
+	
+}*/
+
+
+}
+
+
 
         
 /* Footer */
