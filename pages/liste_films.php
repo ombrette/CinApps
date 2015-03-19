@@ -15,7 +15,7 @@ include '../partials/header.php'; ?>
 
                 <div id="menu">
                     <ul>
-                        <li class="menu1"><a href="#">Genre</a>
+                        <li class="menu2"><a href="#">Genre</a>
                             <ul>
                                 
                                     <div class="menu2">

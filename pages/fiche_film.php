@@ -3,17 +3,33 @@ $auth = 0;
 include '../lib/include.php';
 $title_page='Film';
 $adr='css/fichefilm.css';
-include '../partials/header.php'; ?>
+include '../partials/header.php'; 
+
+if (isset($_GET['id'])) {
+    $id=$_GET['id'];
+    $requete=$db->query("SELECT * FROM film, film_genre, genre WHERE film.id=$id AND film_genre.film_id=film.id AND genre.id=film_genre.genre_id LIMIT 1");
+            
+    }else{
+
+    
+}
+
+$resultats = $requete->fetchAll();
+
+
+
+?>
     
  <!--FILM-->
+<?php foreach($resultats as $resultat): ?>
 <div class="container film">
 
-    <h1 class="text-center">Maléfique</h1>
+    <h1 class="text-center"><?= $resultat['titre'] ?></h1>
 
     <div class="row film1">
         <div class="affiche col-lg-3 col-md-3 col-sm-3">
             
-            <img src="img/malefique2.jpg" class="img-responsive" alt="" >
+            <img src="<?= $resultat['affiche'] ?>" class="img-responsive" alt="" >
         </div>
 
         <div class="resume col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
@@ -24,19 +40,19 @@ include '../partials/header.php'; ?>
                 </div>
 
                 <div class="col-lg-4">
-                    <p class="genre">Genre : Fantastique</p>
+                    <p class="genre">Genre : <?= $resultat['contenu'] ?></p>
                 </div>
 
                 <div class="col-lg-4">
-                    <p class="note text-right">note : 4.5/5</p>
+                    <p class="note text-right">note : <?= $resultat['note'] ?></p>
                 </div>
             
             </div>
             
             <p class="text-left">Synopsis</p>
-            <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène une  vie idyllique au sein d’une paisible forêt dans un royaume où règnent le bonheur et l’harmonie. Un jour, une armée d’envahisseurs menace les frontières du pays et Maléfique, n’écoutant que son courage, s’élève en féroce protectrice de cette terre. Dans cette lutte acharnée, une personne en qui elle avait foi va la trahir, déclenchant en elle une souffrance à nulle autre pareille qui va petit à petit transformer son coeur pur en un coeur de pierre. Bien décidée à se venger, elle s’engage dans une bataille épique avec le successeur du roi, jetant une terrible malédiction sur sa fille qui vient de naître, Aurore. Mais lorsque l’enfant grandit, Maléfique se rend compte que la petite princesse détient la clé de la paix du royaume, et peut-être aussi celle de sa propre rédemption…</p>
+            <p class="text-justify"> <?= $resultat['synopsis'] ?></p>
 
-            <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+            <a href=" <?= $resultat['trailer'] ?>"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
 
 
@@ -99,8 +115,17 @@ include '../partials/header.php'; ?>
 <div class="container commentaires">
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-11">
             <h3>Commentaires</h3>
+            <form action="1" method="POST" accept-charset="utf-8">
+                <p>
+                    <label>Votre Message : </label>
+                    <input class="col-lg-12" type="text" name="message" value="" placeholder="Cinéos est génial!">
+                </p>
+                <p>
+                    <input type="submit" name="submit" value="Publier" placeholder="">
+                </p>
+            </form>
         </div>
 
     </div>
@@ -108,7 +133,7 @@ include '../partials/header.php'; ?>
 
 
 </div>
-
+<?php endforeach ?>
 
 <?php
-include 'partials/footer.php'; ?>
+include '../partials/footer.php'; ?>
