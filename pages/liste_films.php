@@ -144,7 +144,7 @@ include '../partials/header.php'; ?>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa-plus-square-o"></i>A regarder plus tard</p></a></div>
+                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
 
                         </div>
@@ -185,7 +185,7 @@ include '../partials/header.php'; ?>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a></div>
+                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
 
                         </div>
@@ -226,7 +226,7 @@ include '../partials/header.php'; ?>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a></div>
+                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
 
                         </div>
