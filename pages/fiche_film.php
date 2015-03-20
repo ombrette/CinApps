@@ -16,20 +16,18 @@ if (isset($_GET['id'])) {
 
 $resultats = $requete->fetchAll();
 
-
-
 ?>
     
  <!--FILM-->
 <?php foreach($resultats as $resultat): ?>
 <div class="container film">
 
-    <h1 class="text-center"><?= $resultat['titre'] ?></h1>
-
+    <h1 class="text-center"><?= $resultat['titre'];?></h1>
+    
     <div class="row film1">
         <div class="affiche col-lg-3 col-md-3 col-sm-3">
             
-            <img src="<?= $resultat['affiche'] ?>" class="img-responsive" alt="" >
+            <img src="<?= $resultat['affiche']; ?>" class="img-responsive" alt="" >
         </div>
 
         <div class="resume col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
