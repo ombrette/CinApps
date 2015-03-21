@@ -1,8 +1,5 @@
 
 
-.titre_profil {
-	text-transform: uppercase;
-}
 
 
 /*###### questionnaire ######*/
@@ -79,7 +76,7 @@ a:hover, a:focus{
 		width: 85%;
 	}
 
-	.titre_fdj{
+	.titre-section{
 		width: 40%;
 		height: 40%;
 		
@@ -103,7 +100,7 @@ a:hover, a:focus{
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) { 
-	.titre_fdj{
+	.titre-section{
 	width: 60%;
 	height: 60%;
 	}
@@ -125,20 +122,19 @@ a:hover, a:focus{
 }
 
 @media only screen and (max-width: 480px) {
-	.titre_fdj{
+	.titre-section{
 	width: 50%;
 	height: 50%;
-	font-size: 95%;
+	
+	float: none;
+	font-size: 1.3em;
 	}
 
 	.container.questionnaire{
 	width: 85%;
 	}
 
-	.titre_fdj{
-	float: none;
-	font-size: 1.3em;
-	}
+	
 
 	.titre_profil{
 	width: 50%;

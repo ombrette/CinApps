@@ -11,7 +11,7 @@ include '../partials/header.php'; ?>
 
     <div class="row">
   <div class="col-sm-12 col-md-12 col-lg-12">
-    <h1 class="titre_fdj titre_profil">Mon Compte</h1>
+    <h1 class="titre-section titre_profil">Mon Compte</h1>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-lg-12">
         <TABLE>

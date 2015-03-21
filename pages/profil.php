@@ -11,7 +11,7 @@ include '../partials/header.php'; ?>
 <div class="container profil">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-        <h1 class="titre_profil titre_fdj">Mon Compte</h1>
+        <h1 class="titre_profil titre-section">Mon Compte</h1>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-lg-12">
             <TABLE>
@@ -35,7 +35,7 @@ include '../partials/header.php'; ?>
 <div class="container profil filmavoir">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">       
-        <h1 class="titre_profil titre_fdj">à regarder plus tard</h1>
+        <h1 class="titre_profil titre-section">à regarder plus tard</h1>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-lg-3">
                     <a href="fiche_film.php">
@@ -95,7 +95,7 @@ include '../partials/header.php'; ?>
 <div class="container profil dejavu">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">       
-        <h1 class="titre_profil titre_fdj">déjà vu</h1>
+        <h1 class="titre_profil titre-section">déjà vu</h1>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-lg-3">
                     <a href="fiche_film.php">
