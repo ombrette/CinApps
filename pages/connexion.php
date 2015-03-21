@@ -1,9 +1,9 @@
 <?php 
 $auth = 0;
-include 'lib/include.php';
+include '../lib/include.php';
 $title_page='Connexion';
 $adr='css/connexion.css';
-include 'partials/header.php'; ?>
+include '../partials/header.php'; ?>
 
 
     <!--INSCRIPTION-->
@@ -18,8 +18,8 @@ include 'partials/header.php'; ?>
                 <input class="boutonfdj"t ype="submit" name="envoi" value="Confirmer" />
                 <a href="index.php"><p class="boutonfdj">Annuler</p></a><br><br>
 
-                <a href="inscrption.php">S'inscrire</a>
-                <a href="index.php">Accéder sans se connecter</a>
+                <a href="inscrption.php">S'inscrire</a><br>
+                <a href="index.php">Accéder sans se connecter</a><br>
                 <a href="#">Mot de passe oublié ?</a>
 
 

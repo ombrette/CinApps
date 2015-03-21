@@ -1,9 +1,9 @@
 <?php 
 $auth = 0;
-include 'lib/include.php';
+include '../lib/include.php';
 $title_page='Inscription';
 $adr='css/inscription.css';
-include 'partials/header.php'; ?>
+include '../partials/header.php'; ?>
 
 
     <!--INSCRIPTION-->
