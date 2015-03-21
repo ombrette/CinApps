@@ -62,4 +62,37 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i>';
                     }
+function note($value)
+{
+    switch ($value) {
+        case 0:
+            echo '<i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+            break;
+
+        case 1:
+            echo '<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+            break;
+
+        case 2:
+            echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+            break;
+
+        case 3:
+            echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>' ;
+            break;
+
+        case 4:
+            echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>' ;
+            break;
+
+        case 5:
+            echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>' ;
+            break;
+        
+        default:
+            # code...
+            break;
+    }
+}
+
                 ?>

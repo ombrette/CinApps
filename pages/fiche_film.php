@@ -8,13 +8,16 @@ include '../partials/header.php';
 if (isset($_GET['id'])) {
     $id=$_GET['id'];
     $requete=$db->query("SELECT * FROM film, film_genre, genre WHERE film.id=$id AND film_genre.film_id=film.id AND genre.id=film_genre.genre_id LIMIT 1");
-            
-    }else{
+    $resultats = $requete->fetchAll();
+    foreach ($resultats as $resultat => $value) {
+        $title_page=$resultat['titre'];        
+    }
+}else{
 
     
 }
 
-$resultats = $requete->fetchAll();
+
 
 ?>
     

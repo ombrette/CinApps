@@ -1,121 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinéos</title>
-    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
-
-
-
-    <!-- custom font -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-
-
- <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-      <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
-    
-      <script src="js/index.js"></script>
-      <!-- http://codepen.io/anon/pen/gbWaZz -->
-    
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-  
-        <link href="css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
-        <script src="js/jquery.fs.shifter.js"></script>
-
-<!-- Add fancyBox -->
-<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(".video").fancybox();
-    });
-</script>
-    
-
-        <script>
-            $(document).ready(function() {
-                $.shifter({
-                    maxWidth: Infinity
-                });
-            });
-        </script>
-
-</head>
-
-<body class="shifter">
-
-    <div class="shifter-page">
-        <header class="visible-xs menu-mobile">
-            <div class="row">
-                <div>
-                    <a href="pages/questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
-                    <span class="shifter-handle">Menu</span>
-                </div>
-            </div>
-        </header>
-
-    <?php
-
-    include 'lib/db.php';
-
-    ?>
+<?php
+$auth = 0;
+include '/lib/include.php';
+$title_page='Cinéos';
+$adr='';
+include '/partials/header.php'; 
+?>
 
 <?php
 //Connexion à la base de données 
 
 $requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
 $result=$requete->fetchAll();
+
+$req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.film_id");
+$recommandations=$req_recomm->fetchAll();
 ?>
 
     <!--MENU-->
-    
-    <nav class="navbar navbar-default hidden-xs" role="navigation">
-    
-            <div class="container">
-                
-                        
-                <div class="navbar-header">
-
-                    <h4 class="visible-xs">Cinefeel</h4>
-                    
-                </div>
-    
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <a class="navbar-brand hidden-xs" href="">
-                        <img src="img/logo2.png" width="38" height="50" alt="logo">Cinéos</a>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.php">ACCUEIL</a></li>
-                    <li><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
-                    <li><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
-                    <li><a href="pages/profil.php">MON COMPTE</a></li>
-                                   
-
-                    <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
-                </ul>
-            </div>
-    
-        </nav>
-    
-    <!--FIN MENU-->
-
 
 
     <!--FILM DU JOUR-->
@@ -140,7 +41,6 @@ $result=$requete->fetchAll();
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
-                    <?php include 'lib/note.php'; ?>
                 </p>
                 </div>
 
@@ -207,16 +107,11 @@ $result=$requete->fetchAll();
     
     
         <div class="center">
-          <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-           <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-            <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-             <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-              <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-               <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-                <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-                 <div><a href="pages/fiche_film.php"><img src="img/malefique2.jpg"><h3 class="text-center">Maléfique</h3></a><p class="text-center">Le Lornonyme assembla</p></div>
-        </div>
+            <?php foreach ($recommandations as $recommandation): ?>
+          <div><a href="<?= WEBROOT; ?>fiche_film.php?id=<?= $recommandation['id'] ?>"><img src="<?= $recommandation['affiche'] ?>"><h3 class="text-center"><?= $recommandation['titre'] ?></h3></a><p class="text-center">Le Lornonyme assembla</p></div>
+            <?php endforeach ?>
 
+        </div>
     </div>
 
 
