@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-	#inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{
+	#connexion input[type=text],#connexion input[type=email],#connexion input[type=password]{
     width: 85%;
 	}
 
@@ -27,12 +27,12 @@
 
 /*###### INSCRIPTION ######*/
 
-.container.inscription{
+.container.connexion{
 	width: 974px;
 	text-align:center;
 }
 
-.inscription .row div{
+.connexion .row div{
 	background-color: #fff;
 }
 
@@ -48,7 +48,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-#inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{
+#connexion input[type=text],#connexion input[type=email],#connexion input[type=password]{
     background-color: transparent;
     color:#FFF;
     border: solid 0.1em #000000; 
@@ -83,7 +83,7 @@ input {
 }
 
 @media screen and (min-width: 769px) and (max-width:1068px ) {
-	.container.inscription{
+	.container.connexion{
 		width: 85%;
 	}
 
@@ -97,24 +97,24 @@ input {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) { 
-	.container.inscription{
+	.container.connexion{
 	width: 85%;
 	}
 
 
-	#inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{
+	#connexion input[type=text],#connexion input[type=email],#connexion input[type=password]{
     width: 85%;
 	}
 
 }
 
 @media only screen and (max-width: 480px) {
-	.container.inscription{
+	.container.connexion{
 	width: 85%;
 	}
 
 
-	#inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{
+	#connexion input[type=text],#connexion input[type=email],#connexion input[type=password]{
     width: 85%;
 	}
 
