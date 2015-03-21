@@ -1,7 +1,7 @@
 <?php 
 $auth = 0;
 include 'lib/include.php';
-$title_page='Inscription';
+$title_page='Connexion';
 $adr='css/connexion.css';
 include 'partials/header.php'; ?>
 
