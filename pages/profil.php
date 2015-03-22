@@ -14,7 +14,7 @@ include '../partials/header.php'; ?>
         <h1 class="titre_profil titre-section">Mon Compte</h1>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-lg-12">
-            <TABLE>
+            <!--<TABLE>
               <TR>
                  <TD class="line-right">
                     <img src="img/photoprofil.jpg" width="233" height="233" alt="photo de profil">
@@ -25,7 +25,13 @@ include '../partials/header.php'; ?>
                     <a href="modification_profil.php"><p class="boutonfdj"><i class="fa fa-cog"></i> Modifier le profil</p></a>
                 </TD>
               </TR>
-            </TABLE>            
+            </TABLE>  -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 line-right"><img src="../img/photoprofil.jpg" width="233" height="233" alt="photo de profil"></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><h2>Mr Rabbit</h2>
+                    <h3>leroilapin@hotmail.fr</h3>
+                    <a href="modification_profil.php"><p class="boutonfdj"><i class="fa fa-cog"></i> Modifier le profil</p></a></div>
+            </div>          
           </div>
         </div>
       </div>

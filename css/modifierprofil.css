@@ -1,4 +1,6 @@
-
+.mdfp .titre-section{
+	top: -1em;
+}
 
 .titre_profil {
 	text-transform: uppercase;

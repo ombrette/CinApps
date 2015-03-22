@@ -1,6 +1,6 @@
-
-
-
+.questionnaire .titre-section{
+	top: -1em;
+}
 
 /*###### questionnaire ######*/
 .container.questionnaire{
@@ -21,6 +21,7 @@
 	border: black solid 1px;
 	padding: 2.5em 2em;
 	margin-bottom: 1.2em;
+	font-size: 1.3em;
 }
 
 #question h2 {
@@ -53,6 +54,7 @@ a:hover, a:focus{
 	color:white;
 	width: 15em;
 	height: 3.5em;
+	margin: 1em;
 	line-height: 3.7em;
 	vertical-align: middle;
 	text-align: center;
@@ -76,7 +78,7 @@ a:hover, a:focus{
 		width: 85%;
 	}
 
-	.titre-section{
+	.titre_fdj{
 		width: 40%;
 		height: 40%;
 		
@@ -100,7 +102,7 @@ a:hover, a:focus{
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) { 
-	.titre-section{
+	.titre_fdj{
 	width: 60%;
 	height: 60%;
 	}
@@ -122,19 +124,20 @@ a:hover, a:focus{
 }
 
 @media only screen and (max-width: 480px) {
-	.titre-section{
+	.titre_fdj{
 	width: 50%;
 	height: 50%;
-	
-	float: none;
-	font-size: 1.3em;
+	font-size: 95%;
 	}
 
 	.container.questionnaire{
 	width: 85%;
 	}
 
-	
+	.titre_fdj{
+	float: none;
+	font-size: 1.3em;
+	}
 
 	.titre_profil{
 	width: 50%;

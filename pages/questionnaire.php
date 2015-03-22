@@ -50,7 +50,7 @@ $reponses = $selectR->fetchAll();
 <div class="container questionnaire">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h1 class="titre-section text-uppercase titre-profil">Questionnaire</h1>
+        <h1 class="titre-section text-uppercase">Questionnaire</h1>
         <div class="row">
             <?php foreach($questions as $question): ?>
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
@@ -60,10 +60,10 @@ $reponses = $selectR->fetchAll();
                     <?php $i=1;?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                 <?php foreach($reponses as $reponse): ?>
                     <a href="?id=<?= $reponse['id']; ?>&type=<?= $question['type']; ?>&contenu=<?= $reponse['contenu']; ?>&<?= csrf(); ?>"  name="$reponse['id']; ?>"><p class="boutonquest"><?= $reponse['contenu']; ?></p></a>
-                    <img src="<?= $reponse['contenu']; ?>" alt="">
+                    <!--<img src="<?= $reponse['contenu']; ?>" alt="">-->
                     <?php $i=$i+1; ?>
                 <?php endforeach ?> 
             </div>
@@ -88,16 +88,16 @@ $reponses = $selectR->fetchAll();
 <div class="container finquest">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">       
-        <h1 class="titre_finquest titre_fdj">Fin du questionnaire</h1>
+        <h1 class="titre_finquest titre-section">Fin du questionnaire</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
                     <p>suggestion : Voici le resultat listant les films que nous vous suggerons suite à vos réponses, vous n'avez plus qu'à choisir !</p>
                 </div>
                 <?php foreach($reponses as $reponse): ?>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
+                <div class="col-xs-12 col-sm-4 col-lg-3">
                     <a href="fiche_film.php?id=<?= $reponse['id']; ?>">
                         <h2><?= $reponse['titre']; ?></h2>
-                        <img src="<?= $reponse['affiche']; ?>">
+                        <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
                     </a> 
                     <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
                     <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a>           

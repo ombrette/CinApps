@@ -1,9 +1,9 @@
 <?php 
 $auth = 0;
-include '../lib/include.php';
+include 'lib/include.php';
 $title_page='Inscription';
 $adr='css/inscription.css';
-include '../partials/header.php'; ?>
+include 'partials/header.php'; ?>
 
 
     <!--INSCRIPTION-->
@@ -17,7 +17,7 @@ include '../partials/header.php'; ?>
                     <p><label for="password">Entrez votre mot de passe :</label><br><input type="password" id="password" name="password" placeholder="*****" /></p>
                     <p><label for="password">Confirmez votre mot de passe :</label><br><input type="password" id="password" name="password" placeholder="*****" /></p>
                 
-                <input class="boutonfdj" type="submit" name="envoi" value="Confirmer" />
+                <div class="boutonfdj"><input type="submit" name="envoi" value="Confirmer" /></div>
                 <a href="index.php"><p class="boutonfdj">Annuler</p></a><br><br>
                 
                 <a href="index.php">Accéder sans se connecter</a>

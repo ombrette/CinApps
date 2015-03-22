@@ -1,3 +1,9 @@
+
+.profil .titre-section{
+	top: -1em;
+}
+
+
 .container.profil{
 	width: 974px;
 	text-align:center;
@@ -52,10 +58,15 @@
 }
 
 .line-right {
-  margin-right: 1px;
-  border-right: 1px solid grey;
+  border-right: 1px solid #aaa;
 }
 
+@media screen and (max-width: 767px){
+	.line-right {
+  border-right: none;
+  border-bottom: 1px solid #aaa;
+}
+}
 .boutonfdj{
 	display: inline-block;
 	background-color:#c0392b;

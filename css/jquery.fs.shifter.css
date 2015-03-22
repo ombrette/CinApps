@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 767px){
 
-.shifter .shifter-handle { float: right; margin: 1em 2em;}
+.shifter .shifter-handle { float: right; margin: 1em;}
             .shifter .shifter-navigation { background: #f9f9f9; padding: 1em 2.6em; }
             .shifter .shifter-navigation a { color: #666; display: block; font-size: 1.08em; margin: 2em 1.6em; text-transform: uppercase; }
 

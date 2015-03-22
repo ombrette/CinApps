@@ -208,10 +208,16 @@ header.menu-mobile{
 	z-index: 999;
 }
 
+.titre-menu{
+	line-height: 50px;
+	font-family: 'angelinaregular';
+	font-size: 2.5em;
+
+}
 
 
 .quest{
-	margin:1em 2.2em;
+	margin:1em;
 }
 
 .shifter-navigation .logo-menu-xs{
@@ -304,11 +310,9 @@ a:hover, a:focus{
 	text-align: left;
 }
 
-.fdj .contenu h2, h2+p{
-	/*display: inline-block;*/
-}
 
-.fdj .contenu .note{
+
+.note{
 	position:relative;
 	float: left;
 	
@@ -435,6 +439,10 @@ border:solid 1px #c0392b;
 	margin:2em 0;
 }
 
+.ancrec img{
+	min-width: 250px;
+	height: 333px;
+}
 
 @media only screen and (max-width: 767px) {
 	.ancrec .titre-section{

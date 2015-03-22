@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title_page; ?></title>
-    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>
-    <link href="<?= WEBROOT; ?>css/bootstrap.css" rel="stylesheet">
+    
+    <link href="<?= WEBROOT; ?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= WEBROOT; ?>css/style.css" rel="stylesheet">
     <link href="<?= WEBROOT; ?><?php echo $adr; ?>" rel="stylesheet">
     
@@ -25,7 +25,7 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
+    
     
     <script src="<?= WEBROOT; ?>js/index.js"></script>
     <script src="<?= WEBROOT; ?>js/ajax.js"></script>
@@ -55,8 +55,9 @@
         <header class="visible-xs menu-mobile">
             <div class="row">
                 <div>
-                    <a href="pages/questionnaire.php"><img src="<?= WEBROOT; ?>img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
-                    <span class="shifter-handle">Menu</span>
+                    <div class="col-xs-2"><a href="pages/questionnaire.php"><img src="<?= WEBROOT; ?>img/questionnaire.png" width="20" height="27" alt="" class="quest"></a></div>
+                    <div class="col-xs-8"><p class="titre-menu text-center">Cinéos</p></div>
+                    <div class="col-xs-2"><span class="shifter-handle">Menu</span></div>
                 </div>
             </div>
         </header>
@@ -78,7 +79,7 @@
     
             <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
                 <a class="navbar-brand hidden-xs" href="<?= WEBROOT; ?>">
-                        <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo">Cinéos</a>
+                <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo">Cinéos</a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="<?= WEBROOT; ?>">ACCUEIL</a></li>
                     <li><a href="<?= WEBROOT; ?>pages/questionnaire.php">QUESTIONNAIRE</a></li>

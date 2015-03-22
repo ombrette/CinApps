@@ -8,7 +8,7 @@
             #menu li{ display:inline-block;}
             #menu .menu2 li{ display:inherit; }
             .menu2{
-                float: left;
+                float: right;
         
             }
             
@@ -79,6 +79,8 @@
     font-size: 1em;
     line-height: 4em;
     color: #c0392b;
+    float: none;
+    padding: 0;
 }
 
 .affiche{
