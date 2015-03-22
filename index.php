@@ -66,8 +66,9 @@
         <header class="visible-xs menu-mobile">
             <div class="row">
                 <div>
-                    <a href="pages/questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a>
-                    <span class="shifter-handle">Menu</span>
+                    <div class="col-xs-2"><a href="pages/questionnaire.php"><img src="img/questionnaire.png" width="20" height="27" alt="" class="quest"></a></div>
+                    <div class="col-xs-8"><p class="titre-menu text-center">Cinéos</p></div>
+                    <div class="col-xs-2"><span class="shifter-handle">Menu</span></div>
                 </div>
             </div>
         </header>
