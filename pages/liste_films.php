@@ -125,7 +125,7 @@ $genres=$req_genre->fetchAll();
                             ?>
                             <?php foreach ($gfs as $gf): ?>
                             <span class="genre gris hidden-xs"><?= $gf['contenu']?></span>
-                            <? endforeach ?>
+                            <?php endforeach ?>
                             <a href="fiche_film.php?id=<?= $resultat['id'] ?>"><img src="<?= $resultat['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
                         </div>
 
@@ -158,86 +158,6 @@ $genres=$req_genre->fetchAll();
                 </div> <!--fin marg-->
                 <?php endforeach ?>
 
-                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
-                
-                    <div class="row center-block film-list">
-                
-                
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
-                            <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
-                            <p class="annee gris text-left hidden-xs">Année : 2014</p>
-                            <p class="genre gris hidden-xs">Genre : Fantastique</p>
-                            <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
-                        </div>
-                
-                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
-                            <div class="note text-right">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            </div>
-                
-                            <p class="text-left gris">Synopsis</p>
-                            <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
-                        
-                            <div class="row">
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
-                            </div>
-                
-                        </div>
-                 
-                
-                    </div> fin row
-                
-                
-                
-                </div> fin marg
-                
-                
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
-                
-                    <div class="row center-block film-list">
-                
-                
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
-                            <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
-                            <p class="annee gris text-left hidden-xs">Année : 2014</p>
-                            <p class="genre gris hidden-xs">Genre : Fantastique</p>
-                            <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
-                        </div>
-                
-                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
-                            <div class="note text-right">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            </div>
-                
-                            <p class="text-left gris">Synopsis</p>
-                            <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
-                        
-                            <div class="row">
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
-                            </div>
-                
-                        </div>
-                 
-                
-                    </div> fin row
-                
-                
-                
-                </div> fin marg -->
 
             </div> <!--fin row-->
 
