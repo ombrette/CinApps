@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
                 </div>
 
                 <div class="col-lg-4">
-                    <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                    <p class="note pull-right" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
                     <?php include '../lib/note.php'; ?>
                     </p>
                 </div>
@@ -97,8 +97,13 @@ if (isset($_GET['id'])) {
         </div>
 
 
-        <div class="col-lg-offset-4 col-lg-8">
+        <div class="col-lg-offset-2 col-lg-4">
         <a href="#"><p class="boutonfdj">Regarder en streaming</p></a>  
+        
+        </div>
+
+         <div class="col-lg-offset-2 col-lg-4">
+        
         <a href="#"><p class="boutonfdj">Lien de téléchargement</p></a>
         </div>
 

@@ -104,20 +104,20 @@ $genres=$req_genre->fetchAll();
     <!--FIN TRI-->
 
 
-    <!--LISTE FILMS-->
+
     <!--LISTE FILMS-->
         <div class="container">
             <div class="row">
-                <?php foreach ($resultats as $resultat): ?>
+                <?php foreach ($resultats as $res): ?>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
 
                     <div class="row center-block film-list">
 
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
-                            <h1 class="text-left"><a href="fiche_film.php?id=<?= $resultat['id'] ?>"><?= $resultat['titre'] ?></a></h1>
-                            <p class="annee gris text-left hidden-xs"><?= $resultat['date'] ?></p>
-                            <?php $id_film=$resultat['id']; 
+                            <h1 class="text-left"><a href="fiche_film.php?id=<?= $res['id'] ?>"><?= $res['titre'] ?></a></h1>
+                            <p class="annee gris text-left hidden-xs"><?= $res['date'] ?></p>
+                            <?php $id_film=$res['id']; 
 
                             $requete_gf=$db->query("SELECT * FROM film_genre, genre WHERE film_genre.film_id=$id_film AND genre.id=film_genre.genre_id");
                             $gfs=$requete_gf->fetchAll();
@@ -126,20 +126,21 @@ $genres=$req_genre->fetchAll();
                             <?php foreach ($gfs as $gf): ?>
                             <span class="genre gris hidden-xs"><?= $gf['contenu']?></span>
                             <?php endforeach ?>
-                            <a href="fiche_film.php?id=<?= $resultat['id'] ?>"><img src="<?= $resultat['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
+                            <a href="fiche_film.php?id=<?= $res['id'] ?>"><img src="<?= $res['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
-                            <div class="note text-right">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i>
+                            
+                            <div class="row">
+
+                            <p class="note pull-right" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                                <?php include '../lib/note.php'; ?>
+                            </p>
+
                             </div>
 
                             <p class="text-left gris">Synopsis</p>
-                            <p class="text-justify"><?= $resultat['synopsisCourt'] ?></p>
+                            <p class="text-justify"><?= $res['synopsisCourt'] ?></p>
                         
                             <div class="row">
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
