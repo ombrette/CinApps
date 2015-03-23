@@ -3,7 +3,30 @@ $auth = 0;
 include '../lib/include.php';
 $title_page='Liste de films';
 $adr='css/listefilms.css';
-include '../partials/header.php'; ?>    
+include '../partials/header.php'; 
+
+if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
+    $filtre=$_GET['filterBy'];
+    switch ($filtre) {
+        case 'G':
+            $idG=$_GET['filter'];
+            $res=$db->query("SELECT film.id, film.titre, film.affiche, film.date, film.synopsisCourt FROM film, film_genre, genre WHERE genre.id=$idG AND film_genre.genre_id=genre.id AND film.id=film_genre.film_id LIMIT 20");
+        break;
+
+        case 'N':
+            $idN=$_GET['filter'];
+            $res=$db->query("SELECT * FROM film WHERE note=$idN LIMIT 20");
+        break;
+    }
+            
+}else{     
+    $res=$db->query("SELECT * FROM film LIMIT 20");
+}
+$resultats=$res->fetchAll();
+$req_genre=$db->query("SELECT * FROM genre");
+$genres=$req_genre->fetchAll(); 
+
+?>    
 
 <!--TRI-->
     <div class="container">
@@ -15,42 +38,12 @@ include '../partials/header.php'; ?>
 
                 <div id="menu">
                     <ul>
-                        <li class="menu1"><a href="#">Genre</a>
+                        <li class="menu2"><a href="#">Genre</a>
                             <ul>
                                 
-                                    <div class="menu2">
-                                    <li><a href="#">Thriller</a></li>
-                                    <li><a href="#">Western</a></li>
-                                    <li><a href="#">Romance</a></li>
-                                    <li><a href="#">Comédie dramatique</a></li>
-                                    </div>
-                                
-                                
-                                    <div class="menu2">
-                                    <li><a href="#">Guerre</a></li>
-                                    <li><a href="#">Historique</a></li>
-                                    <li><a href="#">Policier</a></li>
-                                    <li><a href="#">Science fiction</a></li>
-                                    </div>
-                               
-                               
-                                    <div class="menu2">
-                                    <li><a href="#">Comédie musicale</a></li>
-                                    <li><a href="#">Drame</a></li>
-                                    <li><a href="#">Epouvante-horreur</a></li>
-                                    <li><a href="#">Fantastique</a></li>
-                                    </div>
-                                
-                                    <div class="menu2">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Animation</a></li>
-                                    <li><a href="#">Aventure</a></li>
-                                    <li><a href="#">Comédie</a></li>
-                                    </div>
-                                
-                                
-
-
+                                <?php foreach ($genres as $genre): ?>
+                                    <li class="col-lg-3 filtre" ><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['contenu'] ?></a></li>
+                                <?php endforeach ?>
                                
                             </ul>
                         </li>
@@ -65,11 +58,9 @@ include '../partials/header.php'; ?>
                         </li>
                         <li class="menu2"><a href="#">Note</a>
                             <ul>
-                                <li><a href="#">1 étoile</a></li>
-                                <li><a href="#">2 étoiles</a></li>
-                                <li><a href="#">3 étoiles</a></li>
-                                <li><a href="#">4 étoiles</a></li>
-                                <li><a href="#">5 étoiles</a></li>
+                                <?php for($i=0; $i<6; $i++):?>
+                                <li><a href="?filter=<?= $i ?>&filterBy=N"><?= $i ?> étoile<?php if($i>1){echo "s";} ?></a></li>
+                                <?php endfor ?>
                             </ul>
                         </li>
                         <li class="menu2"><a href="#">Année</a>
@@ -91,21 +82,23 @@ include '../partials/header.php'; ?>
     </div><!--fin container-->
 
 
+<!--************************RESPONSIVE**********************-->
 
     <div id="menuxs" class="col-xs-8 col-xs-offset-2 visible-xs">
 
         <select>
             <option value="" selected>Trier par</option>
             <option value="#">Genre</option>
-                <option value="#">&nbsp;&nbsp;&nbsp;Action</option>
-                <option value="#">&nbsp;&nbsp;&nbsp;Aventure</option>
+                <?php foreach ($genres as $genre): ?>
+                    <option value="#"><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['contenu'] ?></a></option>
+                <?php endforeach ?>
             <option value="#">Année</option>
             <option value="#">Note</option>
             <option value="#">Pays</option>
         </select>
     </div>
 
-
+<!--************************FIN RESPONSIVE**********************-->
 
     
     <!--FIN TRI-->
@@ -115,17 +108,25 @@ include '../partials/header.php'; ?>
     <!--LISTE FILMS-->
         <div class="container">
             <div class="row">
-
+                <?php foreach ($resultats as $resultat): ?>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
 
                     <div class="row center-block film-list">
 
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
-                            <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
-                            <p class="annee gris text-left hidden-xs">Année : 2014</p>
-                            <p class="genre gris hidden-xs">Genre : Fantastique</p>
-                            <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
+                            <h1 class="text-left"><a href="fiche_film.php?id=<?= $resultat['id'] ?>"><?= $resultat['titre'] ?></a></h1>
+                            <p class="annee gris text-left hidden-xs"><?= $resultat['date'] ?></p>
+                            <?php $id_film=$resultat['id']; 
+
+                            $requete_gf=$db->query("SELECT * FROM film_genre, genre WHERE film_genre.film_id=$id_film AND genre.id=film_genre.genre_id");
+                            $gfs=$requete_gf->fetchAll();
+
+                            ?>
+                            <?php foreach ($gfs as $gf): ?>
+                            <span class="genre gris hidden-xs"><?= $gf['contenu']?></span>
+                            <? endforeach ?>
+                            <a href="fiche_film.php?id=<?= $resultat['id'] ?>"><img src="<?= $resultat['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
@@ -138,7 +139,7 @@ include '../partials/header.php'; ?>
                             </div>
 
                             <p class="text-left gris">Synopsis</p>
-                            <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
+                            <p class="text-justify"><?= $resultat['synopsisCourt'] ?></p>
                         
                             <div class="row">
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
@@ -155,20 +156,20 @@ include '../partials/header.php'; ?>
 
 
                 </div> <!--fin marg-->
+                <?php endforeach ?>
 
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
-
+                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
+                
                     <div class="row center-block film-list">
-
-
+                
+                
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
                             <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
                             <p class="annee gris text-left hidden-xs">Année : 2014</p>
                             <p class="genre gris hidden-xs">Genre : Fantastique</p>
                             <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
                         </div>
-
+                
                         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                             <div class="note text-right">
                             <i class="fa fa-star"></i>
@@ -177,7 +178,7 @@ include '../partials/header.php'; ?>
                             <i class="fa fa-star-half-o"></i>
                             <i class="fa fa-star-o"></i>
                             </div>
-
+                
                             <p class="text-left gris">Synopsis</p>
                             <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
                         
@@ -187,29 +188,29 @@ include '../partials/header.php'; ?>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
-
+                
                         </div>
- 
-
-                    </div> <!--fin row-->
-
-
-
-                </div> <!--fin marg-->
-
-
+                 
+                
+                    </div> fin row
+                
+                
+                
+                </div> fin marg
+                
+                
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
-
+                
                     <div class="row center-block film-list">
-
-
+                
+                
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
                             <h1 class="text-left"><a href="fiche_film.php">Maléfique</a></h1>
                             <p class="annee gris text-left hidden-xs">Année : 2014</p>
                             <p class="genre gris hidden-xs">Genre : Fantastique</p>
                             <img src="img/malefique2.jpg" class="img-responsive affiche" alt="" >
                         </div>
-
+                
                         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                             <div class="note text-right">
                             <i class="fa fa-star"></i>
@@ -218,7 +219,7 @@ include '../partials/header.php'; ?>
                             <i class="fa fa-star-half-o"></i>
                             <i class="fa fa-star-o"></i>
                             </div>
-
+                
                             <p class="text-left gris">Synopsis</p>
                             <p class="text-justify">Maléfique est une belle jeune femme au coeur pur qui mène uneÂ  vie idyllique au sein d'une paisible forêt dans un royaume oÃ¹ règnent le bonheur et l'harmonie. Un jour, une armée d'envahisseurs menace les frontières du pays et Maléfique, n'écoutant que son courage, s'élève en féroce protectrice de cette terre.</p>
                         
@@ -228,19 +229,24 @@ include '../partials/header.php'; ?>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
-
+                
                         </div>
- 
-
-                    </div> <!--fin row-->
-
-
-
-                </div> <!--fin marg-->
+                 
+                
+                    </div> fin row
+                
+                
+                
+                </div> fin marg -->
 
             </div> <!--fin row-->
 
         </div> <!-- fin container-->
+
+
+
+
+
 
 
 
