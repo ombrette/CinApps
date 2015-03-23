@@ -8,8 +8,11 @@
             #menu li{ display:inline-block;}
             #menu .menu2 li{ display:inherit; }
             .menu2{
-                float: right;
-        
+                float: left;
+            }
+
+            .menu2 li{
+                padding-left: 0px;
             }
             
 
