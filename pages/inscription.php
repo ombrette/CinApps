@@ -2,7 +2,7 @@
 $auth = 0;
 include '../lib/include.php';
 $title_page='Inscription';
-$adr='../css/inscription.css';
+$adr='css/inscription.css';
 include '../partials/header.php'; 
 
 $erreur="";
@@ -59,7 +59,7 @@ echo $erreur;
                     <p><label for="password">Entrez votre mot de passe :</label><br><input type="password" id="password" name="password" placeholder="*****" /></p>
                     <p><label for="pass_confirm">Confirmez votre mot de passe :</label><br><input type="password" id="pass_confirm" name="pass_confirm" placeholder="*****" /></p>
                 
-                <div class="boutonfdj"><input type="submit" name="inscription" value="Confirmer" /></div>
+                <input class="boutonfdj" type="submit" name="inscription" value="Confirmer" />
                 <a href="<?= WEBROOT; ?>index.php"><p class="boutonfdj">Annuler</p></a><br><br>
                 
                 <a href="<?= WEBROOT; ?>index.php">Accéder sans se connecter</a>

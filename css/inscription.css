@@ -75,6 +75,15 @@ a:hover {
 	color: white;
 }
 
+input {
+	border:none;
+	border-color: red;
+	background-color: transparent;
+	margin-bottom: 10px;
+	width: 12em;
+	height: 2.5em;
+}
+
 @media screen and (min-width: 769px) and (max-width:1068px ) {
 	.container.inscription{
 		width: 85%;
