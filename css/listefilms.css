@@ -150,13 +150,19 @@
     .affiche{
         width: 100%;
     }
+    .marg{
+        height:470px;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
     .affiche{
         width: 100%;
     }
-
+    .marg{
+        height:540px;
+    }
 
 }
 
@@ -182,13 +188,19 @@
     
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .affiche{
+        max-height: 360px;
+    }
+}
+
 @media screen and (max-width:650px){
     .marg.col-xs-6{
         width: 100%;
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1200px){
     .marg{
         height:420px;
     }
