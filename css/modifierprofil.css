@@ -1,5 +1,7 @@
 .mdfp .titre-section{
 	top: -1em;
+	float: left;
+	margin-left: 5%;
 }
 
 .titre_profil {
@@ -77,6 +79,15 @@
 
 	#contact input[type=password],#contact input[type=email]{
     width: 85%;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.mdfp .titre-section{
+	float: center;
+	margin-left: auto;
 	}
 
 }

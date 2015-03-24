@@ -50,7 +50,8 @@ a:hover {
 
 #inscription input[type=text],#inscription input[type=email],#inscription input[type=password]{
     background-color: transparent;
-    color:#FFF;
+    color:#000;
+    font-size: 1.2em;
     border: solid 0.1em #000000; 
     width: 510px;
     height: 36px;

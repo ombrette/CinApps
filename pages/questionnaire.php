@@ -88,7 +88,7 @@ $reponses = $selectR->fetchAll();
 <div class="container finquest">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">       
-        <h1 class="titre_finquest titre-section">Fin du questionnaire</h1>
+        <h1 class="text-uppercase titre-section">Fin du questionnaire</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
                     <p>suggestion : Voici le resultat listant les films que nous vous suggerons suite à vos réponses, vous n'avez plus qu'à choisir !</p>

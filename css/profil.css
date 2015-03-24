@@ -1,8 +1,8 @@
-
 .profil .titre-section{
 	top: -1em;
+	float: left;
+	margin-left: 5%;
 }
-
 
 .container.profil{
 	width: 974px;
@@ -201,6 +201,15 @@
 
 	#contact input[type=text],#contact input[type=email],#contact textarea{
     width: 85%;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.profil .titre-section{
+	float: center;
+	margin-left: auto;
 	}
 
 }
