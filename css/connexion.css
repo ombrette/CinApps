@@ -50,7 +50,6 @@ a:hover {
 
 #connexion input[type=text],#connexion input[type=email],#connexion input[type=password]{
     background-color: transparent;
-    color:#FFF;
     border: solid 0.1em #000000; 
     width: 510px;
     height: 36px;
