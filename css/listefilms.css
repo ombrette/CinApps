@@ -1,43 +1,90 @@
 
-            #menu{float: left; 
-                position: relative;
-                z-index: 10;
-                margin: 1em 0;
-                border: 1px solid #aaa;}
-            #menu ul { margin:0; padding:0; list-style:none; text-align:center; font-size:.1em; letter-spacing:-2px; }
-            #menu li{ display:inline-block;}
-            #menu .menu2 li{ display:inherit; }
-            .menu2{
-                float: left;
-            }
+#menu{
+    float: left; 
+    position: relative;
+    z-index: 10;
+    margin: 1em 0;
+    border: 1px solid #aaa;
+}
 
-            .menu2 li{
-                padding-left: 0px;
-            }
+#menu ul { 
+    margin:0; 
+    padding:0; 
+    list-style:none; 
+    text-align:center; 
+    font-size:.1em; 
+    letter-spacing:-2px; 
+}
+
+#menu li{ display:
+    inline-block;
+}
+
+#menu .menu2 li{ 
+    display:inherit; 
+}
+
+.menu2{
+    float: left;
+}
+
+.menu2 li{
+    padding-left: 0px;
+}
             
 
 
-            #menu a { display:block; width:14em; height:3em; font-size:14px; letter-spacing:normal; line-height:3em; color:#000; background:#fff; text-decoration: none;}
+#menu a { 
+    display:block; 
+    width:14em; 
+    height:3em; 
+    font-size:14px; 
+    letter-spacing:normal; 
+    line-height:3em; 
+    color:#000; 
+    background:#fff; 
+    text-decoration: none;
+}
             
       
 @media screen and (min-width: 992px) and (max-width: 1200px){
-    #menu a{width: 12em; height: 2.5em; line-height: 2.5em; }
+    #menu a{
+        width: 12em; 
+        height: 2.5em; 
+        line-height: 2.5em; 
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
-    #menu a{width: 10em; height: 2.5em; line-height: 2.5em; }
+    #menu a{
+        width: 10em; 
+        height: 2.5em; 
+        line-height: 2.5em; 
+    }
 }
 
 
 
 
-            #menu li ul { left:-4000px; position:absolute; }
+#menu li ul { 
+    left:-4000px; 
+    position:absolute; 
+}
             
             /* Survol d'un lien racine */
-            #menu li:hover > a { color: #fff; background: #c0392b; }
-            #menu li li:hover > a { color: #fff; background: #ccc; }
+#menu li:hover > a { 
+    color: #fff; 
+    background: #c0392b; 
+}
 
-            #menu li:hover > ul { left: auto;}
+#menu li li:hover > a { 
+    color: #fff; 
+    background: #ccc; 
+}
+
+#menu li:hover > ul { 
+    left: auto;
+}
 
 
 
@@ -141,4 +188,11 @@
     }
 }
 
-
+@media screen and (min-width: 768px){
+    .marg{
+        height:420px;
+    }
+    .affiche{
+        height: 275px;
+    }
+}
