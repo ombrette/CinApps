@@ -48,7 +48,7 @@
 
   #menuxs select { 
     display: inline-block; 
-    width: 100%;
+    width: 90%;
     margin: 1em;
 
     } 
@@ -74,7 +74,7 @@
     font-size: 1.1em;
 }
 
-.titre h1{
+.presentation h1{
     font-size: 1.8em;
 }
 
@@ -89,6 +89,15 @@
 .affiche{
     width: 85%;
 }
+
+.boutonfdj{
+    font-size: 1em;
+}
+
+.boutons{
+        position: relative;
+       bottom: 0;
+    }
 
 @media screen and (min-width: 992px) and (max-width: 1200px){
     .affiche{
@@ -105,14 +114,31 @@
 }
 
 @media screen and (max-width: 767px){
-    .affiche{
-        width: 30%;
+    .presentation h1{
+        text-align: center;
     }
+
+    .affiche{
+        margin:0 auto;
+    }
+
+    .boutonfdj{
+        width: auto;
+        margin: 1em;
+        font-size: 1.6em;
+    }
+
+    .fa{
+        margin-right: 0;
+    }
+
+    
 }
 
-
-.boutonfdj{
-    font-size: 1em;
+@media screen and (max-width:650px){
+    .marg.col-xs-6{
+        width: 100%;
+    }
 }
 
 

@@ -47,7 +47,7 @@ $genres=$req_genre->fetchAll();
                                
                             </ul>
                         </li>
-                        <li class="menu2"><a href="#">Pays</a>
+                        <li class="menu2"><a href="#">Année</a>
                             <ul>
                                 <li><a href="#">Lien 1</a></li>
                                 <li><a href="#">Lien 2</a></li>
@@ -63,7 +63,7 @@ $genres=$req_genre->fetchAll();
                                 <?php endfor ?>
                             </ul>
                         </li>
-                        <li class="menu2"><a href="#">Année</a>
+                        <li class="menu2"><a href="#">Pays</a>
                             <ul>
                                 <li><a href="#">Lien 1</a></li>
                                 <li><a href="#">Lien 2</a></li>
@@ -109,12 +109,12 @@ $genres=$req_genre->fetchAll();
         <div class="container">
             <div class="row">
                 <?php foreach ($resultats as $res): ?>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 marg">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 marg">
 
                     <div class="row center-block film-list">
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 titre">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 presentation">
                             <h1 class="text-left"><a href="fiche_film.php?id=<?= $res['id'] ?>"><?= $res['titre'] ?></a></h1>
                             <p class="annee gris text-left hidden-xs"><?= $res['date'] ?></p>
                             <?php $id_film=$res['id']; 
@@ -127,6 +127,13 @@ $genres=$req_genre->fetchAll();
                             <span class="genre gris hidden-xs"><?= $gf['contenu']?></span>
                             <?php endforeach ?>
                             <a href="fiche_film.php?id=<?= $res['id'] ?>"><img src="<?= $res['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
+
+                            <!-- Boutons xs -->
+                            <div class="row">
+                                <div class="col-xs-6"><a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-play-circle-o"></i></p></div></a>
+                                <div class="col-xs-6"><a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-file-text-o"></i></p></div></a>
+                            </div>
+
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
@@ -142,7 +149,7 @@ $genres=$req_genre->fetchAll();
                             <p class="text-left gris">Synopsis</p>
                             <p class="text-justify"><?= $res['synopsisCourt'] ?></p>
                         
-                            <div class="row">
+                            <div class="row boutons">
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
