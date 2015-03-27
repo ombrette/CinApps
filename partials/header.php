@@ -79,7 +79,9 @@
     
             <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
                 <a class="navbar-brand hidden-xs" href="<?= WEBROOT; ?>">
-                <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo">Cinéos</a>
+                    <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo">
+                    <p class="nom_logo">Cinéos</p>
+                </a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="<?= WEBROOT; ?>">ACCUEIL</a></li>
                     <li><a href="<?= WEBROOT; ?>pages/questionnaire.php">QUESTIONNAIRE</a></li>
