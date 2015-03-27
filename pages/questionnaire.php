@@ -79,7 +79,7 @@ $reponses = $selectR->fetchAll();
 ?>
 
 <?php if($film==0) : ?>
-<div class="container questionnaire">
+<div class="container questionnaire marg-top">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12">
         <h1 class="titre-section text-uppercase">Questionnaire</h1>
