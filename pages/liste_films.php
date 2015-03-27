@@ -24,7 +24,9 @@ if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
 }
 $resultats=$requete->fetchAll();
 $req_genre=$db->query("SELECT * FROM genre");
+$req_date=$db->query("SELECT DISTINCT YEAR(date) FROM film");
 $genres=$req_genre->fetchAll(); 
+$dates=$req_date->fetchAll();
 
 ?>    
 
@@ -49,11 +51,9 @@ $genres=$req_genre->fetchAll();
                         </li>
                         <li class="menu2"><a href="#">Année</a>
                             <ul>
-                                <li><a href="#">Lien 1</a></li>
-                                <li><a href="#">Lien 2</a></li>
-                                <li><a href="#">Lien 3</a></li>
-                                <li><a href="#">Lien 4</a></li>
-                                <li><a href="#">Lien 5</a></li>
+                                <?php foreach ($dates as $date): ?>
+                                    <li class="col-lg-3 filtre" ><a href="?filter=&filterBy=G"><?= $date['date'] ?></a></li>
+                                <?php endforeach ?>
                             </ul>
                         </li>
                         <li class="menu2"><a href="#">Note</a>
@@ -63,8 +63,11 @@ $genres=$req_genre->fetchAll();
                                 <?php endfor ?>
                             </ul>
                         </li>
+<<<<<<< HEAD
                         
                         
+=======
+>>>>>>> 02d9955f16bfff7ee5835ade578140815942b5e7
                     </ul>
                 </div> <!--fin menu tri-->
             </div><!-- fin col-->
