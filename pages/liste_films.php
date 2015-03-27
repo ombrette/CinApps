@@ -42,7 +42,7 @@ $genres=$req_genre->fetchAll();
                             <ul>
                                 
                                 <?php foreach ($genres as $genre): ?>
-                                    <li class="col-lg-3 filtre" ><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['contenu'] ?></a></li>
+                                    <li class="col-lg-3 filtre" ><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['nom'] ?></a></li>
                                 <?php endforeach ?>
                                
                             </ul>
@@ -90,7 +90,7 @@ $genres=$req_genre->fetchAll();
             <option value="" selected>Trier par</option>
             <option value="#">Genre</option>
                 <?php foreach ($genres as $genre): ?>
-                    <option value="#"><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['contenu'] ?></a></option>
+                    <option value="#"><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['nom'] ?></a></option>
                 <?php endforeach ?>
             <option value="#">Année</option>
             <option value="#">Note</option>
@@ -119,12 +119,12 @@ $genres=$req_genre->fetchAll();
                             <p class="annee gris text-left hidden-xs"><?= $res['date'] ?></p>
                             <?php $id_film=$res['id']; 
 
-                            $requete_gf=$db->query("SELECT * FROM film_genre, genre WHERE film_genre.film_id=$id_film AND genre.id=film_genre.genre_id");
+                            $requete_gf=$db->query("SELECT * FROM film_genre, genre WHERE film_genre.id_film=$id_film AND genre.id=film_genre.id_genre");
                             $gfs=$requete_gf->fetchAll();
 
                             ?>
                             <?php foreach ($gfs as $gf): ?>
-                            <span class="genre gris hidden-xs"><?= $gf['contenu']?></span>
+                            <span class="genre gris hidden-xs"><?= $gf['nom']?></span>
                             <?php endforeach ?>
                             <a href="fiche_film.php?id=<?= $res['id'] ?>"><img src="<?= $res['affiche'] ?>" class="img-responsive affiche" alt="" ></a>
 

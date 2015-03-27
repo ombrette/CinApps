@@ -7,7 +7,7 @@ include '../partials/header.php';
 
 if (isset($_GET['id'])) {
     $id=$_GET['id'];
-    $requete=$db->query("SELECT * FROM film, film_genre, genre WHERE film.id=$id AND film_genre.film_id=film.id AND genre.id=film_genre.genre_id LIMIT 1");
+    $requete=$db->query("SELECT * FROM film, film_genre, genre WHERE film.id=$id AND film_genre.id_film=film.id AND genre.id=film_genre.id_genre LIMIT 1");
     $resultats = $requete->fetchAll();
     foreach ($resultats as $res => $value) {
         $title_page=$res['titre'];        
@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
                 </div>
 
                 <div class="col-lg-4 col-xs-6">
-                    <p class="genre">Genre : <?= $res['contenu'] ?></p>
+                    <p class="genre">Genre : <?= $res['nom'] ?></p>
                 </div>
 
                 <div class="col-lg-4">
@@ -71,8 +71,16 @@ if (isset($_GET['id'])) {
             <div class="entete">Réalisateur</div>
             
             <div class="col-lg-6">
-            <img src="img/malefique2.jpg" alt="" class="img-responsive">
-            <p>Angelina Jolie</p>
+
+                <?php  
+                $requete_rea=$db->query("SELECT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
+                $reas=$requete_rea->fetchAll();
+                ?>
+
+                <?php foreach ($reas as $rea): ?>
+                <img src="<?= $rea['picture'] ?>" alt="" width="110" height="147">
+                <p><?= $rea['nom'] ?></p>
+                <?php endforeach ?>
             </div>
 
         </div>
@@ -81,19 +89,17 @@ if (isset($_GET['id'])) {
         <div class="acteur col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             <div class="entete">Acteurs</div>
             <div class="col-lg-4">
-            <img src="img/malefique2.jpg" alt="" class="img-responsive">
-            <p>Angelina Jolie</p>
-            </div>
+            <?php  
+                $requete_act=$db->query("SELECT * FROM film_acteur, acteur WHERE film_acteur.id_film=$id AND acteur.id=film_acteur.id_acteur");
+                $acts=$requete_act->fetchAll();
 
-            <div class="col-lg-4">
-            <img src="img/malefique2.jpg" alt="" class="img-responsive">
-            <p>Angelina Jolie</p>
-            </div>
+            ?>
+            <?php foreach ($acts as $act): ?>
 
-            <div class="col-lg-4">
-            <img src="img/malefique2.jpg" alt="" class="img-responsive">
-            <p>Angelina Jolie</p>
-            </div>
+            <img src="<?= $act['picture'] ?>" alt="" width="110" height="147">
+            <p><?= $act['nom'] ?></p>
+            
+            <?php endforeach ?>
         </div>
 
 

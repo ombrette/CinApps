@@ -82,7 +82,7 @@
 <?php
 //Connexion à la base de données 
 
-$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.film_id AND film_genre.genre_id=genre.id LIMIT 1");
+$requete = $db -> query("SELECT * FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id LIMIT 1");
 $result=$requete->fetchAll();
 
 $req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.film_id");
@@ -157,21 +157,23 @@ $recommandations=$req_recomm->fetchAll();
                 
 
                 
-                <p class="infos gris">Genre : <?= $res['contenu'] ?></p>
+                <p class="infos gris">Genre : <?= $res['nom']; ?></p>
                 
-                <p class="text-justify description hidden-xs"><?= utf8_decode($res['synopsis']); ?></p>
+                <p class="text-justify description hidden-xs"><?= $res['synopsis']; ?></p>
                 </div>
                 
 
                 
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                <a href="bandeannonce.html" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                <a href="#video" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
                     <div style="display:none">
                         <div id="video">
                             <p>Bande annonce :</p>
-                        <!--<?= $res['trailer'] ?>-->
+                        <?= $res['trailer'] ?>
                         </div>
                     </div>
+
+
 
                 </div> 
 
