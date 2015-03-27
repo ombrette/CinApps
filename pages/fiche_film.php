@@ -70,35 +70,40 @@ if (isset($_GET['id'])) {
         <div class="realisateur col-lg-3 col-md-3 col-sm-3">
             <div class="entete">Réalisateur</div>
             
-            <div class="col-lg-6">
-
-                <?php  
+            <?php  
                 $requete_rea=$db->query("SELECT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
                 $reas=$requete_rea->fetchAll();
                 ?>
 
-                <?php foreach ($reas as $rea): ?>
-                <img src="<?= $rea['picture'] ?>" alt="" width="110" height="147">
+            <?php foreach ($reas as $rea): ?>
+
+            <div class="col-lg-12">
+
+                
+                <img src="<?= $rea['picture'] ?>" alt="" class="img-responsive img-fiche">
                 <p><?= $rea['nom'] ?></p>
-                <?php endforeach ?>
+                
             </div>
+            <?php endforeach ?>
 
         </div>
 
 
         <div class="acteur col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             <div class="entete">Acteurs</div>
-            <div class="col-lg-4">
+
             <?php  
                 $requete_act=$db->query("SELECT * FROM film_acteur, acteur WHERE film_acteur.id_film=$id AND acteur.id=film_acteur.id_acteur");
                 $acts=$requete_act->fetchAll();
 
             ?>
-            <?php foreach ($acts as $act): ?>
-
-            <img src="<?= $act['picture'] ?>" alt="" width="110" height="147">
-            <p><?= $act['nom'] ?></p>
             
+            <?php foreach ($acts as $act): ?>
+            <div class="col-lg-4">
+                <img src="<?= $act['picture'] ?>" alt="" class="img-responsive img-fiche">
+                <p><?= $act['nom'] ?></p>
+
+            </div>
             <?php endforeach ?>
         </div>
 
