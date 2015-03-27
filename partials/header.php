@@ -27,7 +27,7 @@
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
     
     
-    <script src="<?= WEBROOT; ?>js/index.js"></script>
+    <script src="<?= WEBROOT; ?>js/main.js"></script>
     <script src="<?= WEBROOT; ?>js/ajax.js"></script>
       <!-- http://codepen.io/anon/pen/gbWaZz -->
      

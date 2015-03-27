@@ -28,7 +28,7 @@
  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
       
     
-      <script src="js/index.js"></script>
+      <script src="js/main.js"></script>
       <!-- http://codepen.io/anon/pen/gbWaZz -->
     
     
@@ -45,7 +45,21 @@
 <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".video").fancybox();
+        
+
+$("a.site").fancybox({          
+        'hideOnContentClick'        : true,
+        'padding'           : 0,
+        'overlayColor'          :'#D3D3D3',
+        'transitionIn'          :'elastic',
+        'transitionOut'         :'elastic',
+        'overlayOpacity'        : 0.7,
+        'zoomSpeedIn'           : 300,
+        'zoomSpeedOut'          : 300,
+        'width'             : 950,
+        'height'            : 400,
+        'type'              :'iframe'
+        });
     });
 </script>
     
@@ -98,7 +112,7 @@ $recommandations=$req_recomm->fetchAll();
                         
                 <div class="navbar-header">
 
-                    <h4 class="visible-xs">Cinefeel</h4>
+                    <h4 class="visible-xs">Cinéos</h4>
                     
                 </div>
     
@@ -165,13 +179,15 @@ $recommandations=$req_recomm->fetchAll();
 
                 
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                <a href="#video" class="video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-                    <div style="display:none">
+                    
+                <a href="<?= $res['trailer'] ?>" class="site video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                    <!--<div style="display:none">
                         <div id="video">
-                            <p>Bande annonce :</p>
-                        <?= $res['trailer'] ?>
+                        
+<?= $res['trailer'] ?>
+                        
                         </div>
-                    </div>
+                    </div>-->
 
 
 
