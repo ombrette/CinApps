@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
             
             <div class="row">
                 <div class="col-lg-4 col-xs-6">
-                    <p class="annee text-left">Année : 2014</p>
+                    <p class="annee text-left">Sortie : <?= $res['date'] ?></p>
                 </div>
 
                 <div class="col-lg-4 col-xs-6">
@@ -99,7 +99,7 @@ if (isset($_GET['id'])) {
             ?>
             
             <?php foreach ($acts as $act): ?>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <img src="<?= $act['picture'] ?>" alt="" class="img-responsive img-fiche">
                 <p><?= $act['nom'] ?></p>
 
@@ -110,11 +110,9 @@ if (isset($_GET['id'])) {
 
         <div class="col-lg-offset-2 col-lg-4">
         <a href="#"><p class="boutonfdj">Regarder en streaming</p></a>  
-        
         </div>
 
-         <div class="col-lg-offset-2 col-lg-4">
-        
+        <div class="col-lg-offset-2 col-lg-4"> 
         <a href="#"><p class="boutonfdj">Lien de téléchargement</p></a>
         </div>
 

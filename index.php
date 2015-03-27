@@ -46,7 +46,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         
-
+$('.video').fancybox();
 $("a.site").fancybox({          
         'hideOnContentClick'        : true,
         'padding'           : 0,
@@ -167,7 +167,7 @@ $recommandations=$req_recomm->fetchAll();
             <div class="row">
 
                 <div class="col-lg-12">
-                <p class="infos gris">Année : </p>
+                <p class="infos gris">Sortie : <?= $res['date'] ?></p>
                 
 
                 
@@ -180,7 +180,9 @@ $recommandations=$req_recomm->fetchAll();
                 
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     
-                <a href="<?= $res['trailer'] ?>" class="site video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                <a href="<?= $res['trailer'] ?>" class="site video hidden-xs"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                   
+
                     <!--<div style="display:none">
                         <div id="video">
                         

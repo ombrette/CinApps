@@ -63,15 +63,7 @@ $genres=$req_genre->fetchAll();
                                 <?php endfor ?>
                             </ul>
                         </li>
-                        <li class="menu2"><a href="#">Pays</a>
-                            <ul>
-                                <li><a href="#">Lien 1</a></li>
-                                <li><a href="#">Lien 2</a></li>
-                                <li><a href="#">Lien 3</a></li>
-                                <li><a href="#">Lien 4</a></li>
-                                <li><a href="#">Lien 5</a></li>
-                            </ul>
-                        </li>
+                        
                         
                     </ul>
                 </div> <!--fin menu tri-->
@@ -94,7 +86,7 @@ $genres=$req_genre->fetchAll();
                 <?php endforeach ?>
             <option value="#">Année</option>
             <option value="#">Note</option>
-            <option value="#">Pays</option>
+
         </select>
     </div>
 
@@ -109,6 +101,8 @@ $genres=$req_genre->fetchAll();
         <div class="container">
             <div class="row">
                 <?php foreach ($resultats as $res): ?>
+
+                
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 marg">
 
                     <div class="row center-block film-list">
@@ -136,7 +130,7 @@ $genres=$req_genre->fetchAll();
 
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                        <div class="col-lg-6 col-md-6 col-sm-6 synopsis hidden-xs">
                             
                             <div class="row">
 
@@ -164,6 +158,7 @@ $genres=$req_genre->fetchAll();
 
 
                 </div> <!--fin marg-->
+                
                 <?php endforeach ?>
 
 

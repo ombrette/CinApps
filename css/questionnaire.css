@@ -49,7 +49,8 @@ a:hover, a:focus{
 	display: inline-block;
 	background-color:#c0392b;
 	color:white;
-	width: 15em;
+	width: auto;
+	padding: 0 1em;
 	height: 3.5em;
 	margin: 1em;
 	line-height: 3.7em;
@@ -185,6 +186,8 @@ a:hover, a:focus{
 	text-align: center;
 	font-size:1.2em;
 }
+
+
 
 .finquest .boutonfdj {
 	margin: 0 auto;

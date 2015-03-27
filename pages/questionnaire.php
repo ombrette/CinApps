@@ -122,8 +122,15 @@ $reponses = $selectR->fetchAll();
                         <h2><?= $reponse['titre']; ?></h2>
                         <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
                     </a> 
-                    <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-                    <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a>           
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 ">
+                    <a href="#"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
+                    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8">
+                    <a href="#"><p class="boutonfdj"><i class="fa fa-plus-square-o"></i>A regarder plus tard</p></a></div>           
+                        
+
+                    </div>
+
                 </div>
                 <?php endforeach ?>
             </div>

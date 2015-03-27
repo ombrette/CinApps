@@ -20,18 +20,7 @@
     inline-block;
 }
 
-#menu .menu2 li{ 
-    display:inherit; 
-}
-
-.menu2{
-    float: left;
-}
-
-.menu2 li{
-    padding-left: 0px;
-}
-            
+      
 
 
 #menu a { 
@@ -71,7 +60,7 @@
     position:absolute; 
 }
             
-            /* Survol d'un lien racine */
+/* Survol d'un lien racine */
 #menu li:hover > a { 
     color: #fff; 
     background: #c0392b; 
@@ -88,7 +77,19 @@
 
 
 
+#menu .menu2 li{ 
+    display:inherit; 
+}
 
+.menu2{
+    float: left;
+}
+
+.menu2 li{
+    padding-left: 0px;
+
+}
+      
 
             
 
@@ -109,13 +110,19 @@
 
 .marg{
     margin: 1em 0;
+    
+
 }
+
+
 
 .film-list{
     background-color: #fff;
     padding: 1em;
 
+
 }
+
 
 .film-list p:not(.boutonfdj){
     font-size: 1.1em;
@@ -140,6 +147,8 @@
 .boutonfdj{
     font-size: 1em;
 }
+
+
 
 .boutons{
         position: relative;
