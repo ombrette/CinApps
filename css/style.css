@@ -144,6 +144,10 @@ nav .container{
 	font-size: 3.5em;
 }
 
+.nom_logo{
+	display: inline-block;
+}
+
 .navbar-header h4{
 	font-family: 'angelinaregular';
 	font-size: 2.5em;
