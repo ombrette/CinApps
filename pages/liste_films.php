@@ -10,7 +10,7 @@ if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
     switch ($filtre) {
         case 'G':
             $idG=$_GET['filter'];
-            $requete=$db->query("SELECT film.id, film.titre, film.affiche, film.date, film.synopsisCourt, film.note FROM film, film_genre, genre WHERE genre.id=$idG AND film_genre.genre_id=genre.id AND film.id=film_genre.film_id LIMIT 20");
+            $requete=$db->query("SELECT film.id, film.titre, film.affiche, film.date, film.synopsisCourt, film.note FROM film, film_genre, genre WHERE genre.id=$idG AND film_genre.id_genre=genre.id AND film.id=film_genre.id_film LIMIT 20");
         break;
 
         case 'N':
