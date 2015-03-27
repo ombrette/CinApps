@@ -78,11 +78,13 @@
 	text-align: center;
 }
 
-.acteur img{
+.img-fiche{
 	margin: 0 auto;
+
+	
+	width: 138px;
+	height: 184px;
 }
-
-
 
 
 
