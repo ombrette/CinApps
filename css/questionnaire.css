@@ -49,11 +49,11 @@ a:hover, a:focus{
 	display: inline-block;
 	background-color:#c0392b;
 	color:white;
-	width: auto;
+	width: 100%;
 	padding: 0 1em;
-	height: 3.5em;
+	height: 5em;
 	margin: 1em;
-	line-height: 3.7em;
+	line-height: 2.5em;
 	vertical-align: middle;
 	text-align: center;
 	font-size:1.2em;
@@ -61,7 +61,14 @@ a:hover, a:focus{
 
 .boutonquest a{
 	color: white;
+
 }
+
+.btnq{
+	float: left;
+	clear: right;
+}
+
 
 @media screen and (min-width: 769px){
 		#question{

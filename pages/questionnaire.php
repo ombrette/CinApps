@@ -94,7 +94,7 @@ $reponses = $selectR->fetchAll();
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                 <?php foreach($reponses as $reponse): ?>
-                    <a href="?id=<?= $reponse['id']; ?>&type=<?= $question['type']; ?>&idH=<?= $reponse['id_humeur']; ?>&idR=<?= $reponse['id_raison']; ?>&idG=<?= $reponse['id_genre']; ?>&idG2=<?= $reponse['id_genre2']; ?>&idG3=<?= $reponse['id_genre3']; ?>&<?= csrf(); ?>"  name="$reponse['id']; ?>"><p class="boutonquest"><?= $reponse['contenu']; ?></p></a>
+                    <a href="?id=<?= $reponse['id']; ?>&type=<?= $question['type']; ?>&idH=<?= $reponse['id_humeur']; ?>&idR=<?= $reponse['id_raison']; ?>&idG=<?= $reponse['id_genre']; ?>&idG2=<?= $reponse['id_genre2']; ?>&idG3=<?= $reponse['id_genre3']; ?>&<?= csrf(); ?>"  name="$reponse['id']; ?>" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 btnq"><p class="boutonquest col-lg-6 col-md-6 col-sm-6 col-xs-12"><?= $reponse['contenu']; ?></p></a>
                     <!--<img src="<?= $reponse['contenu']; ?>" alt="">-->
                     <?php $i=$i+1; ?>
                 <?php endforeach ?> 
