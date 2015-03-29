@@ -66,15 +66,8 @@ $dates=$req_date->fetchAll();
 
                 <div id="menu">
                     <ul>
-                        <li class="menu2"><a href="#">Année</a>
-                            <ul>
-                                <?php foreach ($dates as $date): ?>
-                                    <li class="col-lg-6 filtre" ><a href="?filter=<?= $date['YEAR(date)'] ?>&filterBy=Y"><?= $date['YEAR(date)'] ?></a></li>
-                                <?php endforeach ?>
-                            </ul>
-                        </li>
                         <li class="menu2"><a href="#">Genre</a>
-                            <ul>
+                            <ul class="col-lg-12">
                                 
                                 <?php foreach ($genres as $genre): ?>
                                     <li class="col-lg-3 filtre" ><a href="?filter=<?= $genre['id'] ?>&filterBy=G"><?= $genre['nom'] ?></a></li>
@@ -82,7 +75,13 @@ $dates=$req_date->fetchAll();
                                
                             </ul>
                         </li>
-                        
+                        <li class="menu2"><a href="#">Année</a>
+                            <ul>
+                                <?php foreach ($dates as $date): ?>
+                                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 filtre" ><a href="?filter=<?= $date['YEAR(date)'] ?>&filterBy=Y"><?= $date['YEAR(date)'] ?></a></li>
+                                <?php endforeach ?>
+                            </ul>
+                        </li>
                         <li class="menu2"><a href="#">Note</a>
                             <ul>
                                 <?php for($i=0; $i<6; $i++):?>

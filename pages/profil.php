@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
     $req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
     $result=$req->fetchAll();
 
-    $sql2 = 'SELECT * FROM film, a_voir, user WHERE film.id=a_voir.film_id AND a_voir.user_id=user.id AND user.username="'.$_SESSION['username'].'"';
+    $sql2 = 'SELECT * FROM film, a_voir, user WHERE film.id=a_voir.id_film AND a_voir.id_user=user.id AND user.username="'.$_SESSION['username'].'"';
     $requete = $db->query($sql2) or die('Erreur SQL !<br />'.$sql2.'<br />'.mysql_error());
     $resultat=$requete->fetchAll();
 
