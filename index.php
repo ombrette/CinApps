@@ -172,26 +172,17 @@ $recommandations=$req_recomm->fetchAll();
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                     </div>
-                
+                </div>
+                <div class="row">
                  <div class="col-lg-12 col-md-6 col-sm-6">
-                        <a href="pages/questionnaire.php"><p id="boutonquestionnaire" >Pas convaincu(e) ? Passe par le questionaire !
+                        <a href="pages/questionnaire.php"><p id="boutonquestionnaire">
                     <span class="fa fa-stack fa-1x">
                         <i class="fa fa-question fa-stack-1x"></i>
                         <i class="fa fa-comment-o fa-stack-2x"></i>
-                    </span></i></p></a>
+                    </span></i>Pas convaincu(e) ? Passe par le questionaire !</p></a>
                     </div>
                 </div>   
             </div>
-
-            <!-- <div class="col-lg-5 col-md-7 col-sm-7 col-lg-offset-2 col-md-offset-1 col-sm-offset-1" id="sectionquesitonnaire" >
-                <a href="pages/questionnaire.php">
-                    <p id="partiequestionnaire"><span id="boutonquestionnaire" class="fa-stack fa-3x">
-                        <i class="fa fa-question fa-stack-1x"></i>
-                        <i class="fa fa-comment-o fa-stack-2x"></i>
-                    </span>
-                    <span class="hidden-xs">
-                Pas convaincu(e) ? Passe par le questionaire !</span></p></a>
-            </div> -->
         </div>
         <?php endforeach ?>
     </div>
@@ -214,7 +205,6 @@ $recommandations=$req_recomm->fetchAll();
                 <a href="pages/fiche_film.php?id=<?= $recommandation['id'] ?>"><img src="<?= $recommandation['affiche'] ?>" class="img-responsive">
                     <h3 class="text-center"><?= $recommandation['titre'] ?></h3>
                 </a>
-                <p class="text-center">Le Lornonyme assembla</p>
             </div>
         <?php endforeach ?>
         </div>

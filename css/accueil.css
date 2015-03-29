@@ -50,21 +50,20 @@
 }*/
 
 #boutonquestionnaire {
-	width: 25em;
+	margin-top: 2em;
+	width: 23em;
 	display: inline-block;
-	color:#000;
+	background-color:#c0392b;
+	color:#fff;
 	height: 2.5em;
 	line-height: 2.5em;
 	vertical-align: middle;
+	text-align: center;
 	font-size:1.2em;
 }
 
-#boutonquestionnaire .fa-stack{
-color: #c0392b;
-margin-left: 0.2em;
-}
-
-
 #boutonquestionnaire:hover{
-text-decoration: underline;
+background-color: #fff;
+color: #c0392b;
+border:solid 1px #c0392b;
 }
