@@ -50,16 +50,9 @@ a:hover, a:focus{
 	background-color:#c0392b;
 	color:white;
 	width: 100%;
-<<<<<<< HEAD
-	padding: 0 1em;
-	height: 5em;
-	margin: 1em 0px;
-	line-height: 2.5em;
-=======
 	padding: 1.4em 1em;
 	height: 5em;
 	margin: 1em;
->>>>>>> cc34d1e4c02112c42fef2f3b01355fff96d5f670
 	vertical-align: middle;
 	text-align: center;
 	font-size:1.2em;
