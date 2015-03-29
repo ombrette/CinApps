@@ -3,7 +3,16 @@ $auth = 0;
 include '../lib/include.php';
 $title_page='Modification du profil';
 $adr='css/modifierprofil.css';
-include '../partials/header.php'; ?>
+include '../partials/header.php'; 
+
+session_start();
+
+$sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
+$db -> query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
+$req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+$result=$req->fetchAll();
+
+?>
 
 <!--MODIFICATION PROFIL-->
 <div class="container mdfp">
@@ -17,13 +26,15 @@ include '../partials/header.php'; ?>
         <TABLE>
           <TR>
              <TD class="line-right">
-                <a href="#"><img src="img/photoprofil.jpg" width="233" height="233" alt="photo de profil">
+                <a href="profil.php"><img src="../img/profil.png" width="233" height="233" alt="photo de profil">
                   <div class="modifbouton"><i class="fa fa-play-circle-o"></i>Changer de photo</div>
                 </a>
              </TD>
              <TD>
-                <h2>Mr Rabbit</h2>
-                <h3>leroilapin@hotmail.fr</h3>
+                <?php foreach($result as $res): ?>
+                <h2><?php echo htmlentities(trim($_SESSION['username'])); ?></h2>
+                <h3><?php echo $res['email']; ?></h3>
+                <?php endforeach ?>
             </TD>
           </TR>
         </TABLE>
