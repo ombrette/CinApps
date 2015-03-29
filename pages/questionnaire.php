@@ -33,30 +33,29 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
             case 'genre':
                 if($idG == 0){
                     $type="genre2";
+                    $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
                     $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND()");
                     $film=0;
                 }else{
                     $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG AND film.id=film_genre.id_film ORDER BY RAND()");
                     $film=1;
                 }
-                    $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
 
                 break;
             case 'genre2':
                 $type="genre3";
                 if($idG2 == 0){
+                    $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
                     $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND()");
                     $film=0;
                 }else{
                     $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG2 AND film.id=film_genre.id_film ORDER BY RAND()");
                     $film=1;
                 }
-                    $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
 
                 break;
             case 'genre3':
                 $type="";
-                $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
                 $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG3 AND film.id=film_genre.id_film ORDER BY RAND()");
                 $film=1;
                 break;
@@ -70,8 +69,9 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
 }
 
 
-
+if(!empty($selectQ)){
 $questions = $selectQ->fetchAll();
+}
 
 $reponses = $selectR->fetchAll();
 

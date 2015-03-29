@@ -11,6 +11,7 @@ if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
         case 'G':
             $idG=$_GET['filter'];
             $requete=$db->query("SELECT film.id, film.titre, film.affiche, film.date, film.synopsisCourt, film.note FROM film, film_genre, genre WHERE genre.id=$idG AND film_genre.id_genre=genre.id AND film.id=film_genre.id_film LIMIT 20");
+            
         break;
 
         case 'N':
@@ -40,6 +41,13 @@ $dates=$req_date->fetchAll();
 
                 <div id="menu">
                     <ul>
+                        <li class="menu2"><a href="#">Année</a>
+                            <ul>
+                                <?php foreach ($dates as $date): ?>
+                                    <li class="col-lg-6 filtre" ><a href="?filter=&filterBy=G"><?= $date['YEAR(date)'] ?></a></li>
+                                <?php endforeach ?>
+                            </ul>
+                        </li>
                         <li class="menu2"><a href="#">Genre</a>
                             <ul>
                                 
@@ -49,13 +57,7 @@ $dates=$req_date->fetchAll();
                                
                             </ul>
                         </li>
-                        <li class="menu2"><a href="#">Année</a>
-                            <ul>
-                                <?php foreach ($dates as $date): ?>
-                                    <li class="col-lg-3 filtre" ><a href="?filter=&filterBy=G"><?= $date['date'] ?></a></li>
-                                <?php endforeach ?>
-                            </ul>
-                        </li>
+                        
                         <li class="menu2"><a href="#">Note</a>
                             <ul>
                                 <?php for($i=0; $i<6; $i++):?>
@@ -63,11 +65,7 @@ $dates=$req_date->fetchAll();
                                 <?php endfor ?>
                             </ul>
                         </li>
-<<<<<<< HEAD
-                        
-                        
-=======
->>>>>>> 02d9955f16bfff7ee5835ade578140815942b5e7
+
                     </ul>
                 </div> <!--fin menu tri-->
             </div><!-- fin col-->

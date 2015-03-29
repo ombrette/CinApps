@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinéos</title>
@@ -23,42 +23,6 @@
 
     <link href="css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
 
-<<<<<<< HEAD
- <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-      
-    
-      <script src="js/main.js"></script>
-      <!-- http://codepen.io/anon/pen/gbWaZz -->
-    
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-  
-        <link href="css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
-        <script src="js/jquery.fs.shifter.js"></script>
-
-<!-- Add fancyBox -->
-<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        
-$('.video').fancybox();
-$("a.site").fancybox({          
-        'hideOnContentClick'        : true,
-        'padding'           : 0,
-        'overlayColor'          :'#D3D3D3',
-        'transitionIn'          :'elastic',
-        'transitionOut'         :'elastic',
-        'overlayOpacity'        : 0.7,
-        'zoomSpeedIn'           : 300,
-        'zoomSpeedOut'          : 300,
-        'width'             : 950,
-        'height'            : 400,
-        'type'              :'iframe'
-=======
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
@@ -66,7 +30,8 @@ $("a.site").fancybox({
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {     
+        $(document).ready(function() {  
+            $('.video').fancybox();   
             $("a.site").fancybox({          
                 'hideOnContentClick'        : true,
                 'padding'           : 0,
@@ -80,7 +45,6 @@ $("a.site").fancybox({
                 'height'            : 400,
                 'type'              :'iframe'
             });
->>>>>>> origin/master
         });
     </script>
         
@@ -101,10 +65,10 @@ $("a.site").fancybox({
 //Connexion à la base de données 
 include 'lib/db.php';
 
-$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, YEAR(date) FROM film, film_genre, genre WHERE film.titre='Shutter Island' AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id LIMIT 1");
+$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, YEAR(date) FROM film, film_genre, genre, recommandation WHERE recommandation.id_film=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY film.id DESC LIMIT 1");
 $result=$requete->fetchAll();
 
-$req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.film_id");
+$req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.id_film ORDER BY film.id DESC LIMIT 1, 7");
 $recommandations=$req_recomm->fetchAll();
 ?>
 
@@ -177,65 +141,17 @@ $recommandations=$req_recomm->fetchAll();
                     </div>
                 </div>
 
-<<<<<<< HEAD
-           </div>
-
-            <div class="row">
-
-                <div class="col-lg-12">
-                <p class="infos gris">Sortie : <?= $res['date'] ?></p>
-                
-
-                
-                <p class="infos gris">Genre : <?= $res['nom']; ?></p>
-                
-                <p class="text-justify description hidden-xs"><?= $res['synopsis']; ?></p>
-                </div>
-                
-=======
                 <div class="row">
                     <div class="col-lg-12">
                         <p class="infos gris">Année : <?= $res['YEAR(date)']; ?></p>
->>>>>>> origin/master
 
                         <p class="infos gris">Genre : <?= $res['nom']; ?></p>
                     
-<<<<<<< HEAD
-                <a href="<?= $res['trailer'] ?>" class="site video hidden-xs"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-                   
-
-                    <!--<div style="display:none">
-                        <div id="video">
-                        
-<?= $res['trailer'] ?>
-                        
-                        </div>
-                    </div>-->
-
-
-
-                </div> 
-
-
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
-                </div>
-
-
-             </div>
-
-
-<?php endforeach ?>
-
-            
-
-
-=======
                         <p class="text-justify description hidden-xs"><?= $res['synopsisCourt']; ?></p>
                     </div>
                      
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="<?= $res['trailer'] ?>" class="site video"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                        <a href="<?= $res['trailer'] ?>" class="site video hidden-xs"><p class="boutonfdj"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
                         <!--<div style="display:none">
                             <div id="video">
                                 <?= $res['trailer'] ?>
@@ -249,7 +165,6 @@ $recommandations=$req_recomm->fetchAll();
                     </div>
                  </div>
             </div>
->>>>>>> origin/master
         </div>
         <?php endforeach ?>
     </div>
