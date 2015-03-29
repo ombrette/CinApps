@@ -1,4 +1,4 @@
-#boutonquestionnaire {
+/*#boutonquestionnaire {
 	width: 110px;
 	height: 105px;
 	margin-top: 0.2em;
@@ -47,5 +47,24 @@
 		font-size: 1.15em;
 	}
 
+}*/
+
+#boutonquestionnaire {
+	width: 25em;
+	display: inline-block;
+	color:#000;
+	height: 2.5em;
+	line-height: 2.5em;
+	vertical-align: middle;
+	font-size:1.2em;
 }
 
+#boutonquestionnaire .fa-stack{
+color: #c0392b;
+margin-left: 0.2em;
+}
+
+
+#boutonquestionnaire:hover{
+text-decoration: underline;
+}

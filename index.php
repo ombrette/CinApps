@@ -87,9 +87,7 @@ $recommandations=$req_recomm->fetchAll();
 
 
     <!--MENU-->
-    <?php
-    $pageCurrent = substr(basename($_SERVER['PHP_SELF']), 0, -4);
-    ?>
+    
     <nav class="navbar navbar-default hidden-xs" role="navigation">
     
         <div class="container">
@@ -107,10 +105,10 @@ $recommandations=$req_recomm->fetchAll();
                     <p class="nom_logo">Cinéos</p>
                 </a>
                 <ul class="nav navbar-nav">
-                    <li <?php echo ($pageCurrent == 'index') ? 'class="active"' : ''; ?>><a href="index.php">ACCUEIL</a></li>
-                    <li <?php echo ($pageCurrent == 'questionnaire') ? 'class="active"' : ''; ?>><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
-                    <li <?php echo ($pageCurrent == 'liste_films') ? 'class="active"' : ''; ?>><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
-                    <li <?php echo ($pageCurrent == 'profil' || $pageCurrent == 'connexion' || $pageCurrent == 'inscription' || $pageCurrent == 'modification_profil') ? 'class="active"' : ''; ?>><a href="pages/profil.php">MON COMPTE</a></li>
+                    <li class="active"><a href="index.php">ACCUEIL</a></li>
+                    <li><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
+                    <li><a href="pages/profil.php">MON COMPTE</a></li>
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
                 </ul>
@@ -174,9 +172,18 @@ $recommandations=$req_recomm->fetchAll();
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                     </div>
-                 </div>
+                
+                 <div class="col-lg-12 col-md-6 col-sm-6">
+                        <a href="#"><p id="boutonquestionnaire" >Pas convaincu(e) ? Passe par le questionaire !
+                    <span class="fa fa-stack fa-1x">
+                        <i class="fa fa-question fa-stack-1x"></i>
+                        <i class="fa fa-comment-o fa-stack-2x"></i>
+                    </span></i></p></a>
+                    </div>
+                </div>   
             </div>
-            <div class="col-lg-5 col-md-7 col-sm-7 col-lg-offset-2 col-md-offset-1 col-sm-offset-1" id="sectionquesitonnaire" >
+
+            <!-- <div class="col-lg-5 col-md-7 col-sm-7 col-lg-offset-2 col-md-offset-1 col-sm-offset-1" id="sectionquesitonnaire" >
                 <a href="pages/questionnaire.php">
                     <p id="partiequestionnaire"><span id="boutonquestionnaire" class="fa-stack fa-3x">
                         <i class="fa fa-question fa-stack-1x"></i>
@@ -184,7 +191,7 @@ $recommandations=$req_recomm->fetchAll();
                     </span>
                     <span class="hidden-xs">
                 Pas convaincu(e) ? Passe par le questionaire !</span></p></a>
-            </div>
+            </div> -->
         </div>
         <?php endforeach ?>
     </div>
