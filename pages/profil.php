@@ -13,6 +13,14 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+if(isset($_GET['del'])){
+    $id = $db->quote($_GET['del']);
+    $db->query("DELETE FROM a_voir WHERE id_film=$id");
+    setFlash('Le film a bien été supprimé');
+    header('Location:profil.php');
+    die();
+}
+
     $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
     $db -> query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
     $req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
@@ -58,81 +66,26 @@ if (!isset($_SESSION['username'])) {
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">       
         <h1 class="titre_profil titre-section">à regarder plus tard</h1>
-            <div class="row">
+            <div class="row liste_film_a_voir">
                 <?php foreach($resultat as $resu): ?>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php?id=<?= $resu['film_id'] ?>">
-                        <img src="<?= $resu['affiche'] ?>" class="img-responsive affiche">
-                        <h2><?= $resu['titre'] ?></h2>
-                    </a>    
-                        <p><?= $resu['date'] ?></p>          
+                <div class="grid col-xs-6 col-sm-4 col-lg-3 a_voir">
+                    <figure class="effect-zoe">
+                        <a href="fiche_film.php?id=<?= $resu['id_film']; ?>">
+                            <img src="<?= $resu['affiche']; ?>" class="img-responsive affiche">
+                            <h2><?= $resu['titre']; ?></h2>
+                        </a>
+                        <figcaption>
+                            <h2><span><a href="?del=<?= $resu['id_film']; ?>">Supprimer de la liste</span></h2>
+                        </figcaption>           
+                    </figure>       
                 </div>
                 <?php endforeach ?>
-            </div>
-            <a href=""><p class="plusdefilm">afficher plus de films</p></a>
+            </div><!-- 
+            <a href=""><p class="plusdefilm">afficher plus de films</p></a> -->
         </div>
     </div>
 </div>
 
-<div class="container profil dejavu">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">       
-        <h1 class="titre_profil titre-section">déjà vu</h1>
-            <div class="row">
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>          
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-            </div>
-            <a href=""><p class="plusdefilm">afficher plus de films</p></a>
-        </div>
-    </div>
-</div>
     
 
 
