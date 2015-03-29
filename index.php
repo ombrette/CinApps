@@ -174,7 +174,7 @@ $recommandations=$req_recomm->fetchAll();
                     </div>
                 
                  <div class="col-lg-12 col-md-6 col-sm-6">
-                        <a href="#"><p id="boutonquestionnaire" >Pas convaincu(e) ? Passe par le questionaire !
+                        <a href="pages/questionnaire.php"><p id="boutonquestionnaire" >Pas convaincu(e) ? Passe par le questionaire !
                     <span class="fa fa-stack fa-1x">
                         <i class="fa fa-question fa-stack-1x"></i>
                         <i class="fa fa-comment-o fa-stack-2x"></i>
