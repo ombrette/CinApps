@@ -359,33 +359,33 @@ border:solid 1px #c0392b;
 @media screen and (min-width: 768px) and (max-width:1068px) {
 
 
-.fdj .titre-section{
-	width: 10em;
-	height: 70%;
-	
-}
+	.fdj .titre-section{
+		width: 10em;
+		height: 70%;
+		
+	}
 
-.navbar-nav li:nth-child(4){
-	margin-right: 0;
-}
+	.navbar-nav li:nth-child(4){
+		margin-right: 0;
+	}
 
-	.navbar-brand{
-	font-size: 3em;
-}
+		.navbar-brand{
+		font-size: 3em;
+	}
 
 
-.contenu{
-	font-size: 0.8em;
-}
+	.contenu{
+		font-size: 0.8em;
+	}
 
-.titre-film{
-	font-size: 2.5em;
-}
+	.titre-film{
+		font-size: 2.5em;
+	}
 
-.fdj .contenu .note{
-	float: right;
-	padding: 2.5em 0;
-}
+	.fdj .contenu .note{
+		float: right;
+		padding: 2.5em 0;
+	}
 
 }
 

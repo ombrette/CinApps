@@ -179,7 +179,7 @@ a.imageprofil .modifbouton:hover{
 
 #contact input[type=password],#contact input[type=email]{
     background-color: transparent;
-    color:#FFF;
+    color:#000;
     border: solid 0.1em #000000; 
     width: 510px;
     height: 36px;

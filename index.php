@@ -8,6 +8,8 @@
     <!--<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css'>-->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/accueil.css" rel="stylesheet">
+
 
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
@@ -164,6 +166,15 @@ $recommandations=$req_recomm->fetchAll();
                         <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                     </div>
                  </div>
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-7 col-lg-offset-2 col-md-offset-1 col-sm-offset-1" id="sectionquesitonnaire" >
+                <a href="pages/questionnaire.php">
+                    <p id="partiequestionnaire"><span id="boutonquestionnaire" class="fa-stack fa-3x">
+                        <i class="fa fa-question fa-stack-1x"></i>
+                        <i class="fa fa-comment-o fa-stack-2x"></i>
+                    </span>
+                    <span class="hidden-xs">
+                Pas convaincu(e) ? Passe par le questionaire !</span></p></a>
             </div>
         </div>
         <?php endforeach ?>
