@@ -18,6 +18,10 @@ if (!isset($_SESSION['username'])) {
     $req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
     $result=$req->fetchAll();
 
+    $sql2 = 'SELECT * FROM film, a_voir, user WHERE film.id=a_voir.film_id AND a_voir.user_id=user.id AND user.username="'.$_SESSION['username'].'"';
+    $requete = $db->query($sql2) or die('Erreur SQL !<br />'.$sql2.'<br />'.mysql_error());
+    $resultat=$requete->fetchAll();
+
 ?>
     
 
@@ -55,55 +59,15 @@ if (!isset($_SESSION['username'])) {
         <div class="col-lg-12 col-md-12 col-sm-12">       
         <h1 class="titre_profil titre-section">à regarder plus tard</h1>
             <div class="row">
+                <?php foreach($resultat as $resu): ?>
                 <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
+                    <a href="fiche_film.php?id=<?= $resu['film_id'] ?>">
+                        <img src="<?= $resu['affiche'] ?>" class="img-responsive affiche">
+                        <h2><?= $resu['titre'] ?></h2>
                     </a>    
-                        <p>2014</p>          
+                        <p><?= $resu['date'] ?></p>          
                 </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
-                <div class="col-xs-6 col-sm-4 col-lg-3">
-                    <a href="fiche_film.php">
-                        <img src="img/malefique2.jpg">
-                        <h2>Maléfique</h2>
-                    </a>    
-                        <p>2014</p>           
-                </div>
+                <?php endforeach ?>
             </div>
             <a href=""><p class="plusdefilm">afficher plus de films</p></a>
         </div>

@@ -71,7 +71,7 @@ if (isset($_GET['id'])) {
             <div class="entete">Réalisateur</div>
             
             <?php  
-                $requete_rea=$db->query("SELECT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
+                $requete_rea=$db->query("SELECT DISTINCT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
                 $reas=$requete_rea->fetchAll();
                 ?>
 

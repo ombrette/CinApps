@@ -5,6 +5,8 @@ $title_page='Liste de films';
 $adr='css/listefilms.css';
 include '../partials/header.php'; 
 
+session_start();
+
 if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
     $filtre=$_GET['filterBy'];
     switch ($filtre) {
@@ -18,9 +20,32 @@ if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
             $idN=$_GET['filter'];
             $requete=$db->query("SELECT * FROM film WHERE note=$idN LIMIT 20");
         break;
+
+        case 'Y':
+            $idY=$_GET['filter'];
+            $requete=$db->query("SELECT * FROM film WHERE YEAR(date)=$idY LIMIT 20");
+        break;
     }
+}
+
+elseif (isset($_GET['id'])) {
+    
+    $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
+    $db -> query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
+    $req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+    $result = $req -> fetchAll();
+    foreach ($result as $res) {
+        $user = $res['id'];
+    }
+    $film = $_GET['id'];
+
+    $sql2 = "INSERT INTO a_voir(user_id, film_id) VAlUES ($user, $film)";
+    $req = $db->query($sql2) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+    $requete=$db->query("SELECT * FROM film LIMIT 20");
+
+}
             
-}else{     
+else{     
     $requete=$db->query("SELECT * FROM film LIMIT 20");
 }
 $resultats=$requete->fetchAll();
@@ -44,7 +69,7 @@ $dates=$req_date->fetchAll();
                         <li class="menu2"><a href="#">Année</a>
                             <ul>
                                 <?php foreach ($dates as $date): ?>
-                                    <li class="col-lg-6 filtre" ><a href="?filter=&filterBy=G"><?= $date['YEAR(date)'] ?></a></li>
+                                    <li class="col-lg-6 filtre" ><a href="?filter=<?= $date['YEAR(date)'] ?>&filterBy=Y"><?= $date['YEAR(date)'] ?></a></li>
                                 <?php endforeach ?>
                             </ul>
                         </li>
@@ -148,7 +173,7 @@ $dates=$req_date->fetchAll();
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
                             <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
+                            <a href="?id=<?= $res['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
                             </div>
 
                         </div>

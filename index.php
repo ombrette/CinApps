@@ -65,10 +65,10 @@
 //Connexion à la base de données 
 include 'lib/db.php';
 
-$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, YEAR(date) FROM film, film_genre, genre, recommandation WHERE recommandation.id_film=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY film.id DESC LIMIT 1");
+$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, YEAR(date) FROM film, film_genre, genre, recommandation WHERE recommandation.film_id=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY film.id DESC LIMIT 1");
 $result=$requete->fetchAll();
 
-$req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.id_film ORDER BY film.id DESC LIMIT 1, 7");
+$req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.film_id ORDER BY film.id DESC LIMIT 1, 7");
 $recommandations=$req_recomm->fetchAll();
 ?>
 
