@@ -228,7 +228,51 @@ border:solid 1px #c0392b;
 
 /*####FIN RETOUR QUESTIONNAIRE#####*/
 
+.container.finquest h2{
+	margin-top: 0.7em;
+	height: 57px;
+}
 
+
+.boutons{
+        position: relative;
+       bottom: 0;
+    }
+
+
+@media screen and (min-width: 1068){
+	.container.finquest div#tailleaffiche{
+		margin-top: 50px;
+		height: 360px;
+
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .marg{
+        height:540px;
+    }
+
+    .boutonfdj{
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    .boutonfdj{
+        width: auto;
+        margin: 1em;
+        font-size: 1.1em;
+    }
+
+    .fa{
+        margin-right: 0;
+    }
+
+    
+}
 @media screen and (min-width: 769px) and (max-width:1068px ) {
 	.container.finquest{
 		width: 85%;
@@ -244,9 +288,14 @@ border:solid 1px #c0392b;
 		margin-right: 0;
 	}
 
-		.navbar-brand{
+	.navbar-brand{
 		font-size: 3em;
 	}
+	#tailleaffiche{
+	max-height: 365px;
+	min-height: 262px;
+	}
+	
 }
 
 
