@@ -181,10 +181,17 @@ $dates=$req_date->fetchAll();
                         
                             <div class="row boutons">
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
+                            
+                                    <?php if(!empty($res['trailer'])) : ?>
+                                    <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                                    <?php endif ?>
+                                    <?php if(empty($res['trailer'])) : ?>
+                                    <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
+                                    <?php endif ?>
+                                </div>
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                            <a href="?id=<?= $res['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
-                            </div>
+                                    <a href="?id=<?= $res['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
+                                </div>
 
                         </div>
  

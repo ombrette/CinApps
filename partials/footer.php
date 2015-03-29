@@ -20,6 +20,12 @@
             <a href="<?= WEBROOT; ?>pages/profil.php"><img src="<?= WEBROOT; ?>img/menu_profil.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Mon compte</a>
             <a href="<?= WEBROOT; ?>pages/profil.php"><img src="<?= WEBROOT; ?>img/menu_deconnexion.png" width="24" height="24" alt="logo" class="pull-left icon-menu-xs">Déconnexion</a>
         </nav>
+
+
+
+            <script type="text/javascript" src="<?= WEBROOT; ?>js/jquery.fancybox.pack.js?v=2.1.5"></script>
+    
+            <script type="text/javascript" src="<?= WEBROOT; ?>js/slick.min.js"></script>
 </body>
 
 

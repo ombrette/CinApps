@@ -38,6 +38,14 @@
 
     <link href="<?= WEBROOT; ?>css/jquery.fs.shifter.css" rel="stylesheet" type="text/css" media="all">
     <script src="<?= WEBROOT; ?>js/jquery.fs.shifter.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="<?= WEBROOT; ?>css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?= WEBROOT; ?>css/slick-theme.css"/>
+
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="<?= WEBROOT; ?>css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
     <script>
             $(document).ready(function() {
                 $.shifter({

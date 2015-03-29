@@ -63,7 +63,7 @@ $acts=$requete_act->fetchAll();
             <p class="text-justify"> <?= $res['synopsis'] ?></p>
 
             <?php if(!empty($res['trailer'])) : ?>
-            <a href=" <?= $res['trailer'] ?>"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+            <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
             <?php endif ?>
             <?php if(empty($res['trailer'])) : ?>
             <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
