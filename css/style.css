@@ -350,6 +350,18 @@ color: #c0392b;
 border:solid 1px #c0392b;
 }
 
+.boutonfdj.noba{
+	background-color: #999;
+	color: #ccc;
+	width: 17em;
+}
+
+.boutonfdj.noba:hover{
+	background-color: #999;
+	color: #ccc;
+	border:none;
+}
+
 
 
 .fa{

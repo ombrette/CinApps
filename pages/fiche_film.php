@@ -17,8 +17,10 @@ if (isset($_GET['id'])) {
     
 }
 
-
-
+$requete_rea=$db->query("SELECT DISTINCT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
+$requete_act=$db->query("SELECT DISTINCT * FROM film_acteur, acteur WHERE film_acteur.id_film=$id AND acteur.id=film_acteur.id_acteur");
+$reas=$requete_rea->fetchAll();
+$acts=$requete_act->fetchAll();
 ?>
     
  <!--FILM-->
@@ -55,7 +57,13 @@ if (isset($_GET['id'])) {
             <p class="text-left">Synopsis</p>
             <p class="text-justify"> <?= $res['synopsis'] ?></p>
 
+            <?php if(!empty($res['trailer'])) : ?>
             <a href=" <?= $res['trailer'] ?>"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+            <?php endif ?>
+            <?php if(empty($res['trailer'])) : ?>
+            <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
+            <?php endif ?>
+
             <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
 
 
@@ -69,11 +77,6 @@ if (isset($_GET['id'])) {
 
         <div class="realisateur col-lg-3 col-md-3 col-sm-3">
             <div class="entete">Réalisateur</div>
-            
-            <?php  
-                $requete_rea=$db->query("SELECT DISTINCT realisateur.picture, realisateur.nom FROM film_realisateur, realisateur WHERE film_realisateur.id_film=$id AND realisateur.id=film_realisateur.id_realisateur");
-                $reas=$requete_rea->fetchAll();
-                ?>
 
             <?php foreach ($reas as $rea): ?>
 
@@ -91,12 +94,6 @@ if (isset($_GET['id'])) {
 
         <div class="acteur col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
             <div class="entete">Acteurs</div>
-
-            <?php  
-                $requete_act=$db->query("SELECT * FROM film_acteur, acteur WHERE film_acteur.id_film=$id AND acteur.id=film_acteur.id_acteur");
-                $acts=$requete_act->fetchAll();
-
-            ?>
             
             <?php foreach ($acts as $act): ?>
             <div class="col-lg-3">
