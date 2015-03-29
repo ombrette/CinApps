@@ -67,8 +67,16 @@
 //Connexion à la base de données 
 include 'lib/db.php';
 
-$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, YEAR(date) FROM film, film_genre, genre, recommandation WHERE recommandation.id_film=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY recommandation.id DESC LIMIT 1");
+$requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, film.date FROM film, film_genre, genre, recommandation WHERE recommandation.id_film=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY recommandation.id DESC LIMIT 1");
 $result=$requete->fetchAll();
+
+foreach($result as $res):
+    $date = $res['date'];
+endforeach;
+
+list($year, $month, $day) = explode("-", $date); 
+$months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"); 
+$lastmodified = "$day ".$months[$month-1]." $year";
 
 $req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.id_film ORDER BY recommandation.id DESC LIMIT 1,7");
 $recommandations=$req_recomm->fetchAll();
@@ -145,7 +153,7 @@ $recommandations=$req_recomm->fetchAll();
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="infos gris">Année : <?= $res['YEAR(date)']; ?></p>
+                        <p class="infos gris">Sortie : <?= $lastmodified; ?></p>
 
                         <p class="infos gris">Genre : <?= $res['nom']; ?></p>
                     

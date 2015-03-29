@@ -9,9 +9,14 @@ if (isset($_GET['id'])) {
     $id=$_GET['id'];
     $requete=$db->query("SELECT * FROM film, film_genre, genre WHERE film.id=$id AND film_genre.id_film=film.id AND genre.id=film_genre.id_genre LIMIT 1");
     $resultats = $requete->fetchAll();
-    foreach ($resultats as $res => $value) {
-        $title_page=$res['titre'];        
-    }
+    foreach($resultats as $res):
+        $title_page = $res['titre'];
+        $date = $res['date'];
+    endforeach;
+
+    list($year, $month, $day) = explode("-", $date); 
+    $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"); 
+    $lastmodified = "$day ".$months[$month-1]." $year";
 }else{
 
     
@@ -39,7 +44,7 @@ $acts=$requete_act->fetchAll();
             
             <div class="row">
                 <div class="col-lg-4 col-xs-6">
-                    <p class="annee text-left">Sortie : <?= $res['date'] ?></p>
+                    <p class="annee text-left">Sortie : <?= $lastmodified ?></p>
                 </div>
 
                 <div class="col-lg-4 col-xs-6">

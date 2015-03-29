@@ -49,6 +49,15 @@ else{
     $requete=$db->query("SELECT * FROM film LIMIT 20");
 }
 $resultats=$requete->fetchAll();
+
+foreach($resultats as $res):
+    $date = $res['date'];
+endforeach;
+
+list($year, $month, $day) = explode("-", $date); 
+$months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"); 
+$lastmodified = "$day ".$months[$month-1]." $year";
+
 $req_genre=$db->query("SELECT * FROM genre");
 $req_date=$db->query("SELECT DISTINCT YEAR(date) FROM film");
 $genres=$req_genre->fetchAll(); 
@@ -136,7 +145,7 @@ $dates=$req_date->fetchAll();
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 presentation">
                             <h1 class="text-left"><a href="fiche_film.php?id=<?= $res['id'] ?>"><?= $res['titre'] ?></a></h1>
-                            <p class="annee gris text-left hidden-xs"><?= $res['date'] ?></p>
+                            <p class="annee gris text-left hidden-xs"><?= $lastmodified ?></p>
                             <?php $id_film=$res['id']; 
 
                             $requete_gf=$db->query("SELECT * FROM film_genre, genre WHERE film_genre.id_film=$id_film AND genre.id=film_genre.id_genre");
