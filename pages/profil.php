@@ -68,7 +68,7 @@ if(isset($_GET['del'])){
         <h1 class="titre_profil titre-section">à regarder plus tard</h1>
             <div class="row liste_film_a_voir">
                 <?php foreach($resultat as $resu): ?>
-                <div class="grid col-xs-6 col-sm-4 col-lg-3 a_voir">
+                <div class="grid col-xs-12 col-sm-6 col-lg-3 a_voir">
                     <figure class="effect-zoe">
                         <a href="fiche_film.php?id=<?= $resu['id_film']; ?>">
                             <img src="<?= $resu['affiche']; ?>" class="img-responsive affiche">
