@@ -107,10 +107,17 @@
 
 .film-list p:not(.boutonfdj){
     font-size: 1.1em;
+    margin: 0;
 }
 
-.presentation h1{
+.film-list h1{
     font-size: 1.8em;
+    height: 54px;
+}
+
+
+.titre-syn{
+    margin: 0 0 10px !important; 
 }
 
 .note{
@@ -129,15 +136,27 @@
     font-size: 1em;
 }
 
-.presentation h1{
-    height: 54px;
-}
 
 
 .boutons{
         position: relative;
        bottom: 0;
     }
+
+
+.fix{
+    display: block;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+.vp{
+    margin-bottom: 1.2em !important;
+}
+
+.vp a{
+    color: #c0392b;
+}
 
 
 @media screen and (min-width: 992px) and (max-width: 1200px){

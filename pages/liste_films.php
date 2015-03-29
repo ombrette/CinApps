@@ -133,6 +133,7 @@ $dates=$req_date->fetchAll();
                     <div class="row center-block film-list">
 
 
+
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 presentation">
                             <h1 class="text-left"><a href="fiche_film.php?id=<?= $res['id'] ?>"><?= $res['titre'] ?></a></h1>
                             <p class="annee gris text-left hidden-xs"><?= $res['date'] ?></p>
@@ -165,8 +166,9 @@ $dates=$req_date->fetchAll();
 
                             </div>
 
-                            <p class="text-left gris">Synopsis</p>
-                            <p class="text-justify"><?= $res['synopsisCourt'] ?></p>
+                            <p class="text-left gris titre-syn">Synopsis</p>
+                            <p class="text-justify fix"><?= $res['synopsisCourt'] ?></p>
+                            <p class="vp"><a href="fiche_film.php?id=<?= $res['id'] ?>">Voir plus</a></p>
                         
                             <div class="row boutons">
                                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
