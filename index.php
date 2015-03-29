@@ -87,7 +87,9 @@ $recommandations=$req_recomm->fetchAll();
 
 
     <!--MENU-->
-    
+    <?php
+    $pageCurrent = substr(basename($_SERVER['PHP_SELF']), 0, -4);
+    ?>
     <nav class="navbar navbar-default hidden-xs" role="navigation">
     
         <div class="container">
@@ -105,10 +107,10 @@ $recommandations=$req_recomm->fetchAll();
                     <p class="nom_logo">Cinéos</p>
                 </a>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.php">ACCUEIL</a></li>
-                    <li><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
-                    <li><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
-                    <li><a href="pages/profil.php">MON COMPTE</a></li>
+                    <li <?php echo ($pageCurrent == 'index') ? 'class="active"' : ''; ?>><a href="index.php">ACCUEIL</a></li>
+                    <li <?php echo ($pageCurrent == 'questionnaire') ? 'class="active"' : ''; ?>><a href="pages/questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li <?php echo ($pageCurrent == 'liste_films') ? 'class="active"' : ''; ?>><a href="pages/liste_films.php">LISTE DE FILMS</a></li>
+                    <li <?php echo ($pageCurrent == 'profil' || $pageCurrent == 'connexion' || $pageCurrent == 'inscription' || $pageCurrent == 'modification_profil') ? 'class="active"' : ''; ?>><a href="pages/profil.php">MON COMPTE</a></li>
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
                 </ul>

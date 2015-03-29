@@ -76,17 +76,19 @@
                     <h4 class="visible-xs">Cinéos</h4>
                     
                 </div>
-    
+            <?php
+            $pageCurrent = substr(basename($_SERVER['PHP_SELF']), 0, -4);
+            ?>
             <div class="collapse navbar-collapse" id="navbarCollapse"><!-- identique data-target plus haut-->
                 <a class="navbar-brand hidden-xs" href="<?= WEBROOT; ?>">
                     <img src="<?= WEBROOT; ?>img/logo2.png" width="38" height="50" alt="logo">
                     <p class="nom_logo">Cinéos</p>
                 </a>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="<?= WEBROOT; ?>">ACCUEIL</a></li>
-                    <li><a href="<?= WEBROOT; ?>pages/questionnaire.php">QUESTIONNAIRE</a></li>
-                    <li><a href="<?= WEBROOT; ?>pages/liste_films.php">LISTE DE FILMS</a></li>
-                    <li><a href="<?= WEBROOT; ?>pages/profil.php">MON COMPTE</a></li>
+                    <li <?php echo ($pageCurrent == 'index') ? 'class="active"' : ''; ?>><a href="<?= WEBROOT; ?>">ACCUEIL</a></li>
+                    <li <?php echo ($pageCurrent == 'questionnaire') ? 'class="active"' : ''; ?>><a href="<?= WEBROOT; ?>pages/questionnaire.php">QUESTIONNAIRE</a></li>
+                    <li <?php echo ($pageCurrent == 'liste_films') ? 'class="active"' : ''; ?>><a href="<?= WEBROOT; ?>pages/liste_films.php">LISTE DE FILMS</a></li>
+                    <li <?php echo ($pageCurrent == 'profil' || $pageCurrent == 'connexion' || $pageCurrent == 'inscription' || $pageCurrent == 'modification_profil') ? 'class="active"' : ''; ?>><a href="<?= WEBROOT; ?>pages/profil.php">MON COMPTE</a></li>
                                    
 
                     <li class="recherche"><a href="#"><img class="logorecherche" src="<?= WEBROOT; ?>img/search.png" width="47" height="60" alt="Logo Recherche"></a></li>
