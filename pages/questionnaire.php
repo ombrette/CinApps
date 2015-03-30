@@ -130,10 +130,28 @@ $reponses = $selectR->fetchAll();
                         <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
                         </div></a>
 
-
+                        <!--VISIBLE XS-->
                         <div>
-                               <a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-play-circle-o"></i></p></a>
+                            <?php if(!empty($res['trailer'])) : ?>
+                               <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj visible-xs"><i class="fa fa-play-circle-o"></i></p></a>
+                            <?php endif ?>
+                            <?php if(empty($res['trailer'])) : ?>
+                                    <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
+                                    <?php endif ?>
                                <a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-file-text-o"></i></p></a>
+                        </div>
+
+                        <!--HIDDEN XS-->
+                        <div>
+                            <?php if(!empty($res['trailer'])) : ?>
+                            <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center hidden-xs"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                            <?php endif ?>
+                            <?php if(empty($res['trailer'])) : ?>
+                                    <p class="boutonfdj text-center hidden-xs noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
+                            <?php endif ?>
+                        </div>
+                        <div class="hidden-xs">
+                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                         </div>
 
                         </div>
