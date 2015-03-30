@@ -173,7 +173,7 @@ a:hover, a:focus{
 
 /*####RETOUR QUESTIONNAIRE#####*/
 
-.finquest .row div{
+.finquest .row .fin{
 	background-color: #fff;
 }
 
@@ -234,6 +234,8 @@ border:solid 1px #c0392b;
 
 /*####FIN RETOUR QUESTIONNAIRE#####*/
 
+
+
 .container.finquest h2{
 	margin-top: 0.7em;
 	height: 57px;
@@ -244,6 +246,9 @@ border:solid 1px #c0392b;
         position: relative;
        bottom: 0;
     }
+
+
+
 
 
 @media screen and (min-width: 1068){
@@ -263,6 +268,8 @@ border:solid 1px #c0392b;
     .boutonfdj{
         font-size: 1em;
     }
+
+
 }
 
 
@@ -301,6 +308,10 @@ border:solid 1px #c0392b;
 	max-height: 365px;
 	min-height: 262px;
 	}
+
+	 .container.ancrec{
+    	width: auto;
+    }
 	
 }
 
