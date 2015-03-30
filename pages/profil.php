@@ -1,24 +1,28 @@
-<?php 
-$auth = 0;
-include '../lib/include.php';
-$title_page='Profil';
-$adr='css/profil.css';
-include '../partials/header.php'; 
-
-$result="";
-
+<?php
 session_start();
+$auth = 0;
+include '../lib/include.php'; 
 if (!isset($_SESSION['username'])) {
     header ('Location:' . WEBROOT . 'pages/connexion.php');
     exit();
 }
 
+$title_page='Profil';
+$adr='css/profil.css';
+include '../partials/header.php';
+
+
+$result="";
+
+
+
+
 if(isset($_GET['del'])){
     $id = $db->quote($_GET['del']);
     $db->query("DELETE FROM a_voir WHERE id_film=$id");
     setFlash('Le film a bien été supprimé');
-    header('Location:profil.php');
-    die();
+    /*header('Location:profil.php');
+    die()*/;
 }
 
     $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
@@ -44,7 +48,7 @@ if(isset($_GET['del'])){
             <TABLE>
               <TR>
                  <TD class="line-right">
-                    <img src="img/photoprofil.jpg" width="233" height="233" alt="photo de profil">
+                    <img src="<?= WEBROOT; ?>img/photoprofil.jpg" width="233" height="233" alt="photo de profil">
                  </TD>
                  <TD>
                     <?php foreach($result as $res): ?>

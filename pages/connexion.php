@@ -1,9 +1,7 @@
 <?php 
 $auth = 0;
 include '../lib/include.php';
-$title_page='Connexion';
-$adr='css/connexion.css';
-include '../partials/header.php'; 
+
 
 // on teste si le visiteur a soumis le formulaire de connexion
 if (isset($_POST['connexion']) && $_POST['connexion'] == 'Confirmer') {
@@ -35,7 +33,14 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Confirmer') {
     else {
         setFlash('Au moins un des champs est vide.');
     }
-}?>
+
+
+}
+
+    $title_page='Connexion';
+    $adr='css/connexion.css';
+    include '../partials/header.php'; 
+?>
 
 
     <!--INSCRIPTION-->

@@ -1,11 +1,11 @@
-<?php 
+<?php
+session_start();
 $auth = 0;
 include '../lib/include.php';
 $title_page='Modification du profil';
 $adr='css/modifierprofil.css';
 include '../partials/header.php'; 
 
-session_start();
 
 $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
 $db -> query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
