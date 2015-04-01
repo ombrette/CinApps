@@ -1,6 +1,6 @@
 <?php
 try{
-$db = new PDO('mysql:host=localhost;dbname=cinapps', 'root', '');
+$db = new PDO('mysql:host=cinappsflnqgg.mysql.db;dbname=cinappsflnqgg', 'cinappsflnqgg', 'Dorade2015');
 /*$db = new PDO('mysql:host=sqletud.univ-mlv.fr;dbname=qgiraud_db', 'qgiraud', '140294');*/
 
 
