@@ -110,51 +110,51 @@ $reponses = $selectR->fetchAll();
 <?php if($film==1) : ?>
 <div class="container finquest">
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 fin">       
+        <div class="col-lg-12 col-md-12 col-sm-12">       
         <h1 class="text-uppercase titre-section">Fin du questionnaire</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-                    <p>Suggestion : Voici le resultat listant les films que nous te suggerons suite à tes réponses, tu n'as plus qu'à choisir !</p>
+                    <p>suggestion : Voici le resultat listant les films que nous vous suggerons suite à vos réponses, vous n'avez plus qu'à choisir !</p>
                 </div>
+                <?php foreach($reponses as $reponse): ?>
+                <div class="col-xs-12 col-sm-4 col-lg-3">
+                    <a href="fiche_film.php?id=<?= $reponse['id']; ?>">
+                        <h2 class="nomdefilm"><?= $reponse['titre']; ?></h2>
+                    <div id="tailleaffiche">   
+                        <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
+                    </div> 
+                    </a> 
+
+                    <div class="row center-block">
 
 
-                <div class="container ancrec">
-                
-                
-                    <div class="center">
-                        <?php foreach($reponses as $reponse): ?>
-                        <div>
-                            <a href="fiche_film.php?id=<?= $reponse['id']; ?>">
-                                <h2 class="nomdefilm"><?= $reponse['titre']; ?></h2>
-                                
-                                <div id="tailleaffiche">   
-                                <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
-                                </div>
-                            </a>
-
-                            <!--BOUTONS-->
-                            <div>
-                                <?php if(!empty($res['trailer'])) : ?>
-                                   <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj visible-xs"><i class="fa fa-play-circle-o"></i></p></a>
-                                   <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center hidden-xs"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
-                                <?php endif ?>
-                                <?php if(empty($res['trailer'])) : ?>
-                                        <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
-
-                                <?php endif ?>
-                                   <a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-file-text-o"></i></p></a>
-                                   <a href="#"><p class="boutonfdj hidden-xs"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
+                        <div class="col-lg-offset-2 col-lg-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8">
+                            
+                            <!-- Boutons xs -->
+                            <div class="row">
+                                <div class="col-xs-6"><a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-play-circle-o"></i></p></div></a>
+                                <div class="col-xs-6"><a href="#"><p class="boutonfdj visible-xs"><i class="fa fa-file-text-o"></i></p></div></a>
                             </div>
 
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                         
+                            <div class="row boutons">
+                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                            <a href="#"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a></div>
+                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                            <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
+                            </div>
 
                         </div>
-                        <?php endforeach ?>
+ 
+
                     </div>
-                
-                
+
                 </div>
-            
+                <?php endforeach ?>
+            </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
                     <a href="#"><p class="plusdefilm">afficher plus de film</p></a>
