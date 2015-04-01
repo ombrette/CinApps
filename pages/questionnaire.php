@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../lib/include.php';
 $title_page="Questionnaire";
 $adr='css/questionnaire.css';
@@ -37,7 +38,7 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
                     $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND()");
                     $film=0;
                 }else{
-                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG AND film.id=film_genre.id_film ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id, film.trailer FROM film_genre, film WHERE film_genre.id_genre=$idG AND film.id=film_genre.id_film ORDER BY RAND()");
                     $film=1;
                 }
 
@@ -49,14 +50,14 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
                     $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND()");
                     $film=0;
                 }else{
-                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG2 AND film.id=film_genre.id_film ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id, film.trailer FROM film_genre, film WHERE film_genre.id_genre=$idG2 AND film.id=film_genre.id_film ORDER BY RAND()");
                     $film=1;
                 }
 
                 break;
             case 'genre3':
                 $type="";
-                $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG3 AND film.id=film_genre.id_film ORDER BY RAND()");
+                $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id, film.trailer FROM film_genre, film WHERE film_genre.id_genre=$idG3 AND film.id=film_genre.id_film ORDER BY RAND()");
                 $film=1;
                 break;
             
@@ -68,6 +69,20 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
     $film=0;
 }
 
+if (isset($_GET['idAVoir'])) {
+    
+    $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['username'].'"';
+    $req = $db->query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+    $result = $req -> fetchAll();
+
+    foreach ($result as $res) {
+        $user = $res['id'];
+    }
+    $film = $_GET['idAVoir'];
+
+    $sql2 = "INSERT INTO a_voir(user_id, film_id) VAlUES ($user, $film)";
+    $req = $db->query($sql2) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+}
 
 if(!empty($selectQ)){
 $questions = $selectQ->fetchAll();
@@ -114,7 +129,7 @@ $reponses = $selectR->fetchAll();
         <h1 class="text-uppercase titre-section">Fin du questionnaire</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-                    <p>suggestion : Voici le resultat listant les films que nous vous suggerons suite à vos réponses, vous n'avez plus qu'à choisir !</p>
+                    <p>Suggestion : Voici le resultat listant les films que nous vous suggerons suite à vos réponses, vous n'avez plus qu'à choisir !</p>
                 </div>
                 <?php foreach($reponses as $reponse): ?>
                 <div class="col-xs-12 col-sm-4 col-lg-3">
