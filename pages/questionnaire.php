@@ -21,23 +21,23 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
                     $type="raison";
                 }
                 $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
-                $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND()");
+                $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND() LIMIT 5");
                 $film=0;
                 break;
             case 'raison':
                 $type="genre";
                 $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
-                $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND()");
+                $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND() LIMIT 5");
                 $film=0;
                 break;
             case 'genre':
                 if($idG == 0){
                     $type="genre2";
                     $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
-                    $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH AND id_raison=$idR ORDER BY RAND() LIMIT 5");
                     $film=0;
                 }else{
-                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG AND film.id=film_genre.id_film ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG AND film.id=film_genre.id_film ORDER BY RAND() LIMIT 5");
                     $film=1;
                 }
 
@@ -46,10 +46,10 @@ if (isset($_GET['id']) && isset($_GET['type']) && isset($_GET['idH']) && isset($
                 $type="genre3";
                 if($idG2 == 0){
                     $selectQ = $db->query("SELECT * FROM question WHERE type='$type' AND rep_id=$id");
-                    $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT * FROM reponse WHERE type='$type' AND id_humeur=$idH ORDER BY RAND() LIMIT 5");
                     $film=0;
                 }else{
-                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG2 AND film.id=film_genre.id_film ORDER BY RAND()");
+                    $selectR = $db->query("SELECT DISTINCT film.titre, film.affiche, film.id FROM film_genre, film WHERE film_genre.id_genre=$idG2 AND film.id=film_genre.id_film ORDER BY RAND() LIMIT 5");
                     $film=1;
                 }
 
@@ -96,6 +96,14 @@ $reponses = $selectR->fetchAll();
                 <?php foreach($reponses as $reponse): ?>
                     <a href="?id=<?= $reponse['id']; ?>&type=<?= $question['type']; ?>&idH=<?= $reponse['id_humeur']; ?>&idR=<?= $reponse['id_raison']; ?>&idG=<?= $reponse['id_genre']; ?>&idG2=<?= $reponse['id_genre2']; ?>&idG3=<?= $reponse['id_genre3']; ?>&<?= csrf(); ?>"  name="$reponse['id']; ?>" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 btnq"><p class="boutonquest col-lg-6 col-md-6 col-sm-6 col-xs-12"><?= $reponse['contenu']; ?></p></a>
                     <!--<img src="<?= $reponse['contenu']; ?>" alt="">-->
+                    <?php
+                    $id = $reponse['id'];
+                    $idH = $reponse['id_humeur'];
+                    $idR = $reponse['id_raison'];
+                    $idG = $reponse['id_genre'];
+                    $idG2 = $reponse['id_genre2'];
+                    $idG3 = $reponse['id_genre3'];
+                    ?>
                     <?php $i=$i+1; ?>
                 <?php endforeach ?> 
             </div>
@@ -121,7 +129,7 @@ $reponses = $selectR->fetchAll();
                     <a href="fiche_film.php?id=<?= $reponse['id']; ?>">
                         <h2 class="nomdefilm"><?= $reponse['titre']; ?></h2>
                     <div id="tailleaffiche">   
-                        <img src="<?= $reponse['affiche']; ?>" class="img-responsive">
+                        <img src="<?= $reponse['affiche']; ?>" class="img-responsive" width="270" height="360">
                     </div> 
                     </a> 
 
@@ -157,7 +165,7 @@ $reponses = $selectR->fetchAll();
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-                    <a href="#"><p class="plusdefilm">afficher plus de film</p></a>
+                    <a href="?id=<?= $id; ?>&type=genre&idH=<?= $idH; ?>&idR=<?= $idR; ?>&idG=<?= $idG; ?>&idG2=<?= $idG2; ?>&idG3=<?= $idG3; ?>&<?= csrf(); ?>"><p class="plusdefilm">afficher plus de film</p></a>
                 </div>
             </div>
         </div>
