@@ -210,7 +210,7 @@ $reponses = $selectR->fetchAll();
                                     <a href="?idAVoir=<?= $reponse['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                                 </div>
                                 <?php endif ?>
-                            
+                            </div>
 
                         </div>
  
