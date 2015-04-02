@@ -46,9 +46,12 @@
 
 <body class="shifter">
 
-<?php 
+<?php
+
+session_start();
+
 //Connexion à la base de données 
-include 'lib/db.php';
+include 'lib/include.php';
 
 $requete = $db -> query("SELECT film.id, film.titre, film.affiche, film.note, film.synopsisCourt, film.trailer, genre.nom, film.date FROM film, film_genre, genre, recommandation WHERE recommandation.id_film=film.id AND film.id=film_genre.id_film AND film_genre.id_genre=genre.id ORDER BY recommandation.id DESC LIMIT 1");
 $result=$requete->fetchAll();
@@ -63,6 +66,8 @@ $lastmodified = "$day ".$months[$month-1]." $year";
 
 $req_recomm=$db->query("SELECT film.id, film.titre, film.affiche FROM film, recommandation WHERE film.id=recommandation.id_film ORDER BY recommandation.id DESC LIMIT 1,7");
 $recommandations=$req_recomm->fetchAll();
+
+
 ?>
 
     <div class="shifter-page">
@@ -159,10 +164,11 @@ $recommandations=$req_recomm->fetchAll();
                         <p class="boutonfdj noba hidden-xs"><i class="fa fa-play-circle-o"></i>Bande annonce</p>
                     </div> 
                     <?php endif ?>
-
+                    <?php if(isset($res['id']) && isset($_SESSION['username'])) : ?>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
                     </div>
+                    <?php endif ?>
                 </div>
                 <div class="row">
                  <div class="col-lg-12 col-md-6 col-sm-6">

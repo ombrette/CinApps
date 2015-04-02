@@ -1,11 +1,13 @@
 <?php 
+session_start();
+
 $auth = 0;
 include '../lib/include.php';
 $title_page='Liste de films';
 $adr='css/listefilms.css';
 include '../partials/header.php'; 
 
-session_start();
+
 
 if (isset($_GET['filter']) && isset($_GET['filterBy'])) {
     $filtre=$_GET['filterBy'];
@@ -48,6 +50,7 @@ elseif (isset($_GET['id'])) {
 else{     
     $requete=$db->query("SELECT * FROM film LIMIT 20");
 }
+
 $resultats=$requete->fetchAll();
 
 foreach($resultats as $res):
@@ -56,11 +59,16 @@ endforeach;
 
 list($year, $month, $day) = explode("-", $date); 
 $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"); 
-$lastmodified = "$day ".$months[$month-1]." $year";
+if($date != 0){
+    $lastmodified = "$day ".$months[$month-1]." $year";
+}else{
+    $lastmodified = "Pas de date disponible";
+}
 
 $req_genre=$db->query("SELECT * FROM genre");
-$req_date=$db->query("SELECT DISTINCT YEAR(date) FROM film");
 $genres=$req_genre->fetchAll(); 
+
+$req_date=$db->query("SELECT DISTINCT YEAR(date) FROM film ORDER BY YEAR(date) ASC");
 $dates=$req_date->fetchAll();
 
 ?>    
@@ -169,30 +177,32 @@ $dates=$req_date->fetchAll();
                             
                             <div class="row">
 
-                            <p class="note pull-right" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
-                                <?php include '../lib/note.php'; ?>
-                            </p>
+                                <p class="note pull-right" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                                    <?php include '../lib/note.php'; ?>
+                                </p>
 
-                            </div>
+                                </div>
 
-                            <p class="text-left gris titre-syn">Synopsis</p>
-                            <p class="text-justify fix"><?= $res['synopsisCourt'] ?></p>
-                            <p class="vp"><a href="fiche_film.php?id=<?= $res['id'] ?>">Voir plus</a></p>
-                        
-                            <div class="row boutons">
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                                    <p class="text-left gris titre-syn">Synopsis</p>
+                                    <p class="text-justify fix"><?= $res['synopsisCourt'] ?></p>
+                                    <p class="vp"><a href="fiche_film.php?id=<?= $res['id'] ?>">Voir plus</a></p>
                             
-                                    <?php if(!empty($res['trailer'])) : ?>
-                                    <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                                <div class="row boutons">
+                                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                                
+                                        <?php if(!empty($res['trailer'])) : ?>
+                                        <a href=" <?= $res['trailer'] ?>" class="site video"><p class="boutonfdj text-center"><i class="fa fa-play-circle-o"></i>Bande annonce</p></a>
+                                        <?php endif ?>
+                                        <?php if(empty($res['trailer'])) : ?>
+                                        <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
+                                        <?php endif ?>
+                                    </div>
+                                     <?php if(isset($res['id']) && isset($_SESSION['username'])) : ?>       
+                                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                                        <a href="?id=<?= $res['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a>
+                                    </div>
                                     <?php endif ?>
-                                    <?php if(empty($res['trailer'])) : ?>
-                                    <p class="boutonfdj text-center noba"><i class="fa fa-play-circle-o"></i>Pas de bande annonce disponible</p></a>
-                                    <?php endif ?>
-                                </div>
-                                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-                                    <a href="?id=<?= $res['id'] ?>"><p class="boutonfdj"><i class="fa fa-file-text-o"></i>A regarder plus tard</p></a></div>
-                                </div>
-
+                            </div>
                         </div>
  
 

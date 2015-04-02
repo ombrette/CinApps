@@ -15,7 +15,7 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Confirmer') {
     $data = $req-> fetch(PDO::FETCH_BOTH);
 
     // si on obtient une réponse, alors l'utilisateur est un membre
-    if ($req->rowCount() > 0) {
+    if ($data[0] > 0) {
         session_start();
         $_SESSION['username'] = $_POST['pseudo'];
         header('Location:' . WEBROOT . 'pages/profil.php');

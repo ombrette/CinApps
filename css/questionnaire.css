@@ -1,9 +1,3 @@
-.questionnaire .titre-section, .finquest .titre-section{
-	top: -1em;
-	float: left;
-	margin-left: 5%;
-}
-
 /*###### questionnaire ######*/
 .container.questionnaire{
 	width: 974px;

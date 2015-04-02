@@ -135,7 +135,7 @@ $acts=$requete_act->fetchAll();
 
     <div class="row">
         <div class="col-lg-11">
-            <h3>Commentaires</h3>
+            <h2 class="titre-section text-uppercase">Commentaires</h2>
             <form action="1" method="POST" accept-charset="utf-8">
                 <p>
                     <label>Votre Message : </label>
@@ -145,6 +145,10 @@ $acts=$requete_act->fetchAll();
                     <input type="submit" name="submit" value="Publier" placeholder="">
                 </p>
             </form>
+
+            <div>
+                
+            </div>
         </div>
 
     </div>

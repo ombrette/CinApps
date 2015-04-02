@@ -264,13 +264,17 @@ header.menu-mobile{
 	vertical-align: middle;
 	margin:auto;
 	position:relative;
+	top: -1em;
+	float: left;
+	margin-left: 5%;
 	
 }
 
 .fdj .titre-section{
 	width: 14em;
 	height: 3em;
-	top:-1em;
+	float: none;
+	margin-left: 0%;
 }
 
 
