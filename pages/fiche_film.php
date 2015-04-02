@@ -52,7 +52,7 @@ $acts=$requete_act->fetchAll();
                 </div>
 
                 <div class="col-lg-4">
-                    <p class="note pull-right" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
+                    <p class="note" title="<?= $res['note'] ?> / 5" alt="<?= $res['note'] ?> / 5">
                     <?php include '../lib/note.php'; ?>
                     </p>
                 </div>
@@ -81,7 +81,7 @@ $acts=$requete_act->fetchAll();
     <div class="row personnes">
 
         <div class="realisateur col-lg-3 col-md-3 col-sm-3">
-            <div class="entete">Réalisateur</div>
+            <div class="entete"><p class="pull-left">Réalisateur</p></div>
 
             <?php foreach ($reas as $rea): ?>
 
@@ -98,10 +98,10 @@ $acts=$requete_act->fetchAll();
 
 
         <div class="acteur col-lg-8 col-md-8 col-sm-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-            <div class="entete">Acteurs</div>
+            <div class="entete"><p class="pull-left">Acteurs</p></div>
             
             <?php foreach ($acts as $act): ?>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <img src="<?= $act['picture'] ?>" alt="" class="img-responsive img-fiche">
                 <p><?= $act['nom'] ?></p>
 
@@ -110,11 +110,11 @@ $acts=$requete_act->fetchAll();
         </div>
 
 
-        <div class="col-lg-offset-2 col-lg-4">
+        <div class="col-lg-offset-2 col-lg-4 col-md-offset-2 col-md-4 col-sm-4">
         <a href="#"><p class="boutonfdj">Regarder en streaming</p></a>  
         </div>
 
-        <div class="col-lg-offset-2 col-lg-4"> 
+        <div class="col-lg-offset-2 col-lg-4 col-md-offset-2 col-md-4 col-sm-offset-4 col-sm-4"> 
         <a href="#"><p class="boutonfdj">Lien de téléchargement</p></a>
         </div>
 

@@ -211,7 +211,7 @@ border:solid 1px #c0392b;
 
 .finquest h2{
 	margin-top: 0px;
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
 .finquest a, .finquest p {
@@ -239,6 +239,10 @@ border:solid 1px #c0392b;
        bottom: 0;
     }
 
+#tailleaffiche img{
+	width: 75%;
+	height: 360px;
+}
 
 @media screen and (min-width: 1068){
 	.container.finquest div#tailleaffiche{
@@ -327,3 +331,6 @@ border:solid 1px #c0392b;
 	}
 
 }
+
+
+
